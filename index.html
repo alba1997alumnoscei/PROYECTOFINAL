@@ -5,61 +5,93 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tienda online</title>
+
+    <!--Enlace a CSS-->
     <link rel="stylesheet" href="./css/styles.css">
 </head>
 
 <body>
+
+    <!--CONTAINER DE TODA LA PÁGINA-->
     <div class="container">
 
+        <!--HEADER-->
         <div class="header">
+            <div class="header__logo"></div>
             HEADER: logo
         </div>
-        
 
-        
+        <!--Barra de navegación-->
+        <nav class="nav">
 
-
-
-
+            <div class="nav__buttons">
+                <button class="nav__btn">Ropa y Accesorios</button>
+                <button class="nav__btn">Diseños</button>
+                <button class="nav__btn">Cesta</button>
+            </div>
+        </nav>
+        <!--MAIN-->
         <div class="main">
 
-            <nav class="nav">
-            
-                <div>
-                   <button>Ropa y Accesorios</button>
-                   <button>Diseños</button>
-                   <button>Cesta</button>
-                </div>
-            </nav>
-            
+
+
+
+
+            <!--Boton personalizar-->
             <button class="personalizar">
                 BOTÓN DE PERSONALIZAR
-            </button> 
+            </button>
 
+
+            <!--Boton personalizar con acordeon-->
             <div class="acordeon">
-                CUADRITO EXPLICATORIO con acordeon
+                <div class="acordeon__elegir">
+                    1. ELIGE TU DISEÑO
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel impedit ducimus porro? Repellendus quaerat atque quae beatae est id ullam iure facilis aperiam ad suscipit, sequi natus voluptates, nam praesentium.
+                </div>
+
+                <div class="acordeon__personalizar">
+                    2. PERSONALIZA TU DISEÑO
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel impedit ducimus porro? Repellendus quaerat atque quae beatae est id ullam iure facilis aperiam ad suscipit, sequi natus voluptates, nam praesentium.
+                </div>
+
+                <div class="acordeon__aplicar">
+                    3. APLICA TU DESCUENTO
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel impedit ducimus porro? Repellendus quaerat atque quae beatae est id ullam iure facilis aperiam ad suscipit, sequi natus voluptates, nam praesentium.
+                </div>
+
+                <div class="acordeon__pagar">
+                    4. PAGA 
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel impedit ducimus porro? Repellendus quaerat atque quae beatae est id ullam iure facilis aperiam ad suscipit, sequi natus voluptates, nam praesentium.
+                </div>
+
+
             </div>
 
+
+            <!--Código descuento-->
             <div class="descuento">
-
+                DESCUENTO
             </div>
-            
+
         </div>
 
 
 
-
+        <!--FOOTER-->
         <div class="footer">
-            
-            <div>
+
+            <div class="footer__links">
                 <a href="" target="">Facebook</a>
                 <a href="" target="">Twitter</a>
                 <a href="" target="">Instagram</a>
             </div>
-            <div>
+
+            <div class="footer__privacidad">
                 <a href="">Política de Privacidad</a>
             </div>
-            <div>
+
+            <div class="footer__contacto">
                 <a href="" class="">Formulario de Contacto</a>
             </div>
 
@@ -68,6 +100,8 @@
     </div>
 
 </body>
+
+<!--Enlace a JS-->
 
 <script src="./js/script.js"></script>
 
