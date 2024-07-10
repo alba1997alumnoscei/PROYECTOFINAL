@@ -5,8 +5,7 @@ const acordeon = document.querySelector(".acordeon");
 const headers = acordeon.querySelectorAll(".acordeon__item--titulo");                         
 const acordeonItems = acordeon.querySelectorAll(".acordeon__item"); 
 
-const personalizarBtn = acordeon.querySelectorAll(".personalizar"); 
-const descuentoBtn = acordeon.querySelectorAll(".descuento"); 
+
 
 //-----------------------------------------------------------------------------------------------------------------------------------------//
 // 2. Funciones: 
@@ -25,23 +24,10 @@ headers.forEach(header => {
         acordeonItems.forEach(elemento => {
             elemento.classList.remove("active");
         
-        });
+        })
 
         //agregar "active"
         item.classList.add("active");
-
-        
-        if (item.classList.contains('active')) {
-            const personalizarBtn = item.querySelector('.personalizar');
-            personalizarBtn.style.display = 'block';
-
-            const descuentoBtn = item.querySelector('.descuento');
-            descuentoBtn.style.display = 'block';
-        } else {
-            personalizarBtn.style.display = 'none';
-            descuentoBtn.style.display = 'none';
-            
-        }
     });
 
 

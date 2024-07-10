@@ -37,6 +37,12 @@ body{
     max-width: 100%; /* Asegura que la imagen no exceda el tamaño del contenedor */
     height: auto; /* Permite que la altura se ajuste proporcionalmente */
     
+    
+}
+
+.header__logo--ropa{
+    display: flex;
+       
 }
 
 .footer {
@@ -46,9 +52,6 @@ body{
     display: flex;
     justify-content: space-evenly;
     
-    
-    
-
 }
 
 .footer__links{
@@ -125,9 +128,10 @@ body{
 /*---------Personalizar----------*/
 
 .personalizar {
-    display: none;
+    display:block;
 
 }
+
 .personalizar:hover {
     transform: scale(1.2); /* Escalado al pasar el mouse */
 }
@@ -206,6 +210,42 @@ body{
     display: none;
     
     
+}
+
+
+#products-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    max-width: 70%;
+}
+
+.productItem {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+    text-align: center;
+    width: 300px;
+}
+
+.productItem img {
+    width: 100%;
+    height: auto;
+}
+
+.productItem h2 {
+    font-size: 1.2em;
+    margin: 10px 0;
+}
+
+.productItem p {
+    margin: 5px 0;
+}
+
+.productItem .price {
+    font-weight: bold;
+    color: #e67e22;
 }
 
 
