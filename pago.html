@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plataforma de pago</title>
+
+    <!--Enlace a CSS-->
+    <link rel="stylesheet" href="./css/styles.css">
+</head>
+
+<body id="pago">
+
+    <!-----------CONTAINER DE TODA LA PÁGINA------------------->
+    <div class="container">
+
+        <!--HEADER-->
+        <div class="header">
+            <div class="header__logo"></div>
+            <img src="./imgs/pruebaropa2.jpg" alt="logo">
+
+        </div>
+        <!--Barra de navegación-->
+        <nav class="nav">
+
+            <div class="nav__buttons">
+                <button class="nav__btn">Ropa y Accesorios</button>
+                <button class="nav__btn">Diseños</button>
+                <button class="nav__btn">Cesta</button>
+            </div>
+        </nav>
+        <!---------------MAIN-------------------------------->
+
+        <div class="main">
+            <section>
+
+
+                <form class="contacto">
+                    <h1>formulario de contacto</h1>
+
+                    <!--Forms de input text-->
+
+                    <label value="nombre">Nombre del titular</label>
+                    <input type="text" name="nombre"  required>
+
+                    <label value="numeroTarjeta">Nº Tarjeta</label>
+                    <input type="text" name="numeroTarjeta" required>
+
+                    <label value="vencimiento">Vencimiento</label>
+                    <input type="month" name="vencimiento" required>
+
+                    <label value="codigo">CVV</label>
+                    <input type="text" name="codigo" placeholder="?">
+                    
+
+                    
+
+                    
+                </form>
+            </section>
+
+        </div>
+
+
+
+        <!-------------------------FOOTER----------------------------------->
+        <div class="footer">
+
+            <div class="footer__links">
+                <a href="https://www.facebook.com/" target="_blank">Facebook</a>
+                <a href="https://x.com/" target="_blank">X</a>
+                <a href="https://www.instagram.com/" target="_blank">Instagram</a>
+            </div>
+
+            <div class="footer__privacidad">
+                <a href="https://policies.google.com/privacy?hl=es" target="_blank">Política de Privacidad</a>
+            </div>
+
+            <div class="footer__contacto">
+                <a href="" class="">Formulario de Contacto</a>
+            </div>
+
+        </div>
+
+    </div>
+
+
+</body>
+
+<!--Enlace a JS-->
+
+<script src="./js/script.js"></script>
+
+</html>

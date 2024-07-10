@@ -26,12 +26,14 @@ body{
 
 .header {
     height: 200px;
-    background-color: rgb(203, 216, 50);
+    background-color: rgb(207, 230, 118);
     width: 100vw;
     display: flex;
     justify-content: center;
     z-index: 2;
     position: fixed;
+    font-size: 5rem;
+    
 }
 .header__logo {
     max-width: 100%; /* Asegura que la imagen no exceda el tamaño del contenedor */
@@ -47,7 +49,7 @@ body{
 
 .footer {
     
-    background-color: rgb(117, 200, 217);
+    background-color: rgb(207, 230, 118);
     width: 100vw;
     display: flex;
     justify-content: space-evenly;
@@ -55,26 +57,21 @@ body{
 }
 
 .footer__links{
-    border: 1px solid green;
+    
     width: 33%;
     display: flex;
     justify-content: space-around;
     
 }
 
-.footer__privacidad{
-    border: 1px solid green;
+.footer__privacidad, .footer__contacto{
+   
     width: 33%;
     display: flex;
     justify-content: center;
 }
 
-.footer__contacto{
-    border: 1px solid green;
-    width: 33%;
-    display: flex;
-    justify-content: center;
-}
+
 
 
 
@@ -98,7 +95,7 @@ body{
 .nav {
     
     width: 100VW;
-    background-color: blueviolet;
+    background-color: rgb(162, 84, 236);
     padding: 1rem;
     position: fixed;
     z-index: 1;
@@ -108,16 +105,18 @@ body{
 .nav__buttons {
     display: flex;
     flex-direction: row;
-    background-color: blueviolet;
+    
     
 }
 
 .nav__btn{
-    border: 1px solid green;
+    background-color: rgb(186, 127, 237);
     border-radius: 5%;
     width: 33%;
     margin: 10px;
     padding: 10px;
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 1.25rem;
 }
 
 :hover.nav__btn{
@@ -167,7 +166,6 @@ body{
 }
 
 .acordeon__item--titulo {
-    /*background-color: pink;*/
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
     padding: 10px;
@@ -247,6 +245,15 @@ body{
     font-weight: bold;
     color: #e67e22;
 }
+
+
+.contacto{
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    margin: 20px;
+}
+
 
 
 /*-----------------------------------------------------------------*/

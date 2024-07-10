@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto</title>
+
+    <!--Enlace a CSS-->
+    <link rel="stylesheet" href="./css/styles.css">
+</head>
+
+<body id="contacto">
+
+    <!-----------CONTAINER DE TODA LA PÁGINA------------------->
+    <div class="container">
+
+        <!--HEADER-->
+        <div class="header">
+            <div class="header__logo"></div>
+            <img src="./imgs/pruebaropa2.jpg" alt="logo">
+
+        </div>
+        <!--Barra de navegación-->
+        <nav class="nav">
+
+            <div class="nav__buttons">
+                <button class="nav__btn">Ropa y Accesorios</button>
+                <button class="nav__btn">Diseños</button>
+                <button class="nav__btn">Cesta</button>
+            </div>
+        </nav>
+        <!---------------MAIN-------------------------------->
+
+        <div class="main">
+            <section>
+
+
+                <form class="contacto">
+                    <h1>formulario de contacto</h1>
+
+                    <!--Forms de input text-->
+
+                    <label value="nombre">Nombre</label>
+                    <input type="text" name="nombre" placeholder="Escribe tu nombre" required>
+
+                    <label value="apellido">Apellidos</label>
+                    <input type="text" name="apellido" placeholder="Escribe tu apellido" required>
+
+                    <label value="email">Tu email</label>
+                    <input type="text" name="email" placeholder="juanito@gmail.com" required>
+
+                    <label value="telefono">Tu número de teléfono</label>
+                    <input type="text" name="telefono" placeholder="(+34)..." required>
+
+                    <!--Forms de input radio-->
+
+                    Sexo:
+                    <label value="Mujer">Mujer</label>
+                    <input type="radio" value="Mujer" name="opcionSexo">
+
+                    <label value="Hombre">Hombre</label>
+                    <input type="radio" value="Hombre" name="opcionSexo">
+
+                    <label value="noContesta">Prefiero no contestar</label>
+                    <input type="radio" value="noContesta" name="opcionSexo">
+
+                    <label value="departamento">¿Con qué departamento quieres contactar?</label>
+                    <select type="departamento" name="departamento" required>
+                        <option value="rrhh">RR.HH.</option>
+                        <option value="ventas">Ventas</option>
+                        <option value="att">Atención al cliente</option>
+                        <option value="otros">Otros</option>
+
+                    </select>
+
+                </form>
+            </section>
+
+        </div>
+
+
+
+        <!-------------------------FOOTER----------------------------------->
+        <div class="footer">
+
+            <div class="footer__links">
+                <a href="https://www.facebook.com/" target="_blank">Facebook</a>
+                <a href="https://x.com/" target="_blank">X</a>
+                <a href="https://www.instagram.com/" target="_blank">Instagram</a>
+            </div>
+
+            <div class="footer__privacidad">
+                <a href="https://policies.google.com/privacy?hl=es" target="_blank">Política de Privacidad</a>
+            </div>
+
+            <div class="footer__contacto">
+                <a href="" class="">Formulario de Contacto</a>
+            </div>
+
+        </div>
+
+    </div>
+
+
+</body>
+
+<!--Enlace a JS-->
+
+<script src="./js/script.js"></script>
+
+</html>
