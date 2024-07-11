@@ -88,6 +88,7 @@ body{
     width: 100%;
     flex: 1;
     margin-top: 400px;
+    margin-bottom: 200px;
 }
 
 
@@ -255,6 +256,26 @@ body{
 }
 
 
+.slider{
+overflow: hidden;
+border: 1px solid black;
+}
+
+.slider-images{
+    display: flex;
+    width: 400px;
+    height: 600px;
+    transition: transform 0.5s ease;
+}
+
+.slider-images img{ /*a cada imagen del grupo slider-images*/
+    min-width: 400px;
+    max-width: 400px;
+    min-height: 600px;
+    max-height: 600px;
+
+    object-fit: contain; /*como me va a mostrar la imagen dentro de la caja, es decir añade barritas en los lados o arriba/abajo para evitar que la foto sea muy ancha o muy larga*/
+}
 
 /*-----------------------------------------------------------------*/
 /*----------------------------Media Queries------------------------*/
