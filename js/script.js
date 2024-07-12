@@ -25,17 +25,18 @@ document.addEventListener('DOMContentLoaded', function () {
             iniContacto();
             break;
 
-        case "pago":
+        case "personalizar":
             console.log("Estoy en Pago");
-            iniPago();
+            iniPersonalizar();
             break;
 
     }
 
 
-    //------------------------------------------------------------------------------------------
-    //------------------------------------ JS HOME ---------------------------------------------
-    //------------------------------------------------------------------------------------------
+    //----------------------------------------------------------------------------------------------------------------------------------------------------------
+    //------------------------------------ JS HOME ------------------------------------------------------------------------------------------------
+     //----------------------------------------------------------------------------------------------------------------------------------------------------------
+
 
     function iniHome() {
         const acordeon = document.querySelector(".acordeon");
@@ -44,7 +45,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         const btnPersonalizar = document.getElementById("botonPersonalizar");
         const btnDescuento = document.getElementById("botonDescuento");
-
+        const addCesta = '';
 
         // FOREACH: en los headers 
 
@@ -74,59 +75,71 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
     }
-
-    //------------------------------------------------------------------------------------------
+  //----------------------------------------------------------------------------------------------------------------------------------------------------------
     //------------------------------------ JS ROPA ---------------------------------------------
-    //------------------------------------------------------------------------------------------
+  //----------------------------------------------------------------------------------------------------------------------------------------------------------
 
     function iniRopa() {
         const container = document.getElementById('products-container');
         const inputTitulo = document.querySelector("#inputTitulo"); //nombre de la prenda a buscar
+        
+        const counterTotal = document.querySelector('#contadorTotal');
+
 
 
         //Botones 
-        const btnTodos = document.querySelector("#btnTodos")  
+        const btnTodos = document.querySelector("#btnTodos")
         const btnPant = document.querySelector("#btnPantalon")
         const btnCha = document.querySelector("#btnChaqueta")
         const btnCami = document.querySelector("#btnCamiseta")
-        
+
+
         //Array de los productos: nombre, referencia, precio, imagen
         const products = [
             {
-                nombre: 'Camiseta Roja',
+                nombre: 'Camiseta xxx',
                 referencia: 'REF123',
-                precio: 19.99,
-                imagen: 'https://via.placeholder.com/200x200?text=Camiseta+Roja'
+                precio: '19.99 eur',
+                imagen: 'https://es.m.wikipedia.org/wiki/Archivo:Camiseta-negra.jpg',
+                boton: 'add'
+
             },
             {
-                nombre: 'Pantalones Vaqueros',
+                nombre: 'Pantalones xx',
                 referencia: 'REF456',
-                precio: 39.99,
-                imagen: 'https://via.placeholder.com/200x200?text=Pantalones+Vaqueros'
+                precio: '19.99 eur',
+                imagen: 'https://es.wikipedia.org/wiki/Pantal%C3%B3n#/media/Archivo:Trousers-colourisolated.jpg',
+                boton: 'add'
+                
+            },
+            {
+                nombre: 'Chaqueta xxx',
+                referencia: 'REF789',
+                precio: '19.99 eur',
+                imagen: 'https://es.wikipedia.org/wiki/Chaqueta#/media/Archivo:Tweed_jacket_edited.jpg',
+                boton: 'add'
+                
+            },
+            {
+                nombre: 'Camiseta xx',
+                referencia: 'REF123',
+                precio: '19.99 eur',
+                imagen: 'https://es.m.wikipedia.org/wiki/Archivo:Camiseta-negra.jpg',
+                boton: 'add'
+            },
+            {
+                nombre: 'Pantalones xxx',
+                referencia: 'REF456',
+                precio: '19.99 eur',
+                imagen: 'https://es.wikipedia.org/wiki/Pantal%C3%B3n#/media/Archivo:Trousers-colourisolated.jpg',
+                boton: 'add'
             },
             {
                 nombre: 'Chaqueta de Cuero',
                 referencia: 'REF789',
-                precio: 59.99,
-                imagen: 'https://via.placeholder.com/200x200?text=Chaqueta+de+Cuero'
-            },
-            {
-                nombre: 'Camiseta Roja',
-                referencia: 'REF123',
-                precio: 19.99,
-                imagen: 'https://via.placeholder.com/200x200?text=Camiseta+Roja'
-            },
-            {
-                nombre: 'Pantalones Vaqueros',
-                referencia: 'REF456',
-                precio: 39.99,
-                imagen: 'https://via.placeholder.com/200x200?text=Pantalones+Vaqueros'
-            },
-            {
-                nombre: 'Chaqueta de Cuero',
-                referencia: 'REF789',
-                precio: 59.99,
-                imagen: 'https://via.placeholder.com/200x200?text=Chaqueta+de+Cuero'
+                precio: '19.99 eur',
+                imagen: 'https://es.wikipedia.org/wiki/Chaqueta#/media/Archivo:Tweed_jacket_edited.jpg',
+                boton: 'add'
             },
 
         ];
@@ -144,15 +157,19 @@ document.addEventListener('DOMContentLoaded', function () {
                 <img src="${product.imagen}" alt="${product.nombre}">
                 <h2>${product.nombre}</h2>
                 <p>Referencia: ${product.referencia}</p>
-                <p class="precio">$${product.precio}</p>
+                <p >${product.precio}</p>
+               <button class="btnCesta">${product.boton}</button>
                 
             `;
+
+            
                 container.appendChild(productItem);//añade dentro del container al final 
 
             });
-            
 
-           
+
+
+
         }
 
         listaProductos(products); // Se ejecuta la función listaProductos para mostrar el array
@@ -167,6 +184,8 @@ document.addEventListener('DOMContentLoaded', function () {
             );
             listaProductos(productosFiltrados); // función de escribir 
         });
+
+
 
         // Filtrar clicando en los botones 
         btnTodos.addEventListener("click", () => {
@@ -185,16 +204,46 @@ document.addEventListener('DOMContentLoaded', function () {
             listaProductos(productosFiltrados);
         }
 
-     
+        
+        const addCesta = document.querySelectorAll('.btnCesta');
+        let counter = 0;
+
+        addCesta.forEach(btn => {
+            btn.addEventListener("click", () => {
+                const index = parseInt(btn.dataset.index);
+                agregarProducto(products[index]);
+                counter++;
+                counterTotal.textContent = counter;
+            });
+        });
+    // Función para agregar un producto a la cesta y guardar en localStorage
+    function agregarProducto(producto) {
+        // Agregar producto al array de productos seleccionados
+        productosSeleccionados.push(producto);
+        // Guardar en localStorage
+        localStorage.setItem('productosSeleccionados', JSON.stringify(productosSeleccionados));
+    }
+
+    // Inicialización: cargar productos del localStorage si existen
+    const productosGuardados = localStorage.getItem('productosSeleccionados');
+    let productosSeleccionados = [];
+
+    if (productosGuardados) {
+        productosSeleccionados = JSON.parse(productosGuardados);
+    }
+
+    // Mostrar inicialmente los productos
+    listaProductos(products);
+
 
 
     }
 });
 
 
-//------------------------------------------------------------------------------------------
+  //----------------------------------------------------------------------------------------------------------------------------------------------------------
 //------------------------------------ JS DISEÑOS-------------------------------------------
-//------------------------------------------------------------------------------------------
+  //----------------------------------------------------------------------------------------------------------------------------------------------------------
 
 function iniDisenos() {
     //------------------------------------------------------
@@ -264,26 +313,35 @@ function iniDisenos() {
     //------------------------------------------------------
     // 
     //------------------------------------------------------
-}
-
-
-//------------------------------------------------------------------------------------------
-//------------------------------------ JS CONTACTO------------------------------------------
-//------------------------------------------------------------------------------------------
+};
 
 
 
 
 
 
-//------------------------------------------------------------------------------------------
+
+
+  //----------------------------------------------------------------------------------------------------------------------------------------------------------
 //------------------------------------ JS PAGO----------------------------------------------
-//------------------------------------------------------------------------------------------
+  //----------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
+function iniPersonalizar() {
+
+    let cantidad = 0;
 
 
+   
 
+    
+
+};
+
+
+  //----------------------------------------------------------------------------------------------------------------------------------------------------------
+//------------------------------------ JS CONTACTO------------------------------------------
+  //----------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
 

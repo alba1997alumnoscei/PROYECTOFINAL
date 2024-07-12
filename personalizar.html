@@ -4,16 +4,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Diseños</title>
+    <title>Cesta</title>
 
     <!--Enlace a CSS-->
     <link rel="stylesheet" href="./css/styles.css">
 </head>
 
-<body id="disenos">
+<body id="personalizar">
 
-   <!---------------------------------------CONTAINER DE TODA LA PÁGINA--------------------------------->
-   <div class="container">-
+   <!-----------CONTAINER DE TODA LA PÁGINA------------------->
+   <div class="container">
 
     <!--HEADER-->
     <div class="header">
@@ -37,49 +37,42 @@
             </button>
         </div>
     </nav>
-    <!-----------------------------------------------MAIN-------------------------------->
+    <!---------------MAIN-------------------------------->
 
     <div class="main">
-
-        <h1>Diseños disponibles</h1>
-        <div class="slider">
-            <div class="slider-images">
-
-            <img src="./imgs/prueba1.jpg" alt="prueba1">
-            <img src="./imgs/prueba2.jpg" alt="prueba2">
-            <img src="./imgs/prueba3.jpg" alt="prueba3">
-            <img src="./imgs/prueba4.jpg" alt="prueba4">
-            <img src="./imgs/prueba5.jpg" alt="prueba5">
-            <img src="./imgs/prueba6.jpg" alt="prueba6">
-
-            </div>
-
-            <button class="btnPrev">Anterior</button>
-            <button class="btnNext">Siguiente</button>
-
-            <div class="slider-contador">
-                <span id="txtActual"></span> / <span id="txtTotal"></span>
-
-            </div>
-
+<div class="ropaPersonalizar">
+        <h1>Ropa y accesorios</h1>
+        <button>Quiero este!</button>
+        <button>Quiero este!</button>
+        <button>Quiero este!</button>
+        <button>Quiero este!</button>
+        <button>Quiero este!</button>
+        <button>Quiero este!</button>
+    </div>
+    <div class="disenosPersonalizar">
+        <h1>Ropa y accesorios</h1>
+        <button>Quiero este!</button>
+        <button>Quiero este!</button>
+        <button>Quiero este!</button>
+        <button>Quiero este!</button>
+        <button>Quiero este!</button>
+        <button>Quiero este!</button>
+    </div>
+   
+    <div style="border-top: 1px solid black; margin: 10px; padding:10px">
+        <button onclick="verTotal()">Ver total de Items</button>
+        <button onclick="borrarCarrito()">Vaciar carrito</button>
         </div>
-
-
-
-
-
-
-
-
-
-
-
     
+        <div id="información"></div>
+    
+   
     </div>
 
 
-    
-    <!-------------------------------------------FOOTER----------------------------------->
+
+
+    <!-------------------------FOOTER----------------------------------->
     <div class="footer">
 
         <div class="footer">
@@ -99,6 +92,7 @@
             </div>
     
         </div>
+    </div>
 
 </div>
 
