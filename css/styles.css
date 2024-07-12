@@ -293,6 +293,12 @@ border: 1px solid black;
     border: 1px solid green;
     width: 100px;
     padding: 30px;
-    
 
+
+}
+.volver{
+    border: 1px solid green;
+    width: 50%;
+    padding: 30px;
+    justify-content: center;
 }
