@@ -213,7 +213,7 @@ body{
 }
 
 
-#products-container {
+#products-container , #productos-container {
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
@@ -278,7 +278,21 @@ border: 1px solid black;
     object-fit: contain; /*como me va a mostrar la imagen dentro de la caja, es decir añade barritas en los lados o arriba/abajo para evitar que la foto sea muy ancha o muy larga*/
 }
 
-/*-----------------------------------------------------------------*/
-/*----------------------------Media Queries------------------------*/
-/*-----------------------------------------------------------------*/
+.carrito{
+    background-color: yellow;
+    border: 1px solid red;
+    display: flex;
+    flex-wrap: wrap;
+   width: 50%;
+   height: auto;
+    flex-direction: row;
+}
 
+
+.irPago{
+    border: 1px solid green;
+    width: 100px;
+    padding: 30px;
+    
+
+}

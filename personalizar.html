@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cesta</title>
+    <title>Personalizar</title>
 
     <!--Enlace a CSS-->
     <link rel="stylesheet" href="./css/styles.css">
@@ -12,89 +12,93 @@
 
 <body id="personalizar">
 
-   <!-----------CONTAINER DE TODA LA PÁGINA------------------->
-   <div class="container">
+    <!-----------CONTAINER DE TODA LA PÁGINA------------------->
+    <div class="container">
 
-    <!--HEADER-->
-    <div class="header">
-        <div class="header__logo"></div>
-        <img src="./imgs/pruebaropa2.jpg" alt="logo">
-       
-    </div>
-    <!--Barra de navegación-->
-    <nav class="nav">
+        <!--HEADER-->
+        <div class="header">
+            <div class="header__logo"></div>
+            <img src="./imgs/pruebaropa2.jpg" alt="logo">
 
-        <div class="nav__buttons">
-            <button class="nav__btn">
-                <a href="./ropa-accesorios.html">Ropa y Accesorios</a>
-                
-            </button>
-            <button class="nav__btn">
-                <a href="./disenos.html">Diseños</a>
-            </button>
-            <button class="nav__btn">
-                <a href="./personalizar.html">Personalizar</a>
-            </button>
         </div>
-    </nav>
-    <!---------------MAIN-------------------------------->
+        <!--Barra de navegación-->
+        <nav class="nav">
 
-    <div class="main">
-<div class="ropaPersonalizar">
-        <h1>Ropa y accesorios</h1>
-        <button>Quiero este!</button>
-        <button>Quiero este!</button>
-        <button>Quiero este!</button>
-        <button>Quiero este!</button>
-        <button>Quiero este!</button>
-        <button>Quiero este!</button>
-    </div>
-    <div class="disenosPersonalizar">
-        <h1>Ropa y accesorios</h1>
-        <button>Quiero este!</button>
-        <button>Quiero este!</button>
-        <button>Quiero este!</button>
-        <button>Quiero este!</button>
-        <button>Quiero este!</button>
-        <button>Quiero este!</button>
-    </div>
-   
-    <div style="border-top: 1px solid black; margin: 10px; padding:10px">
-        <button onclick="verTotal()">Ver total de Items</button>
-        <button onclick="borrarCarrito()">Vaciar carrito</button>
+            <div class="nav__buttons">
+                <button class="nav__btn">
+                    <a href="./ropa-accesorios.html">Ropa y Accesorios</a>
+
+                </button>
+                <button class="nav__btn">
+                    <a href="./disenos.html">Diseños</a>
+                </button>
+                <button class="nav__btn">
+                    <a href="./personalizar.html">Personalizar</a>
+                </button>
+            </div>
+        </nav>
+        <!---------------MAIN-------------------------------->
+
+        <div class="main">
+            <!-- Contenedor para los productos -->
+            <div id="productos-container"></div>
+
+
+
+
+
+            <button id="borrarCarrito">Vaciar carrito</button>
+
+            <!-- Contenedor para los productos agregados al carrito -->
+            <div class="carrito">
+                <div id="carrito-container"></div>
+                <div id="carrito-disenos"></div>
+            </div>
+
+
+            <div class="infoTotal">Aquí tiene su resultado total</div>
+
+
+            <div class="aplicar">
+                <form class="aplicardescuento">
+                    <label for="codigo">Código de Descuento</label>
+                    <input type="text" id="codigo" name="codigo" placeholder="Ingresa tu código descuento" required>
+                    <button type="button" id="aplicarDescuento">Aplicar Descuento</button>
+                </form>
+            </div>
+
+            <button class="irPago">
+                <a href="/pago.html">PAGAR</a>
+
+            </button>
+
         </div>
-    
-        <div id="información"></div>
-    
-   
-    </div>
 
 
 
-
-    <!-------------------------FOOTER----------------------------------->
-    <div class="footer">
-
+        <!-------------------------FOOTER----------------------------------->
         <div class="footer">
 
-            <div class="footer__links">
-                <a href="https://www.facebook.com/" target="_blank">Facebook</a>
-                <a href="https://x.com/" target="_blank">X</a>
-                <a href="https://www.instagram.com/" target="_blank">Instagram</a>
-            </div>
-    
-            <div class="footer__privacidad">
-                <a href="https://policies.google.com/privacy?hl=es" target="_blank">Política de Privacidad</a>
-            </div>
-    
-            <div class="footer__contacto">
-                <a href="./contacto.html" class="">Formulario de Contacto</a>
-            </div>
-    
-        </div>
-    </div>
+            <div class="footer">
 
-</div>
+                <div class="footer__links">
+                    <a href="https://www.facebook.com/" target="_blank">Facebook</a>
+                    <a href="https://x.com/" target="_blank">X</a>
+                    <a href="https://www.instagram.com/" target="_blank">Instagram</a>
+                </div>
+
+                <div class="footer__privacidad">
+                    <a href="https://policies.google.com/privacy?hl=es" target="_blank">Política de Privacidad</a>
+                </div>
+
+                <div class="footer__contacto">
+                    <a href="./contacto.html" class="">Formulario de Contacto</a>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
 
 
 </body>

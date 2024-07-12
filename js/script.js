@@ -30,21 +30,24 @@ document.addEventListener('DOMContentLoaded', function () {
             iniPersonalizar();
             break;
 
+        case "pago":
+            console.log("Estoy en Pago");
+            iniPago();
+            break;
+
     }
 
 
     //----------------------------------------------------------------------------------------------------------------------------------------------------------
     //------------------------------------ JS HOME ------------------------------------------------------------------------------------------------
-     //----------------------------------------------------------------------------------------------------------------------------------------------------------
+    //----------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
     function iniHome() {
         const acordeon = document.querySelector(".acordeon");
         const headers = acordeon.querySelectorAll(".acordeon__item--titulo");
         const acordeonItems = acordeon.querySelectorAll(".acordeon__item");
-
-        const btnPersonalizar = document.getElementById("botonPersonalizar");
-        const btnDescuento = document.getElementById("botonDescuento");
+       
         const addCesta = '';
 
         // FOREACH: en los headers 
@@ -74,15 +77,19 @@ document.addEventListener('DOMContentLoaded', function () {
         acordeonItems[0].classList.add('active');
 
 
+        const discount =document.getElementById("descuento")
+        discount.addEventListener('click', function() {
+            alert('Enhorabuena! Este es tu codigo descuento: CAMISETA123');
+        });
     }
-  //----------------------------------------------------------------------------------------------------------------------------------------------------------
+    //----------------------------------------------------------------------------------------------------------------------------------------------------------
     //------------------------------------ JS ROPA ---------------------------------------------
-  //----------------------------------------------------------------------------------------------------------------------------------------------------------
+    //----------------------------------------------------------------------------------------------------------------------------------------------------------
 
     function iniRopa() {
         const container = document.getElementById('products-container');
         const inputTitulo = document.querySelector("#inputTitulo"); //nombre de la prenda a buscar
-        
+
         const counterTotal = document.querySelector('#contadorTotal');
 
 
@@ -110,7 +117,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 precio: '19.99 eur',
                 imagen: 'https://es.wikipedia.org/wiki/Pantal%C3%B3n#/media/Archivo:Trousers-colourisolated.jpg',
                 boton: 'add'
-                
+
             },
             {
                 nombre: 'Chaqueta xxx',
@@ -118,7 +125,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 precio: '19.99 eur',
                 imagen: 'https://es.wikipedia.org/wiki/Chaqueta#/media/Archivo:Tweed_jacket_edited.jpg',
                 boton: 'add'
-                
+
             },
             {
                 nombre: 'Camiseta xx',
@@ -162,7 +169,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 
             `;
 
-            
+
                 container.appendChild(productItem);//añade dentro del container al final 
 
             });
@@ -204,7 +211,7 @@ document.addEventListener('DOMContentLoaded', function () {
             listaProductos(productosFiltrados);
         }
 
-        
+
         const addCesta = document.querySelectorAll('.btnCesta');
         let counter = 0;
 
@@ -216,147 +223,261 @@ document.addEventListener('DOMContentLoaded', function () {
                 counterTotal.textContent = counter;
             });
         });
-    // Función para agregar un producto a la cesta y guardar en localStorage
-    function agregarProducto(producto) {
-        // Agregar producto al array de productos seleccionados
-        productosSeleccionados.push(producto);
-        // Guardar en localStorage
-        localStorage.setItem('productosSeleccionados', JSON.stringify(productosSeleccionados));
-    }
-
-    // Inicialización: cargar productos del localStorage si existen
-    const productosGuardados = localStorage.getItem('productosSeleccionados');
-    let productosSeleccionados = [];
-
-    if (productosGuardados) {
-        productosSeleccionados = JSON.parse(productosGuardados);
-    }
-
-    // Mostrar inicialmente los productos
-    listaProductos(products);
-
-
 
     }
-});
 
 
-  //----------------------------------------------------------------------------------------------------------------------------------------------------------
-//------------------------------------ JS DISEÑOS-------------------------------------------
-  //----------------------------------------------------------------------------------------------------------------------------------------------------------
 
-function iniDisenos() {
-    //------------------------------------------------------
-    // 1. Declaramos variables y constantes
-    //------------------------------------------------------
-    //slider
-    const sliderImages = document.querySelector(".slider-images");
-    const listaImages = document.querySelectorAll(".slider-images img");
+    //----------------------------------------------------------------------------------------------------------------------------------------------------------
+    //------------------------------------ JS DISEÑOS-------------------------------------------
+    //----------------------------------------------------------------------------------------------------------------------------------------------------------
 
-    //Botones
-    const btnPrev = document.querySelector(".btnPrev");
-    const btnNext = document.querySelector(".btnNext");
+    function iniDisenos() {
+        //------------------------------------------------------
+        // 1. Declaramos variables y constantes
+        //------------------------------------------------------
+        //slider
+        const sliderImages = document.querySelector(".slider-images");
+        const listaImages = document.querySelectorAll(".slider-images img");
 
-
-    //Contador
-    const spanActual = document.getElementById("txtActual");
-    const spanTotal = document.getElementById("txtTotal");
-
-    let imgIndex = 0; //la primera foto que va a tomar va a ser la 0
-    const totalImages = listaImages.length; //total de imagenes, y la vamos a tomar de la lista de imagenes con el lenght 
+        //Botones
+        const btnPrev = document.querySelector(".btnPrev");
+        const btnNext = document.querySelector(".btnNext");
 
 
-    //EventListener
+        //Contador
+        const spanActual = document.getElementById("txtActual");
+        const spanTotal = document.getElementById("txtTotal");
 
-    btnNext.addEventListener("click", nextImagen); //2 parametros: click + funcion
-    btnPrev.addEventListener("click", prevImagen); //2 parametros: click + funcion
+        let imgIndex = 0; //la primera foto que va a tomar va a ser la 0
+        const totalImages = listaImages.length; //total de imagenes, y la vamos a tomar de la lista de imagenes con el lenght 
 
-    //------------------------------------------------------
-    // 2. Funciones
-    //------------------------------------------------------
 
-    function nextImagen() {
-        imgIndex++; //cada vez que hago nextImage el indice se incrementa en 1
-        if (imgIndex >= totalImages) {//si el indice es mayor o igual al total de imagenes
-            imgIndex = 0; //el indice se queda a 0
+        //EventListener
+
+        btnNext.addEventListener("click", nextImagen); //2 parametros: click + funcion
+        btnPrev.addEventListener("click", prevImagen); //2 parametros: click + funcion
+
+        //------------------------------------------------------
+        // 2. Funciones
+        //------------------------------------------------------
+
+        function nextImagen() {
+            imgIndex++; //cada vez que hago nextImage el indice se incrementa en 1
+            if (imgIndex >= totalImages) {//si el indice es mayor o igual al total de imagenes
+                imgIndex = 0; //el indice se queda a 0
+            }
+            actualizarSlider();
+            actualizarContador(); //funcion de actualizar contador 
         }
-        actualizarSlider();
-        actualizarContador(); //funcion de actualizar contador 
-    }
 
-    function prevImagen() {
-        imgIndex--; //cada vez que hago prevImage el indice se decrementa en 1
-        if (imgIndex < 0) {//si el indice es menor a 0
-            imgIndex = totalImages; //el indice vale totalImages
+        function prevImagen() {
+            imgIndex--; //cada vez que hago prevImage el indice se decrementa en 1
+            if (imgIndex < 0) {//si el indice es menor a 0
+                imgIndex = totalImages; //el indice vale totalImages
+            }
+            actualizarSlider();
+            actualizarContador(); //funcion de actualizar contador 
         }
-        actualizarSlider();
-        actualizarContador(); //funcion de actualizar contador 
+
+        function actualizarSlider() {// como el minwidth es 400px 
+            const width = 400; //el ancho de mi slider 
+            sliderImages.style.transform = `translateX(${-width * imgIndex}px)`//aplico CSS para mover en X cierta cantidad de px, usando esa variable. 
+        }
+
+        function actualizarContador() { //funcion para que imprima los valores
+            spanActual.textContent = imgIndex + 1;
+
+        }
+
+        //------------------------------------------------------
+        // 3. Ejecutamos codigo 
+        //------------------------------------------------------
+        actualizarContador();
+        spanTotal.textContent = totalImages;
+
+
+        //------------------------------------------------------
+        // 
+        //------------------------------------------------------
+    };
+
+
+
+
+
+
+
+
+    //----------------------------------------------------------------------------------------------------------------------------------------------------------
+    //------------------------------------ JS PERSONALIZAR----------------------------------------------
+    //----------------------------------------------------------------------------------------------------------------------------------------------------------
+
+    function iniPersonalizar() {
+        const prodContainer = document.getElementById("productos-container");
+        const carritoContainer = document.getElementById("carrito-container");
+        const carritoDisenos = document.getElementById("carrito-disenos");
+        const txtInfo = document.querySelector(".infoTotal");
+    
+        let precioTotal = 0;
+        let productoRopaSeleccionado = null;
+        let diseñoSeleccionado = null;
+    
+        const products = [
+            {
+                nombre: 'Camiseta xxx',
+                referencia: 'REF123',
+                precio: 19.99,
+                imagen: 'https://es.m.wikipedia.org/wiki/Archivo:Camiseta-negra.jpg',
+                boton: 'add'
+            },
+            {
+                nombre: 'Pantalones xx',
+                referencia: 'REF456',
+                precio: 29.99,
+                imagen: 'https://es.wikipedia.org/wiki/Pantal%C3%B3n#/media/Archivo:Trousers-colourisolated.jpg',
+                boton: 'add'
+            },
+            {
+                nombre: 'Chaqueta xxx',
+                referencia: 'REF789',
+                precio: 39.99,
+                imagen: 'https://es.wikipedia.org/wiki/Chaqueta#/media/Archivo:Tweed_jacket_edited.jpg',
+                boton: 'add'
+            }
+        ];
+    
+        const disenos = [
+            {
+                nombre: 'LOVE',
+                referencia: 'REF123',
+                precio: 9.99,
+                imagen: 'https://es.m.wikipedia.org/wiki/Archivo:Camiseta-negra.jpg',
+                boton: 'add'
+            },
+            {
+                nombre: 'FLOR',
+                referencia: 'REF456',
+                precio: 14.99,
+                imagen: 'https://es.wikipedia.org/wiki/Pantal%C3%B3n#/media/Archivo:Trousers-colourisolated.jpg',
+                boton: 'add'
+            }
+        ];
+    
+        function agregarRopaAlCarrito(item) {
+            if (productoRopaSeleccionado) {
+                carritoContainer.innerHTML = '';
+            }
+            const carritoItem = document.createElement('div');
+            carritoItem.className = 'productItem';
+            carritoItem.innerHTML = `
+                <img src="${item.imagen}" alt="${item.nombre}">
+                <h2>${item.nombre}</h2>
+                <p>Referencia: ${item.referencia}</p>
+                <p>${item.precio.toFixed(2)} EUR</p>
+            `;
+            carritoContainer.appendChild(carritoItem);
+            productoRopaSeleccionado = item;
+            actualizarPrecioTotal();
+        }
+    
+        function agregarDisenoAlCarrito(item) {
+            if (diseñoSeleccionado) {
+                carritoDisenos.innerHTML = '';
+            }
+            const carritoItem = document.createElement('div');
+            carritoItem.className = 'disenoItem';
+            carritoItem.innerHTML = `
+                <img src="${item.imagen}" alt="${item.nombre}">
+                <h2>${item.nombre}</h2>
+                <p>Referencia: ${item.referencia}</p>
+                <p>${item.precio.toFixed(2)} EUR</p>
+            `;
+            carritoDisenos.appendChild(carritoItem);
+            diseñoSeleccionado = item;
+            actualizarPrecioTotal();
+        }
+    
+        function actualizarPrecioTotal() {
+            let precioTotalCalculado = 0;
+            if (productoRopaSeleccionado) {
+                precioTotalCalculado += productoRopaSeleccionado.precio;
+            }
+            if (diseñoSeleccionado) {
+                precioTotalCalculado += diseñoSeleccionado.precio;
+            }
+    
+            // Verificar si se ingresó el código de descuento correcto
+            const codigoDescuento = document.getElementById('codigo').value;
+            if (codigoDescuento === "CAMISETA123") {
+                precioTotalCalculado *= 0.85; // Aplicar descuento del 15%
+            }
+    
+            precioTotal = precioTotalCalculado;
+            verTotal();
+        }
+    
+        function verTotal() {
+            txtInfo.textContent = `Total a pagar: ${precioTotal.toFixed(2)} EUR`;
+        }
+    
+        function borrarCarrito() {
+            carritoContainer.innerHTML = '';
+            carritoDisenos.innerHTML = '';
+            precioTotal = 0;
+            productoRopaSeleccionado = null;
+            diseñoSeleccionado = null;
+            verTotal();
+        }
+    
+        // Evento para vaciar el carrito
+        document.getElementById("borrarCarrito").addEventListener("click", borrarCarrito);
+    
+        // Evento para aplicar el descuento
+        document.getElementById("aplicarDescuento").addEventListener("click", actualizarPrecioTotal);
+    
+        // Listar productos de ropa
+        products.forEach(producto => {
+            const productItem = document.createElement('div');
+            productItem.className = 'productItem';
+            productItem.innerHTML = `
+                <img src="${producto.imagen}" alt="${producto.nombre}">
+                <h2>${producto.nombre}</h2>
+                <p>Referencia: ${producto.referencia}</p>
+                <p>${producto.precio.toFixed(2)} EUR</p>
+                <button class="btnCestaRopa">Añadir al carrito</button>
+            `;
+            prodContainer.appendChild(productItem);
+            productItem.querySelector('.btnCestaRopa').addEventListener('click', () => {
+                agregarRopaAlCarrito(producto);
+            });
+        });
+    
+        // Listar diseños
+        disenos.forEach(diseno => {
+            const disenoItem = document.createElement('div');
+            disenoItem.className = 'disenoItem';
+            disenoItem.innerHTML = `
+                <img src="${diseno.imagen}" alt="${diseno.nombre}">
+                <h2>${diseno.nombre}</h2>
+                <p>Referencia: ${diseno.referencia}</p>
+                <p>${diseno.precio.toFixed(2)} EUR</p>
+                <button class="btnCestaDiseno">Añadir al carrito</button>
+            `;
+            prodContainer.appendChild(disenoItem);
+            disenoItem.querySelector('.btnCestaDiseno').addEventListener('click', () => {
+                agregarDisenoAlCarrito(diseno);
+            });
+        });
+    
+        // Mostrar el total inicial
+        verTotal();
     }
-
-    function actualizarSlider() {// como el minwidth es 400px 
-        const width = 400; //el ancho de mi slider 
-        sliderImages.style.transform = `translateX(${-width * imgIndex}px)`//aplico CSS para mover en X cierta cantidad de px, usando esa variable. 
-    }
-
-    function actualizarContador() { //funcion para que imprima los valores
-        spanActual.textContent = imgIndex + 1;
-
-    }
-
-    //------------------------------------------------------
-    // 3. Ejecutamos codigo 
-    //------------------------------------------------------
-    actualizarContador();
-    spanTotal.textContent = totalImages;
-
-
-    //------------------------------------------------------
-    // 
-    //------------------------------------------------------
-};
-
-
-
-
-
-
-
-
-  //----------------------------------------------------------------------------------------------------------------------------------------------------------
-//------------------------------------ JS PAGO----------------------------------------------
-  //----------------------------------------------------------------------------------------------------------------------------------------------------------
-
-
-function iniPersonalizar() {
-
-    let cantidad = 0;
-
-
+    
    
 
     
 
-};
-
-
-  //----------------------------------------------------------------------------------------------------------------------------------------------------------
-//------------------------------------ JS CONTACTO------------------------------------------
-  //----------------------------------------------------------------------------------------------------------------------------------------------------------
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+});
 
 
