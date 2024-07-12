@@ -89,7 +89,7 @@ document.addEventListener('DOMContentLoaded', function () {
         const btnPant = document.querySelector("#btnPantalon")
         const btnCha = document.querySelector("#btnChaqueta")
         const btnCami = document.querySelector("#btnCamiseta")
-        
+        let btnCesta = "";
         //Array de los productos: nombre, referencia, precio, imagen
         const products = [
             {
@@ -145,12 +145,12 @@ document.addEventListener('DOMContentLoaded', function () {
                 <h2>${product.nombre}</h2>
                 <p>Referencia: ${product.referencia}</p>
                 <p class="precio">$${product.precio}</p>
-                
+                <p><button class="btn" id="btnCesta">Cesta </button></p>
             `;
                 container.appendChild(productItem);//añade dentro del container al final 
 
             });
-            
+            btnCesta = document.getElementById('btnCesta');
 
            
         }
@@ -185,7 +185,13 @@ document.addEventListener('DOMContentLoaded', function () {
             listaProductos(productosFiltrados);
         }
 
-     
+        btnCesta.addEventListener("click", (Element) => {
+
+            //cogemos el elemento Padre para saber cual es el producto, si camiseta, pantalón, chaqueta
+            let oElementoPadre = Element.target.parentNode.parentNode;
+            console.log(Element);
+
+        });
 
 
     }
