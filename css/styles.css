@@ -7,16 +7,31 @@
     box-sizing: border-box;
 }
 
+:root {
+
+    --color-fondo: #f2f2f2;
+    --color-texto: #333;
+    --color-header: #3cde5f;
+    --color-nav: #7d22be;
+    --color-btnnav: #a14cde;
+
+
+    
+}
+
+
+
 body{
     font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    font-size: 1.25rem;
+    
+    background-color: var(--color-fondo);
 }
 
 .container {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    height: 100vh;
+    height: auto;
     width: 100vw;
 }
 
@@ -25,14 +40,14 @@ body{
 /*-----------------------------------------------------------------*/
 
 .header {
-    height: 200px;
-    background-color: rgb(207, 230, 118);
-    width: 100vw;
+    height: 20%;
+    background-color: var(--color-header);
+    width: 100%;
     display: flex;
     justify-content: center;
-    z-index: 2;
     position: fixed;
-    font-size: 5rem;
+    
+
     
 }
 .header__logo {
@@ -49,24 +64,26 @@ body{
 
 .footer {
     
-    background-color: rgb(207, 230, 118);
-    width: 100vw;
+    background-color: var(--color-header);
+    width: 100%;
     display: flex;
     justify-content: space-evenly;
+    height: auto;
     
 }
 
 .footer__links{
     
-    width: 33%;
+    width: auto;
     display: flex;
     justify-content: space-around;
+    flex-wrap: wrap;
     
 }
 
 .footer__privacidad, .footer__contacto{
    
-    width: 33%;
+    width: auto;
     display: flex;
     justify-content: center;
 }
@@ -79,40 +96,46 @@ body{
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: auto;
+    height: 100%;
     width: 100%;
     flex: 1;
     margin-top: 400px;
     margin-bottom: 200px;
+    flex-wrap: wrap;
+    font-size: 1.50rem;
 }
 
 
 /*---------------Navegación------------*/
 .nav {
     
-    width: 100VW;
-    background-color: rgb(162, 84, 236);
-    padding: 1rem;
+    width: 100%;
+    background-color: var(--color-nav);
+    padding: 10px;
     position: fixed;
-    z-index: 1;
-    top: 200px;
+    top: 20%;
+    align-content: center;
 }
 
 .nav__buttons {
     display: flex;
     flex-direction: row;
+    justify-content: space-around;
+    
     
     
 }
 
 .nav__btn{
-    background-color: rgb(186, 127, 237);
+    background-color: var(--color-btnnav);
     border-radius: 5%;
     width: 33%;
+    height: 10%;
     margin: 10px;
     padding: 10px;
     font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    font-size: 1.25rem;
+    
+    justify-content: space-around;
 }
 
 :hover.nav__btn{
@@ -203,6 +226,11 @@ body{
 
 .descuento{
     display: none;
+    padding: 30px;
+    margin-top: 15px;
+    font-size: 1rem;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    
     
     
 }
@@ -213,15 +241,23 @@ body{
 }
 
 
-#products-container , #productos-container {
+#products-container , #productos-container, #disenos-container {
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
     justify-content: center;
-    max-width: 70%;
+    padding-top: 400px;
+    padding: 30px;
+    
 }
 
-.productItem {
+#productos-container{
+padding-bottom: 400px;
+}
+
+
+
+.productItem, .disenoItem{
     border: 1px solid #ddd;
     border-radius: 5px;
     padding: 10px;
@@ -233,9 +269,13 @@ body{
     width: 100%;
     height: auto;
 }
+.disenoItem img {
+    width: 100%;
+    height: auto;
+}
 
 .productItem h2 {
-    font-size: 1.2em;
+    
     margin: 10px 0;
 }
 
@@ -278,15 +318,87 @@ border: 1px solid black;
     object-fit: contain; /*como me va a mostrar la imagen dentro de la caja, es decir añade barritas en los lados o arriba/abajo para evitar que la foto sea muy ancha o muy larga*/
 }
 
-.carrito{
-    background-color: yellow;
+#carrito{
+   
     border: 1px solid red;
     display: flex;
     flex-wrap: wrap;
-   width: 50%;
+   width: 100%;
    height: auto;
     flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding: 30px;
+    margin: 30px;
+    
+    
+    
 }
+#carrito img{
+   
+width: 30%;
+height: auto;
+    
+}
+
+#borrarCarrito{
+    padding: 20px;
+    margin: 20px;
+}
+
+.carritoResumen{
+    border: 3px solid green;
+    display: flex;
+    flex-direction: row;
+    justify-content:space-around;
+    height: auto;
+    min-height: 400px;
+    width: 100%;
+    flex-wrap: wrap;
+
+}
+
+#carrito-container, #carrito-disenos{
+    display: flex;
+
+}
+
+#carrito-container, #carrito-disenos{
+    display: flex;
+
+}
+
+
+.carritoPago{
+    border: 3px solid pink;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    padding: 30px;
+   
+}
+.aplicar{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+}
+
+#aplicarDescuento, #codigo{
+    padding: 10px;
+}
+
+
+
+.aplicardescuento{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    align-items: center;
+}
+
 
 
 .irPago{
@@ -298,7 +410,80 @@ border: 1px solid black;
 }
 .volver{
     border: 1px solid green;
-    width: 50%;
+    width: auto;
     padding: 30px;
+    display: flex;
     justify-content: center;
+    
+}
+
+
+.fixed-button {
+    position: fixed;
+    bottom: 20px; /* Distancia desde el fondo de la pantalla */
+    right: 20px; /* Distancia desde el lado derecho de la pantalla */
+    background-color: #007BFF; /* Color de fondo del botón */
+    color: white; /* Color del texto del botón */
+    border: none; /* Sin borde */
+    padding: 10px 20px; /* Relleno alrededor del texto del botón */
+    
+    border-radius: 5px; /* Bordes redondeados */
+    cursor: pointer; /* Cursor de mano al pasar sobre el botón */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Sombra del botón */
+}
+
+.fixed-button:hover {
+    background-color: #0056b3; /* Color de fondo al pasar el mouse */
+}
+
+.irBtn{
+    border: 1px solid red;
+    display: flex;
+    padding: 40px;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.botones{
+    display: flex;
+    justify-content: space-around;
+    border: 1px solid yellow;
+    width: 100%;
+    padding: 20px;
+    
+}
+
+.btn{
+    padding: 20px;
+    border-radius: 10%;
+    color: var(--color-nav) ;
+    font-size: 1rem;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+/* Estilos base que aplican a todos los tamaños de pantalla */
+
+/* Estilos para dispositivos móviles (hasta 767px de ancho) */
+@media only screen and (max-width: 767px) {
+    /* Agrega aquí tus estilos específicos para dispositivos móviles */
+    body {
+        font-size: 14px; /* Ejemplo: tamaño de fuente más pequeño para móviles */
+    }
+}
+
+/* Estilos para tablets (768px a 1023px de ancho) */
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+    /* Agrega aquí tus estilos específicos para tablets */
+    body {
+        font-size: 16px; /* Ejemplo: tamaño de fuente ligeramente mayor para tablets */
+    }
+}
+
+/* Estilos para pantallas grandes (más de 1024px de ancho) */
+@media only screen and (min-width: 1024px) {
+    /* Agrega aquí tus estilos específicos para pantallas grandes */
+    body {
+        font-size: 18px; /* Ejemplo: tamaño de fuente aún mayor para pantallas grandes */
+    }
 }

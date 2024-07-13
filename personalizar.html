@@ -19,6 +19,9 @@
         <div class="header">
             <div class="header__logo"></div>
             <img src="./imgs/pruebaropa2.jpg" alt="logo">
+             <button class="volver">
+                <a href="./index.html">Volver al menú principal</a>
+            </button>
 
         </div>
         <!--Barra de navegación-->
@@ -40,41 +43,73 @@
         <!---------------MAIN-------------------------------->
 
         <div class="main">
+
+            <button class="fixed-button">Ir al Carrito</button>
             <!-- Contenedor para los productos -->
+            <p>Elige el modelo de camiseta, sudadera o Tote Bag</p>
             <div id="productos-container"></div>
 
+            <p>Elige el diseño</p>
+            <div id="disenos-container"></div>
 
 
 
 
-            <button id="borrarCarrito">Vaciar carrito</button>
+
+
+
+            
 
             <!-- Contenedor para los productos agregados al carrito -->
-            <div class="carrito">
-                <div id="carrito-container"></div>
-                <div id="carrito-disenos"></div>
+
+            TU CARRITO:
+            <div id="carrito">
+
+                <div class="carritoResumen">
+
+                    <div id="carrito-container">
+
+
+                    </div>
+
+                    <div id="carrito-disenos"></div>
+
+
+                </div>
+
+                <button id="borrarCarrito">Vaciar carrito</button>
+
+
+                <div class="carritoPago">
+
+
+
+                    <div class="infoTotal">Aquí tiene su resultado total</div>
+
+
+                    <div class="aplicar">
+                        <form class="aplicardescuento">
+                            <label for="codigo">Código de Descuento</label>
+                            <input type="text" id="codigo" name="codigo" placeholder="Ingresa tu código descuento"
+                                required>
+                            <button type="button" id="aplicarDescuento">Aplicar Descuento</button>
+                        </form>
+                    </div>
+
+                    <button class="irPago">
+                        <a href="/pago.html">PAGAR</a>
+
+                    </button>
+                </div>
+
+
             </div>
-
-
-            <div class="infoTotal">Aquí tiene su resultado total</div>
-
-
-            <div class="aplicar">
-                <form class="aplicardescuento">
-                    <label for="codigo">Código de Descuento</label>
-                    <input type="text" id="codigo" name="codigo" placeholder="Ingresa tu código descuento" required>
-                    <button type="button" id="aplicarDescuento">Aplicar Descuento</button>
-                </form>
-            </div>
-
-            <button class="irPago">
-                <a href="/pago.html">PAGAR</a>
-
-            </button>
 
             <button class="volver">
                 <a href="./index.html">Volver al menú principal</a>
             </button>
+
+
 
         </div>
 

@@ -47,7 +47,7 @@ document.addEventListener('DOMContentLoaded', function () {
         const acordeon = document.querySelector(".acordeon");
         const headers = acordeon.querySelectorAll(".acordeon__item--titulo");
         const acordeonItems = acordeon.querySelectorAll(".acordeon__item");
-       
+
         const addCesta = '';
 
         // FOREACH: en los headers 
@@ -77,8 +77,8 @@ document.addEventListener('DOMContentLoaded', function () {
         acordeonItems[0].classList.add('active');
 
 
-        const discount =document.getElementById("descuento")
-        discount.addEventListener('click', function() {
+        const discount = document.getElementById("descuento")
+        discount.addEventListener('click', function () {
             alert('Enhorabuena! Este es tu codigo descuento: CAMISETA123');
         });
     }
@@ -96,58 +96,190 @@ document.addEventListener('DOMContentLoaded', function () {
 
         //Botones 
         const btnTodos = document.querySelector("#btnTodos")
-        const btnPant = document.querySelector("#btnPantalon")
-        const btnCha = document.querySelector("#btnChaqueta")
+        const btnPant = document.querySelector("#btnTote")
+        const btnCha = document.querySelector("#btnSudadera")
         const btnCami = document.querySelector("#btnCamiseta")
 
 
         //Array de los productos: nombre, referencia, precio, imagen
         const products = [
             {
-                nombre: 'Camiseta xxx',
-                referencia: 'REF123',
-                precio: '19.99 eur',
-                imagen: 'https://es.m.wikipedia.org/wiki/Archivo:Camiseta-negra.jpg',
-                boton: 'add'
+                nombre: 'Camiseta Vibing',
+                precio: 12.99,
+                referencia: 'precio de diseño no inlcuido',
+                imagen: 'imgs/camiesta-vibing.jpg',
 
             },
             {
-                nombre: 'Pantalones xx',
-                referencia: 'REF456',
-                precio: '19.99 eur',
-                imagen: 'https://es.wikipedia.org/wiki/Pantal%C3%B3n#/media/Archivo:Trousers-colourisolated.jpg',
-                boton: 'add'
+                nombre: 'Camiseta Alien',
+                precio: 12.99,
+                referencia: 'precio de diseño no inlcuido',
+                imagen: 'imgs/camiseta-alien.jpg',
 
             },
             {
-                nombre: 'Chaqueta xxx',
-                referencia: 'REF789',
-                precio: '19.99 eur',
-                imagen: 'https://es.wikipedia.org/wiki/Chaqueta#/media/Archivo:Tweed_jacket_edited.jpg',
-                boton: 'add'
+                nombre: 'Camiseta Bees',
+                precio: 12.99,
+                referencia: 'precio de diseño no inlcuido',
+                imagen: 'imgs/camiseta-bees.jpg',
 
             },
             {
-                nombre: 'Camiseta xx',
-                referencia: 'REF123',
-                precio: '19.99 eur',
-                imagen: 'https://es.m.wikipedia.org/wiki/Archivo:Camiseta-negra.jpg',
-                boton: 'add'
+                nombre: 'Camiseta Cat',
+                precio: 12.99,
+                referencia: 'precio de diseño no inlcuido',
+                imagen: 'imgs/camiseta-cat.jpg',
+
             },
             {
-                nombre: 'Pantalones xxx',
-                referencia: 'REF456',
-                precio: '19.99 eur',
-                imagen: 'https://es.wikipedia.org/wiki/Pantal%C3%B3n#/media/Archivo:Trousers-colourisolated.jpg',
-                boton: 'add'
+                nombre: 'Camiseta Eye',
+                precio: 12.99,
+                referencia: 'precio de diseño no inlcuido',
+                imagen: 'imgs/camiseta-ojo.jpg',
+
             },
             {
-                nombre: 'Chaqueta de Cuero',
-                referencia: 'REF789',
-                precio: '19.99 eur',
-                imagen: 'https://es.wikipedia.org/wiki/Chaqueta#/media/Archivo:Tweed_jacket_edited.jpg',
-                boton: 'add'
+                nombre: 'Camiseta Be Kind',
+                precio: 12.99,
+                referencia: 'precio de diseño no inlcuido',
+                imagen: 'imgs/camiseta-kind.jpg',
+
             },
+            {
+                nombre: 'Camiseta Push Your Limit',
+                precio: 12.99,
+                referencia: 'precio de diseño no inlcuido',
+                imagen: 'imgs/camiseta-push.jpg',
+
+            },
+            {
+                nombre: 'Camiseta Take It All In',
+                precio: 12.99,
+                referencia: 'precio de diseño no inlcuido',
+                imagen: 'imgs/camiseta-take.jpg',
+
+            },
+            //------------------------------------------------------------------------------------
+            {
+                nombre: 'Sudadera Alien',
+                precio: 12.99,
+                referencia: 'precio de diseño no inlcuido',
+                imagen: 'imgs/sudadera-alien.jpg',
+
+            },
+            {
+                nombre: 'Sudadera Bees',
+                precio: 12.99,
+                referencia: 'precio de diseño no inlcuido',
+                imagen: 'imgs/sudadera-bees.jpg',
+
+            },
+            {
+                nombre: 'Sudadera Cat',
+                precio: 12.99,
+                referencia: 'precio de diseño no inlcuido',
+                imagen: 'imgs/sudadera-cat.jpg',
+
+            },
+            {
+                nombre: 'Sudadera Be Kind',
+                precio: 12.99,
+                referencia: 'precio de diseño no inlcuido',
+                imagen: 'imgs/sudadera-kind.jpg',
+
+            },
+            {
+                nombre: 'Sudadera Eye',
+                precio: 12.99,
+                referencia: 'precio de diseño no inlcuido',
+                imagen: 'imgs/sudadera-ojo.jpg',
+
+            },
+            {
+                nombre: 'Sudadera Push Your Limit',
+                precio: 12.99,
+                referencia: 'precio de diseño no inlcuido',
+                imagen: 'imgs/sudadera-push.jpg',
+
+            },
+            {
+                nombre: 'Sudadera Take It All In',
+                precio: 12.99,
+                referencia: 'precio de diseño no inlcuido',
+                imagen: 'imgs/sudadera-take.jpg',
+
+            },
+            {
+                nombre: 'Sudadera Vibing',
+                precio: 12.99,
+                referencia: 'precio de diseño no inlcuido',
+                imagen: 'imgs/sudadera-vibing.jpg',
+
+            },
+            //-----------------------------------------------------------------------------------
+            {
+                nombre: 'Tote Bag Alien',
+                precio: 12.99,
+                referencia: 'precio de diseño no inlcuido',
+                imagen: 'imgs/tote-alien.jpg',
+
+            },
+            {
+                nombre: 'Tote Bag Bees',
+                precio: 12.99,
+                referencia: 'precio de diseño no inlcuido',
+                imagen: 'imgs/tote-bees.jpg',
+
+            },
+            {
+                nombre: 'Tote Bag Cat',
+                precio: 12.99,
+                referencia: 'precio de diseño no inlcuido',
+                imagen: 'imgs/tote-cat.jpg',
+
+            },
+            {
+                nombre: 'Tote Bag Kind',
+                precio: 12.99,
+                referencia: 'precio de diseño no inlcuido',
+                imagen: 'imgs/tote-kind.jpg',
+
+            },
+            {
+                nombre: 'Tote Bag Eye',
+                precio: 12.99,
+                referencia: 'precio de diseño no inlcuido',
+                imagen: 'imgs/tote-ojo.jpg',
+
+            },
+            {
+                nombre: 'Tote Bag Push Your Limit',
+                precio: 12.99,
+                referencia: 'precio de diseño no inlcuido',
+                imagen: 'imgs/tote-push.jpg',
+
+            },
+            {
+                nombre: 'Tote Bag Take It All In',
+                precio: 12.99,
+                referencia: 'precio de diseño no inlcuido',
+                imagen: 'imgs/tote-take.jpg',
+
+            },
+            {
+                nombre: 'Tote Bag Vibing',
+                precio: 12.99,
+                referencia: 'precio de diseño no inlcuido',
+                imagen: 'imgs/tote-vibing.jpg',
+
+            },
+
+
+
+
+
+
+
 
         ];
 
@@ -163,9 +295,9 @@ document.addEventListener('DOMContentLoaded', function () {
                 productItem.innerHTML = `
                 <img src="${product.imagen}" alt="${product.nombre}">
                 <h2>${product.nombre}</h2>
-                <p>Referencia: ${product.referencia}</p>
                 <p >${product.precio}</p>
-               <button class="btnCesta">${product.boton}</button>
+                <p> ${product.referencia}</p>
+               
                 
             `;
 
@@ -200,8 +332,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
         });
 
-        btnPant.addEventListener("click", () => filtrarTipo("pantalones"));
-        btnCha.addEventListener("click", () => filtrarTipo("chaqueta"));
+        btnPant.addEventListener("click", () => filtrarTipo("tote"));
+        btnCha.addEventListener("click", () => filtrarTipo("sudadera"));
         btnCami.addEventListener("click", () => filtrarTipo("camiseta"));
 
         function filtrarTipo(tipo) {
@@ -315,55 +447,132 @@ document.addEventListener('DOMContentLoaded', function () {
 
     function iniPersonalizar() {
         const prodContainer = document.getElementById("productos-container");
+        const disenosContainer = document.getElementById("disenos-container");
+
         const carritoContainer = document.getElementById("carrito-container");
         const carritoDisenos = document.getElementById("carrito-disenos");
         const txtInfo = document.querySelector(".infoTotal");
-    
+
         let precioTotal = 0;
         let productoRopaSeleccionado = null;
         let diseñoSeleccionado = null;
-    
+
         const products = [
             {
-                nombre: 'Camiseta xxx',
-                referencia: 'REF123',
-                precio: 19.99,
-                imagen: 'https://es.m.wikipedia.org/wiki/Archivo:Camiseta-negra.jpg',
-                boton: 'add'
+                nombre: 'Camiseta Basic',
+                precio: 12.99,
+                imagen: 'imgs/sample-basic.jpg',
+
+
             },
             {
-                nombre: 'Pantalones xx',
-                referencia: 'REF456',
-                precio: 29.99,
-                imagen: 'https://es.wikipedia.org/wiki/Pantal%C3%B3n#/media/Archivo:Trousers-colourisolated.jpg',
-                boton: 'add'
+                nombre: 'Camiseta Oversize',
+                precio: 12.99,
+                imagen: 'imgs/sample-oversize.jpg',
+
+
+            },
+
+            {
+                nombre: 'Camiseta Crop',
+                precio: 12.99,
+                imagen: 'imgs/sample-crop.jpg',
+
+
             },
             {
-                nombre: 'Chaqueta xxx',
-                referencia: 'REF789',
-                precio: 39.99,
-                imagen: 'https://es.wikipedia.org/wiki/Chaqueta#/media/Archivo:Tweed_jacket_edited.jpg',
-                boton: 'add'
-            }
+                nombre: 'Camiseta Niños',
+                precio: 12.99,
+                imagen: 'imgs/sample-ninos.jpg',
+
+
+            },
+            {
+                nombre: 'Sudadera con Bolsillo',
+                precio: 12.99,
+                imagen: 'imgs/sample-bolsillo.jpg',
+
+
+            },
+            {
+                nombre: 'Sudadera sin Bolsillo',
+                precio: 12.99,
+                imagen: 'imgs/sample-sin.jpg',
+
+
+            },
+            {
+                nombre: 'Tote Bag Blanca',
+                precio: 12.99,
+                imagen: 'imgs/sample-toteblanca.jpg',
+
+
+            },
+            {
+                nombre: 'Tote Bag Negra',
+                precio: 12.99,
+                imagen: 'imgs/sample-totenegra.jpg',
+
+            },
+
+            //------------------------------------------------------------------------------------
+
+
+
         ];
-    
+
         const disenos = [
             {
-                nombre: 'LOVE',
-                referencia: 'REF123',
+                nombre: 'Alien',
                 precio: 9.99,
-                imagen: 'https://es.m.wikipedia.org/wiki/Archivo:Camiseta-negra.jpg',
-                boton: 'add'
+                imagen: 'imgs/diseno-alien.jpg',
+
             },
             {
-                nombre: 'FLOR',
-                referencia: 'REF456',
-                precio: 14.99,
-                imagen: 'https://es.wikipedia.org/wiki/Pantal%C3%B3n#/media/Archivo:Trousers-colourisolated.jpg',
-                boton: 'add'
-            }
+                nombre: 'Bees',
+                precio: 9.99,
+                imagen: 'imgs/diseno-bees.jpg',
+
+            },
+            {
+                nombre: 'Cat',
+                precio: 9.99,
+                imagen: 'imgs/diseno-cat.jpg',
+
+            },
+            {
+                nombre: 'Be Kind',
+                precio: 9.99,
+                imagen: 'imgs/diseno-kind.jpg',
+
+            },
+            {
+                nombre: 'Eye',
+                precio: 9.99,
+                imagen: 'imgs/diseno-ojo.jpg',
+
+            },
+            {
+                nombre: 'Push Your Limit',
+                precio: 9.99,
+                imagen: 'imgs/diseno-push.jpg',
+
+            },
+            {
+                nombre: 'Take It All In',
+                precio: 9.99,
+                imagen: 'imgs/diseno-take.jpg',
+
+            },
+            {
+                nombre: 'Vibing',
+                precio: 9.99,
+                imagen: 'imgs/diseno-vibing.jpg',
+
+            },
+
         ];
-    
+
         function agregarRopaAlCarrito(item) {
             if (productoRopaSeleccionado) {
                 carritoContainer.innerHTML = '';
@@ -373,14 +582,17 @@ document.addEventListener('DOMContentLoaded', function () {
             carritoItem.innerHTML = `
                 <img src="${item.imagen}" alt="${item.nombre}">
                 <h2>${item.nombre}</h2>
-                <p>Referencia: ${item.referencia}</p>
                 <p>${item.precio.toFixed(2)} EUR</p>
+                
+                
+                
+                
             `;
             carritoContainer.appendChild(carritoItem);
             productoRopaSeleccionado = item;
             actualizarPrecioTotal();
         }
-    
+
         function agregarDisenoAlCarrito(item) {
             if (diseñoSeleccionado) {
                 carritoDisenos.innerHTML = '';
@@ -390,14 +602,15 @@ document.addEventListener('DOMContentLoaded', function () {
             carritoItem.innerHTML = `
                 <img src="${item.imagen}" alt="${item.nombre}">
                 <h2>${item.nombre}</h2>
-                <p>Referencia: ${item.referencia}</p>
                 <p>${item.precio.toFixed(2)} EUR</p>
+                
+                
             `;
             carritoDisenos.appendChild(carritoItem);
             diseñoSeleccionado = item;
             actualizarPrecioTotal();
         }
-    
+
         function actualizarPrecioTotal() {
             let precioTotalCalculado = 0;
             if (productoRopaSeleccionado) {
@@ -406,21 +619,21 @@ document.addEventListener('DOMContentLoaded', function () {
             if (diseñoSeleccionado) {
                 precioTotalCalculado += diseñoSeleccionado.precio;
             }
-    
+
             // Verificar si se ingresó el código de descuento correcto
             const codigoDescuento = document.getElementById('codigo').value;
             if (codigoDescuento === "CAMISETA123") {
                 precioTotalCalculado *= 0.85; // Aplicar descuento del 15%
             }
-    
+
             precioTotal = precioTotalCalculado;
             verTotal();
         }
-    
+
         function verTotal() {
             txtInfo.textContent = `Total a pagar: ${precioTotal.toFixed(2)} EUR`;
         }
-    
+
         function borrarCarrito() {
             carritoContainer.innerHTML = '';
             carritoDisenos.innerHTML = '';
@@ -429,30 +642,35 @@ document.addEventListener('DOMContentLoaded', function () {
             diseñoSeleccionado = null;
             verTotal();
         }
-    
+
         // Evento para vaciar el carrito
         document.getElementById("borrarCarrito").addEventListener("click", borrarCarrito);
-    
+
         // Evento para aplicar el descuento
         document.getElementById("aplicarDescuento").addEventListener("click", actualizarPrecioTotal);
-    
+
         // Listar productos de ropa
         products.forEach(producto => {
             const productItem = document.createElement('div');
             productItem.className = 'productItem';
             productItem.innerHTML = `
+            
                 <img src="${producto.imagen}" alt="${producto.nombre}">
                 <h2>${producto.nombre}</h2>
-                <p>Referencia: ${producto.referencia}</p>
                 <p>${producto.precio.toFixed(2)} EUR</p>
                 <button class="btnCestaRopa">Añadir al carrito</button>
+                
             `;
             prodContainer.appendChild(productItem);
+
             productItem.querySelector('.btnCestaRopa').addEventListener('click', () => {
                 agregarRopaAlCarrito(producto);
+                document.getElementById("disenos-container").scrollIntoView({ behavior: 'smooth' });
+
             });
+
         });
-    
+
         // Listar diseños
         disenos.forEach(diseno => {
             const disenoItem = document.createElement('div');
@@ -460,23 +678,40 @@ document.addEventListener('DOMContentLoaded', function () {
             disenoItem.innerHTML = `
                 <img src="${diseno.imagen}" alt="${diseno.nombre}">
                 <h2>${diseno.nombre}</h2>
-                <p>Referencia: ${diseno.referencia}</p>
                 <p>${diseno.precio.toFixed(2)} EUR</p>
                 <button class="btnCestaDiseno">Añadir al carrito</button>
             `;
-            prodContainer.appendChild(disenoItem);
+            disenosContainer.appendChild(disenoItem);
+
             disenoItem.querySelector('.btnCestaDiseno').addEventListener('click', () => {
                 agregarDisenoAlCarrito(diseno);
+                // Desplazar al div "disenos-container"
+                document.getElementById("carrito").scrollIntoView({ behavior: 'smooth' });
             });
+
+
         });
-    
+
         // Mostrar el total inicial
         verTotal();
+
+      // Función para desplazarse al div con id "carrito"
+    function scrollToCarrito() {
+        const carritoDiv = document.getElementById("carrito");
+        carritoDiv.scrollIntoView({ behavior: 'smooth' });
     }
-    
-   
+
+    // Event listener para el botón "Ir al Carrito"
+    const botonIrAlCarrito = document.querySelector('.fixed-button');
+    botonIrAlCarrito.addEventListener('click', scrollToCarrito);
+
+
+
+    }
 
     
+
+
 
 });
 
