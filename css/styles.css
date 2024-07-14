@@ -1,6 +1,8 @@
-/*-----------------------------------------------------------------*/
-/*----------------------------Generales----------------------------*/
-/*-----------------------------------------------------------------*/
+/*-------------------------------------------------------------------------------------------------*/
+/*-------------------------------------------Generales---------------------------------------------*/
+/*-------------------------------------------------------------------------------------------------*/
+
+/*-------Reseteo, :root (HTML), body y container-------------------*/
 * {
     margin: 0;
     padding: 0;
@@ -11,19 +13,19 @@
 
     --color-fondo: #f2f2f2;
     --color-texto: #333;
-    --color-header: #3cde5f;
-    --color-nav: #7d22be;
-    --color-btnnav: #a14cde;
+    --color-textoSecundario: #2d254d;
 
-
-    
+    --color-primario: #3ea653;
+    --color-secundario: #6b53c4;
+    --color-terciario: #ad98f9;
+   
+ 
 }
 
 
 
 body{
     font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    
     background-color: var(--color-fondo);
 }
 
@@ -35,13 +37,17 @@ body{
     width: 100vw;
 }
 
-/*-----------------------------------------------------------------*/
-/*----------------------------Header y footer----------------------*/
-/*-----------------------------------------------------------------*/
+
+
+/*-------------------------------------------------------------------------------------------------*/
+/*----------------------------------------------Header y Footer------------------------------------*/
+/*-------------------------------------------------------------------------------------------------*/
+
+/*-----------------------Header ----------------------*/
 
 .header {
     height: 20%;
-    background-color: var(--color-header);
+    background-color: var(--color-primario);
     width: 100%;
     display: flex;
     justify-content: center;
@@ -51,47 +57,97 @@ body{
     
 }
 .header__logo {
-    max-width: 100%; /* Asegura que la imagen no exceda el tamaño del contenedor */
-    height: auto; /* Permite que la altura se ajuste proporcionalmente */
+    max-width: 100%; 
+    height: auto; 
     
     
 }
 
-.header__logo--ropa{
-    display: flex;
-       
-}
 
+
+/*-----------------------Footer ----------------------*/
 .footer {
     
-    background-color: var(--color-header);
+    background-color: var(--color-primario);
     width: 100%;
     display: flex;
     justify-content: space-evenly;
-    height: auto;
+    height: 6rem;
+    font: 1.3rem;
+    align-items: center;
+    
     
 }
 
 .footer__links{
     
-    width: auto;
+    width: 33%;
     display: flex;
     justify-content: space-around;
-    flex-wrap: wrap;
+    flex-direction: row;
     
 }
 
 .footer__privacidad, .footer__contacto{
    
-    width: auto;
+    width: 33%;
     display: flex;
     justify-content: center;
 }
 
-/*-----------------------------------------------------------------*/
-/*----------------------------Main---------------------------------*/
-/*-----------------------------------------------------------------*/
+.rrss{
+   
+    width: 50%;
+    
+    }
+.rrss img{
+width: 3em;
+height: auto;
+}
+/*-----------------------Navegación----------------------*/
+.nav {
+    
+    width: 100%;
+    background-color: var(--color-secundario);
+    padding: 10px;
+    position: fixed;
+    top: 20%;
+    align-content: center;
+    
+}
 
+/*Div donde metemos los botones*/
+.nav__buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    
+}
+/*Botones del nav*/
+.nav__btn{
+    background-color: var(--color-terciario);
+    border-radius: 5%;
+    width: 33%;
+    height: 10%;
+    margin: 10px;
+    padding: 10px;
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 1.30rem;
+    justify-content: space-around;
+}
+
+:hover.nav__btn{
+    transform: scale(1.1); /* Escalado al pasar el mouse */
+}
+
+.nav__btn a{
+    color: var(--color-textoSecundario);  
+}
+
+
+/*-------------------------------------------------------------------------------------------------*/
+/*--------------------------------------------MAIN-------------------------------------------------*/
+/*-------------------------------------------------------------------------------------------------*/
 .main {
     display: flex;
     flex-direction: column;
@@ -101,73 +157,41 @@ body{
     flex: 1;
     margin-top: 400px;
     margin-bottom: 200px;
-    flex-wrap: wrap;
-    font-size: 1.50rem;
+    /* flex-wrap: wrap; */
+    font-size: 1.30rem;
 }
 
-
-/*---------------Navegación------------*/
-.nav {
+/*---------Boton de "Volver al Menú principal"-----------------*/
+.volver{
     
-    width: 100%;
-    background-color: var(--color-nav);
-    padding: 10px;
-    position: fixed;
-    top: 20%;
-    align-content: center;
-}
-
-.nav__buttons {
+    width: auto;
+    padding: 30px;
     display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    
-    
+    justify-content: center;
     
 }
 
-.nav__btn{
-    background-color: var(--color-btnnav);
-    border-radius: 5%;
-    width: 33%;
-    height: 10%;
-    margin: 10px;
-    padding: 10px;
-    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    
-    justify-content: space-around;
+/*---------Estilo de los botones con etiqueta btn---------------*/
+
+.btn{
+    padding: 20px;
+    border-radius: 10%;
+    color: var(--color-secundario) ;
+    font-size: 1.30rem;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
-
-:hover.nav__btn{
-    transform: scale(1.1); /* Escalado al pasar el mouse */
-}
-
-
-/*---------Personalizar----------*/
-
-.personalizar {
-    display:none;
-
-}
-.active .personalizar {
-    display:block;
-
-}
-
-.personalizar:hover {
-    transform: scale(1.2); /* Escalado al pasar el mouse */
-}
-
+/*------------------------------------------------------------------*/
+/*----------------------------HTML INDEX----------------------------*/
+/*------------------------------------------------------------------*/
 
 /*---------Acordeón----------*/
-
 
 .acordeon {
     background-color: #fff;
     border-radius: 15px;
     padding: 10px;
     width: 90%;
-    margin: 30px;
+    
     display: flex;
     flex-direction: column;
     text-align: left;
@@ -184,8 +208,6 @@ body{
     align-items: center;
     display: block; /* Muestra el contenido activo */
     max-height: 200px; /* Altura máxima para el contenido visible */
-    
-    
 }
 
 .acordeon__item--titulo {
@@ -197,29 +219,66 @@ body{
     display: flex;
     flex-direction: column;
     text-align: left;
-
-    
 }
 
 .acordeon__item--contenido {
-    display: none;
-   
+    display: none;  
 }
-
 
 .active .acordeon__item--contenido {
     display: block;
-     
+}
+
+.redirection {
+    border: 1px solid violet;
+    display: flex;
+    padding: 40px;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+    width: 100%;
+    flex: 1;
+}
+
+.redirection__btns {
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+    gap: 100px;
+    flex: 1;
+    height: auto;
+    width: 100%;
+}
+
+.redirection__btns a {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 1.30rem;
+    color: var(--color-texto);
+}
+
+.redirection__btns img {
+    width: 300px;
+    height: auto;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.irRopa, .irDisenos, .irPersonalizar {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    align-items: center;
 }
 
 
-.sombreado {
+/* .sombreado {
     box-shadow: inset 0 10px 20px -10px rgba(0, 0, 0, 0.5);  
 }
 
 :hover.sombreado {
     box-shadow: inset 0 10px 20px -10px rgba(0, 0, 0, 0.5);  
-}
+} */
 
 
 /*---------descuento----------*/
@@ -228,18 +287,22 @@ body{
     display: none;
     padding: 30px;
     margin-top: 15px;
-    font-size: 1rem;
+    font-size: 1.30rem;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    
-    
     
 }
 .active .descuento{
     display: block;
     
-    
 }
 
+.descuento:hover {
+    transform: scale(1.2); /* Escalado al pasar el mouse */
+}
+
+/*------------------------------------------------------------*/
+/*---------------HTML PERSONALIZAR----------------------------*/
+/*------------------------------------------------------------*/
 
 #products-container , #productos-container, #disenos-container {
     display: flex;
@@ -250,6 +313,8 @@ body{
     padding: 30px;
     
 }
+
+
 
 #productos-container{
 padding-bottom: 400px;
@@ -285,37 +350,7 @@ padding-bottom: 400px;
 
 .productItem .price {
     font-weight: bold;
-    color: #e67e22;
-}
-
-
-.contacto{
-    display: flex;
-    flex-direction: column;
-    padding: 20px;
-    margin: 20px;
-}
-
-
-.slider{
-overflow: hidden;
-border: 1px solid black;
-}
-
-.slider-images{
-    display: flex;
-    width: 400px;
-    height: 600px;
-    transition: transform 0.5s ease;
-}
-
-.slider-images img{ /*a cada imagen del grupo slider-images*/
-    min-width: 400px;
-    max-width: 400px;
-    min-height: 600px;
-    max-height: 600px;
-
-    object-fit: contain; /*como me va a mostrar la imagen dentro de la caja, es decir añade barritas en los lados o arriba/abajo para evitar que la foto sea muy ancha o muy larga*/
+    
 }
 
 #carrito{
@@ -408,15 +443,6 @@ height: auto;
 
 
 }
-.volver{
-    border: 1px solid green;
-    width: auto;
-    padding: 30px;
-    display: flex;
-    justify-content: center;
-    
-}
-
 
 .fixed-button {
     position: fixed;
@@ -436,54 +462,76 @@ height: auto;
     background-color: #0056b3; /* Color de fondo al pasar el mouse */
 }
 
-.irBtn{
-    border: 1px solid red;
+/*--------------------------------------------------------*/
+/*---------------HTML CONTACTO----------------------------*/
+/*--------------------------------------------------------*/
+
+.contacto{
     display: flex;
-    padding: 40px;
-    justify-content: center;
     flex-direction: column;
-    align-items: center;
+    padding: 20px;
+    margin: 20px;
 }
 
-.botones{
+/*--------------------------------------------------------*/
+/*---------------HTML DISEÑOS-----------------------------*/
+/*--------------------------------------------------------*/
+
+.slider{
+overflow: hidden;
+border: 1px solid black;
+}
+
+.slider-images{
     display: flex;
-    justify-content: space-around;
-    border: 1px solid yellow;
-    width: 100%;
-    padding: 20px;
+    width: 400px;
+    height: 600px;
+    transition: transform 0.5s ease;
+}
+
+.slider-images img{ /*a cada imagen del grupo slider-images*/
+    min-width: 400px;
+    max-width: 400px;
+    min-height: 600px;
+    max-height: 600px;
+
+    object-fit: contain; /*como me va a mostrar la imagen dentro de la caja, es decir añade barritas en los lados o arriba/abajo para evitar que la foto sea muy ancha o muy larga*/
+}
+
+
+
+
+
+/* Para móviles (hasta 768px de ancho) */
+@media (max-width: 768px) {
+    .redirection {
+        padding: 20px;
+    }
+
+    .redirection__btns {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .redirection__btns img {
+        width: 100%;
+        margin-top: 10px;
+    }
+
     
 }
 
-.btn{
-    padding: 20px;
-    border-radius: 10%;
-    color: var(--color-nav) ;
-    font-size: 1rem;
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-}
-
-/* Estilos base que aplican a todos los tamaños de pantalla */
-
-/* Estilos para dispositivos móviles (hasta 767px de ancho) */
-@media only screen and (max-width: 767px) {
-    /* Agrega aquí tus estilos específicos para dispositivos móviles */
-    body {
-        font-size: 14px; /* Ejemplo: tamaño de fuente más pequeño para móviles */
+/* Para tablets (de 768px a 1024px de ancho) */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .redirection__btns {
+        gap: 50px;
     }
 }
 
-/* Estilos para tablets (768px a 1023px de ancho) */
-@media only screen and (min-width: 768px) and (max-width: 1023px) {
-    /* Agrega aquí tus estilos específicos para tablets */
-    body {
-        font-size: 16px; /* Ejemplo: tamaño de fuente ligeramente mayor para tablets */
-    }
-}
 
-/* Estilos para pantallas grandes (más de 1024px de ancho) */
-@media only screen and (min-width: 1024px) {
-    /* Agrega aquí tus estilos específicos para pantallas grandes */
-    body {
-        font-size: 18px; /* Ejemplo: tamaño de fuente aún mayor para pantallas grandes */
+/* Para pantallas grandes (más de 1024px de ancho) */
+@media (min-width: 1025px) {
+    .redirection__btns {
+        gap: 100px;
     }
 }
