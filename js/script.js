@@ -89,7 +89,6 @@ document.addEventListener('DOMContentLoaded', function () {
     function iniRopa() {
         const container = document.getElementById('products-container');
         const inputTitulo = document.querySelector("#inputTitulo"); //nombre de la prenda a buscar
-
         const counterTotal = document.querySelector('#contadorTotal');
 
 
@@ -327,12 +326,12 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
         // Filtrar clicando en los botones 
-        btnTodos.addEventListener("click", () => {
-            listaProductos(products);
+        btnTodos.addEventListener("click", () => { //cuando hago clic en Todos, se muestra la lista de productos completa
+            listaProductos(products); //llama a la funcion 
 
         });
 
-        btnPant.addEventListener("click", () => filtrarTipo("tote"));
+        btnPant.addEventListener("click", () => filtrarTipo("tote")); 
         btnCha.addEventListener("click", () => filtrarTipo("sudadera"));
         btnCami.addEventListener("click", () => filtrarTipo("camiseta"));
 
@@ -343,18 +342,6 @@ document.addEventListener('DOMContentLoaded', function () {
             listaProductos(productosFiltrados);
         }
 
-
-        const addCesta = document.querySelectorAll('.btnCesta');
-        let counter = 0;
-
-        addCesta.forEach(btn => {
-            btn.addEventListener("click", () => {
-                const index = parseInt(btn.dataset.index);
-                agregarProducto(products[index]);
-                counter++;
-                counterTotal.textContent = counter;
-            });
-        });
 
     }
 
@@ -435,12 +422,6 @@ document.addEventListener('DOMContentLoaded', function () {
     };
 
 
-
-
-
-
-
-
     //----------------------------------------------------------------------------------------------------------------------------------------------------------
     //------------------------------------ JS PERSONALIZAR----------------------------------------------
     //----------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -453,10 +434,16 @@ document.addEventListener('DOMContentLoaded', function () {
         const carritoDisenos = document.getElementById("carrito-disenos");
         const txtInfo = document.querySelector(".infoTotal");
 
-        let precioTotal = 0;
-        let productoRopaSeleccionado = null;
-        let diseñoSeleccionado = null;
+        const btnBorrar = document.getElementById("borrarCarrito");
+        const btnDescuento = document.getElementById("aplicarDescuento");
+        const btnMensaje = document.getElementById("btnMensaje");
+        
 
+        let precioTotal = 0;
+        let productoRopaSeleccionado = null; //lo inicializamos en null la primera vez, para que despues se pueda ir actualizando 
+        let diseñoSeleccionado = null;//lo inicializamos en null la primera vez, para que despues se pueda ir actualizando 
+
+        //array de productos
         const products = [
             {
                 nombre: 'Camiseta Basic',
@@ -521,6 +508,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         ];
 
+        //array de diseños 
         const disenos = [
             {
                 nombre: 'Alien',
@@ -573,12 +561,99 @@ document.addEventListener('DOMContentLoaded', function () {
 
         ];
 
-        function agregarRopaAlCarrito(item) {
-            if (productoRopaSeleccionado) {
-                carritoContainer.innerHTML = '';
+           // Listar productos de ropa
+           products.forEach(producto => {
+            const productItem = document.createElement('div');
+            productItem.className = 'productItem';
+            productItem.innerHTML = `
+            
+                <img src="${producto.imagen}" alt="${producto.nombre}">
+                <h2>${producto.nombre}</h2>
+                <p>${producto.precio.toFixed(2)} EUR</p>
+                <button class="btnCestaRopa">Añadir al carrito</button>
+                
+            `;
+            prodContainer.appendChild(productItem);
+
+            //ahora como ya está creado el boton con la clase .btnCestaRopa, hago un query selector para que cada vez que haga click sobre este botón, se ejectue la funcion de agregar la ropa al carrito, del producto en cuestión. 
+            productItem.querySelector('.btnCestaRopa').addEventListener('click', () => {
+                agregarRopaAlCarrito(producto);
+                //Se ejecuta la funcion para mostrar el mensaje de que falta el diseño
+                mostrarMensaje();
+                //Se cierra dicho mensaje
+                cerrarMensajeDiseno();                
+            });
+
+        });
+
+
+        // Listar diseños
+        disenos.forEach(diseno => {
+            const disenoItem = document.createElement('div');
+            disenoItem.className = 'disenoItem';
+            disenoItem.innerHTML = `
+                <img src="${diseno.imagen}" alt="${diseno.nombre}">
+                <h2>${diseno.nombre}</h2>
+                <p>${diseno.precio.toFixed(2)} EUR</p>
+                <button class="btnCestaDiseno">Añadir al carrito</button>
+            `;
+            disenosContainer.appendChild(disenoItem);
+
+            disenoItem.querySelector('.btnCestaDiseno').addEventListener('click', () => {
+                agregarDisenoAlCarrito(diseno);
+                //Se ejecuta la funcion para mostrar el mensaje de que falta alguna camiseta, sudadera o Tote Bag
+                mostrarMensajeDiseno();
+                //Se cierra dicho mensaje
+                cerrarMensaje();
+            });
+
+
+        });
+
+            // Mostrar el total inicial para que me muestre que el total a pagar es 0,00 EUR 
+            verTotal();
+
+            //funcion que te muestra el mensaje de que falta por añadir el diseño 
+        function mostrarMensaje() {
+            const mensaje = document.getElementById('mensaje');
+            if(diseñoSeleccionado){//comprobamos si hay algun diseño seleccionado
+                console.log("Ya hay un diseño seleccionado");
+            }else{//en el caso de que no haya mostramos el mensaje
+                mensaje.style.display = 'block';
             }
-            const carritoItem = document.createElement('div');
-            carritoItem.className = 'productItem';
+            
+        }
+
+        // Función para cerrar el mensaje
+        function cerrarMensaje() {//CerraMensaje seleccionado
+            const mensaje = document.getElementById('mensaje');
+            //Cerramos el mensaje
+            mensaje.style.display = 'none';
+        }
+            //funcion que te muestra el mensaje de que falta por añadir una camiseta, sudadera o Tote Bag
+        function mostrarMensajeDiseno() {
+            const mensaje = document.getElementById('mensajeDiseno');
+            //comprobamos si hay alguna prenda de ropa seleccionada
+            if(productoRopaSeleccionado){
+                console.log("Ya hay seleccionado una camiseta, sudadera o Tote Bag")
+            }else{//en el caso de que no haya mostramos el mensaje
+                mensaje.style.display = 'block';
+            }
+        }
+
+        // Función para cerrar el mensaje
+        function cerrarMensajeDiseno() {
+            const mensaje = document.getElementById('mensajeDiseno');
+            mensaje.style.display = 'none';
+        }
+
+        //funcion que se ejectuta cuando hago clic en el boton "Añadir al carrito". Solo puede haber 1 productoRopaSeleccionado y 1 diseñoSeleccionado
+        function agregarRopaAlCarrito(item) {
+            if (productoRopaSeleccionado) { //comprobamos si hay algún productoRopaSeleccionado en el carrito
+                carritoContainer.innerHTML = ''; //si hay algún productoRopaSeleccionado, vacia el carrito 
+            }
+            const carritoItem = document.createElement('div'); //y ahora crea el div del nuevo producto que hemos seleccionado. 
+            carritoItem.className = 'productItem'; //crea la clase 
             carritoItem.innerHTML = `
                 <img src="${item.imagen}" alt="${item.nombre}">
                 <h2>${item.nombre}</h2>
@@ -588,9 +663,9 @@ document.addEventListener('DOMContentLoaded', function () {
                 
                 
             `;
-            carritoContainer.appendChild(carritoItem);
-            productoRopaSeleccionado = item;
-            actualizarPrecioTotal();
+            carritoContainer.appendChild(carritoItem); //en el container añade el producto 
+            productoRopaSeleccionado = item; //ahora el productoRopaSeleccionado será el nuevo item que acabamos de añadir. 
+            actualizarPrecioTotal(); //ejecutamos funcion de actualizarPrecio 
         }
 
         function agregarDisenoAlCarrito(item) {
@@ -611,89 +686,44 @@ document.addEventListener('DOMContentLoaded', function () {
             actualizarPrecioTotal();
         }
 
-        function actualizarPrecioTotal() {
-            let precioTotalCalculado = 0;
-            if (productoRopaSeleccionado) {
-                precioTotalCalculado += productoRopaSeleccionado.precio;
+        function actualizarPrecioTotal() { //ejecutamos la funcion de actualizar el precio 
+            let precioTotalCalculado = 0; //incializamos la variable del precio en 0
+            if (productoRopaSeleccionado) { //comprobamos si hay algun producto seleccionado 
+                precioTotalCalculado += productoRopaSeleccionado.precio; //si hay algun producto seleccionado sumamos el total precioTotalCalculado al precio del productoRopaSeleccionado. 
             }
-            if (diseñoSeleccionado) {
-                precioTotalCalculado += diseñoSeleccionado.precio;
+            if (diseñoSeleccionado) {//si hay un diseño seleccionado
+                precioTotalCalculado += diseñoSeleccionado.precio; //sumamos el precioTotalCalculado, es decir 0, al precio del diseñoSeleccionado. 
             }
 
-            // Verificar si se ingresó el código de descuento correcto
-            const codigoDescuento = document.getElementById('codigo').value;
-            if (codigoDescuento === "CAMISETA123") {
+            //DESCUENTO 
+            const codigoDescuento = document.getElementById('codigo').value; //del HTML, obtenemos el valor del div #codigo. 
+            if (codigoDescuento === "CAMISETA123") { //si es exactamente igual a CAMISETA123
                 precioTotalCalculado *= 0.85; // Aplicar descuento del 15%
             }
 
-            precioTotal = precioTotalCalculado;
-            verTotal();
+            precioTotal = precioTotalCalculado; //Entonces ahora el precio total que incialmente era 0, va a ser igual al precio total calculado que acabamos de ver. Es decir, la suma de lo que he agregado al carrito menos el descuento. 
+            verTotal(); //ejecutamos la funcion para ver el total 
         }
 
-        function verTotal() {
+        function verTotal() { //ejecutamos la función para que se muestre el total. 
             txtInfo.textContent = `Total a pagar: ${precioTotal.toFixed(2)} EUR`;
         }
 
+        //funcion de vaciar carrito. 
         function borrarCarrito() {
-            carritoContainer.innerHTML = '';
-            carritoDisenos.innerHTML = '';
-            precioTotal = 0;
-            productoRopaSeleccionado = null;
-            diseñoSeleccionado = null;
-            verTotal();
+            carritoContainer.innerHTML = ''; //lo deja vacio
+            carritoDisenos.innerHTML = ''; //lo deja vacio 
+            precioTotal = 0; //lo deja a 0
+            productoRopaSeleccionado = null; //lo deja a null 
+            diseñoSeleccionado = null;//lo deja a null 
+            verTotal(); // y ejecutamos la funcion verTotal para mostrar el valor a 0
         }
 
         // Evento para vaciar el carrito
-        document.getElementById("borrarCarrito").addEventListener("click", borrarCarrito);
+        btnBorrar.addEventListener("click", borrarCarrito);
 
         // Evento para aplicar el descuento
-        document.getElementById("aplicarDescuento").addEventListener("click", actualizarPrecioTotal);
-
-        // Listar productos de ropa
-        products.forEach(producto => {
-            const productItem = document.createElement('div');
-            productItem.className = 'productItem';
-            productItem.innerHTML = `
-            
-                <img src="${producto.imagen}" alt="${producto.nombre}">
-                <h2>${producto.nombre}</h2>
-                <p>${producto.precio.toFixed(2)} EUR</p>
-                <button class="btnCestaRopa">Añadir al carrito</button>
-                
-            `;
-            prodContainer.appendChild(productItem);
-
-            productItem.querySelector('.btnCestaRopa').addEventListener('click', () => {
-                agregarRopaAlCarrito(producto);
-                document.getElementById("disenos-container").scrollIntoView({ behavior: 'smooth' });
-
-            });
-
-        });
-
-        // Listar diseños
-        disenos.forEach(diseno => {
-            const disenoItem = document.createElement('div');
-            disenoItem.className = 'disenoItem';
-            disenoItem.innerHTML = `
-                <img src="${diseno.imagen}" alt="${diseno.nombre}">
-                <h2>${diseno.nombre}</h2>
-                <p>${diseno.precio.toFixed(2)} EUR</p>
-                <button class="btnCestaDiseno">Añadir al carrito</button>
-            `;
-            disenosContainer.appendChild(disenoItem);
-
-            disenoItem.querySelector('.btnCestaDiseno').addEventListener('click', () => {
-                agregarDisenoAlCarrito(diseno);
-                // Desplazar al div "disenos-container"
-                document.getElementById("carrito").scrollIntoView({ behavior: 'smooth' });
-            });
-
-
-        });
-
-        // Mostrar el total inicial
-        verTotal();
+        btnDescuento.addEventListener("click", actualizarPrecioTotal);
 
       // Función para desplazarse al div con id "carrito"
     function scrollToCarrito() {
@@ -708,10 +738,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
     }
-
-    
-
-
 
 });
 
