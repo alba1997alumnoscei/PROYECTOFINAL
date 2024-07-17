@@ -1,8 +1,12 @@
+//Para cargar cargar el contenido del DOM usamos este addEventListener 
+
 document.addEventListener('DOMContentLoaded', function () {
 
+    //Declaramos la variable bodyId que será igual al body id de cada página.  
     const bodyId = document.body.id;
-    console.log("body id es:", bodyId)
+    console.log("body id es:", bodyId) //console.log para saber en qué página estamos. 
 
+    //Definimos un switch con el parámetro bodyId. Cada página corresponde a un case y dependiendo del case en el que esté se iniciará la función asignada. 
     switch (bodyId) {
 
         case "home":
@@ -42,42 +46,44 @@ document.addEventListener('DOMContentLoaded', function () {
     //------------------------------------ JS HOME ------------------------------------------------------------------------------------------------
     //----------------------------------------------------------------------------------------------------------------------------------------------------------
 
+    //Esta función corresponde al index.html 
 
     function iniHome() {
+
+        
+        //1. Definimos variables para hacer un acordeón. 
+
         const acordeon = document.querySelector(".acordeon");
         const headers = acordeon.querySelectorAll(".acordeon__item--titulo");
         const acordeonItems = acordeon.querySelectorAll(".acordeon__item");
+        const discount = document.getElementById("descuento")
 
-        const addCesta = '';
-
-        // FOREACH: en los headers 
+        //2. Hacemos forEach 
+        //Aquí se recorre el header con un forEach.  
 
         headers.forEach(header => {
             //cuando yo hago click en el header (en los titulos)
             header.addEventListener("click", () => {
-                //el más cercano
+                //Recogemos el elemento en el que hemos cliqueado, con el closest cogemos el más cercano
                 const item = header.closest(".acordeon__item");
 
-
-
-                //quitar "active"
+                //ahora recorremos todos los items del acordeón y eliminamos la clase de activo para que se cierren los demás
                 acordeonItems.forEach(elemento => {
                     elemento.classList.remove("active");
 
                 })
 
-
-                //agregar "active"
+                //agregamos la clase active solo en el item que hemos seleccionado
                 item.classList.add("active");
             });
 
         });
 
-
+        //para que al cargar la página el primero [0] esté "abierto"
         acordeonItems[0].classList.add('active');
 
-
-        const discount = document.getElementById("descuento")
+        //3. Ejecutamos los eventos
+        //cuando hago click en discount se ejecuta la función del código de descuento. 
         discount.addEventListener('click', function () {
             alert('Enhorabuena! Este es tu codigo descuento: CAMISETA123');
         });
@@ -86,19 +92,19 @@ document.addEventListener('DOMContentLoaded', function () {
     //------------------------------------ JS ROPA ---------------------------------------------
     //----------------------------------------------------------------------------------------------------------------------------------------------------------
 
+    //Esta función corresponde al ropa-accesorios-html
     function iniRopa() {
+
+        //1. Declaramos las variables: products-container será donde aparezcan todas las prendas y accesorios. 
+
+        const inputTitulo = document.querySelector("#inputTitulo"); //nombre de la prenda a buscar que más 
         const container = document.getElementById('products-container');
-        const inputTitulo = document.querySelector("#inputTitulo"); //nombre de la prenda a buscar
-        const counterTotal = document.querySelector('#contadorTotal');
-
-
 
         //Botones 
         const btnTodos = document.querySelector("#btnTodos")
         const btnPant = document.querySelector("#btnTote")
         const btnCha = document.querySelector("#btnSudadera")
         const btnCami = document.querySelector("#btnCamiseta")
-
 
         //Array de los productos: nombre, referencia, precio, imagen
         const products = [
@@ -310,6 +316,14 @@ document.addEventListener('DOMContentLoaded', function () {
 
         }
 
+        //funcion de filtrar por tipo cuando hago click 
+        function filtrarTipo(tipo) {
+            const productosFiltrados = products.filter(product =>
+                product.nombre.toLowerCase().includes(tipo)
+            );
+            listaProductos(productosFiltrados);
+        }
+
         listaProductos(products); // Se ejecuta la función listaProductos para mostrar el array
 
 
@@ -320,7 +334,7 @@ document.addEventListener('DOMContentLoaded', function () {
             const productosFiltrados = products.filter(product => //del array "products" filtramos por nombre 
                 product.nombre.toLowerCase().includes(texto) //que incluya el value que hemos escrito en el input
             );
-            listaProductos(productosFiltrados); // función de escribir 
+            listaProductos(productosFiltrados); // se ejecuta la función de listarProductos para ver los productos que hay 
         });
 
 
@@ -335,12 +349,7 @@ document.addEventListener('DOMContentLoaded', function () {
         btnCha.addEventListener("click", () => filtrarTipo("sudadera"));
         btnCami.addEventListener("click", () => filtrarTipo("camiseta"));
 
-        function filtrarTipo(tipo) {
-            const productosFiltrados = products.filter(product =>
-                product.nombre.toLowerCase().includes(tipo)
-            );
-            listaProductos(productosFiltrados);
-        }
+        
 
 
     }
