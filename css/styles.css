@@ -12,20 +12,24 @@
 :root {
 
     --color-fondo: #f2f2f2;
-    --color-texto: #333;
+    --color-texto: #000000;
     --color-textoSecundario: #2d254d;
 
-    --color-primario: #3ea653;
-    --color-secundario: #6b53c4;
-    --color-terciario: #ad98f9;
+    --color-primario: #ffffff;
+    --color-secundario: #184c41;
+    --color-terciario: #ffffff;
    
  
 }
 
+/* @font-face {
+    font-family: 'Outfit';
+    src: url('/fonts/Outfit-VariableFont_wght.ttf') format('truetype');
+   
+} */
 
-
-body{
-    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+body {
+    font-family: 'outfit';
     background-color: var(--color-fondo);
 }
 
@@ -46,7 +50,7 @@ body{
 /*-----------------------Header ----------------------*/
 
 .header {
-    height: 20%;
+    height: 30%;
     background-color: var(--color-primario);
     width: 100%;
     display: flex;
@@ -59,6 +63,7 @@ body{
 .header__logo {
     max-width: 100%; 
     height: auto; 
+
     
     
 }
@@ -72,9 +77,15 @@ body{
     width: 100%;
     display: flex;
     justify-content: space-evenly;
-    height: 6rem;
+    height: 7rem;
     font: 1.3rem;
     align-items: center;
+    background-image: url(/imgs/fondo.jpg);
+    background-size: cover; 
+    background-position: center bottom; 
+    padding: 20px; 
+    
+    
     
     
 }
@@ -93,6 +104,17 @@ body{
     width: 33%;
     display: flex;
     justify-content: center;
+    font-size: 1.30rem;
+
+}
+
+.footer__privacidad a, .footer__contacto a{
+    text-decoration: none;
+    color: var(--color-texto);
+    font-weight: 500;
+}
+:hover.footer__privacidad a, :hover.footer__contacto a, :hover.rrss img{
+    transform: scale(1.2);
 }
 
 .rrss{
@@ -100,10 +122,13 @@ body{
     width: 50%;
     
     }
+
 .rrss img{
 width: 3em;
 height: auto;
 }
+
+
 /*-----------------------Navegación----------------------*/
 .nav {
     
@@ -111,17 +136,25 @@ height: auto;
     background-color: var(--color-secundario);
     padding: 10px;
     position: fixed;
-    top: 20%;
+    top: 30%;
     align-content: center;
+    background-image: url(/imgs/fondo.jpg);
+    background-size: cover; 
+    background-position: center top; 
+    padding: 20px; 
+    
     
 }
+
+
 
 /*Div donde metemos los botones*/
 .nav__buttons {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    
+    font-size: 1.3rem;
+    min-width: 100px;
 }
 /*Botones del nav*/
 .nav__btn{
@@ -131,7 +164,7 @@ height: auto;
     height: 10%;
     margin: 10px;
     padding: 10px;
-    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-family: 'outfit';
     font-size: 1.30rem;
     justify-content: space-around;
 }
@@ -141,7 +174,7 @@ height: auto;
 }
 
 .nav__btn a{
-    color: var(--color-textoSecundario);  
+    color: var(--color-texto);  
 }
 
 
@@ -162,13 +195,20 @@ height: auto;
 }
 
 /*---------Boton de "Volver al Menú principal"-----------------*/
-.volver{
-    
-    width: auto;
-    padding: 30px;
-    display: flex;
-    justify-content: center;
-    
+.volver {
+    position: fixed;
+    bottom: 20px;
+    right: 20px; 
+    background-color: var(--color-secundario);
+    color: var(--color-primario);
+    border: none; 
+    padding: 5px; 
+    border-radius: 5px; 
+    cursor: pointer; 
+}
+
+.volver img {
+    width: 50%;
 }
 
 /*---------Estilo de los botones con etiqueta btn---------------*/
@@ -178,7 +218,21 @@ height: auto;
     border-radius: 10%;
     color: var(--color-secundario) ;
     font-size: 1.30rem;
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-family: 'outfit';
+    border: none;
+    box-shadow:0px 2px 4px rgb(42, 122, 110) ;
+    margin: 30px;
+   
+    border-radius: 0;
+    transition: border-radius 0.5s ease-in-out;
+    
+}
+
+:hover.btn{
+    border-radius: 30%;
+    
+    
+
 }
 /*------------------------------------------------------------------*/
 /*----------------------------HTML INDEX----------------------------*/
@@ -198,16 +252,16 @@ height: auto;
 }
 
 .acordeon__item {
-    background-color: #fefcfc;
+    
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    margin-bottom: 50px;
+    box-shadow: 0 4px 8px rgba(7, 101, 67, 0.1);
+    padding: 40px;
+    margin-bottom: 80px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    display: block; /* Muestra el contenido activo */
-    max-height: 200px; /* Altura máxima para el contenido visible */
+    display: block; 
+    max-height: 250px; 
 }
 
 .acordeon__item--titulo {
@@ -219,6 +273,9 @@ height: auto;
     display: flex;
     flex-direction: column;
     text-align: left;
+    font-size: 1.50rem;
+    font-weight: 600;
+    color: var(--color-secundario);
 }
 
 .acordeon__item--contenido {
@@ -226,6 +283,15 @@ height: auto;
 }
 
 .active .acordeon__item--contenido {
+    display: block;
+    padding: 30px;
+}
+
+.lista{
+    display: none;
+}
+
+.active .lista {
     display: block;
 }
 
@@ -239,15 +305,20 @@ height: auto;
 .redirection__btns {
     display: flex;
     justify-content: space-around;
-    padding: 20px;
+    padding: 50px;
     gap: 100px;
     flex: 1;
     height: auto;
     width: 100%;
+    font-size: 1.30rem;
+    
+    
 }
 
+
+
 .redirection__btns a {
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-family: 'outfit';
     font-size: 1.30rem;
     color: var(--color-texto);
 }
@@ -267,16 +338,27 @@ height: auto;
     width: auto;
     max-width: 500px;
     
+    cursor: pointer;
+    border: none;
+    box-shadow:0px 2px 4px rgb(42, 122, 110) ;
+    
+    
+    
+}
+:hover.irRopa{
+    transform: rotate(-10deg);
+    
+}
+:hover.irDisenos {
+    transform: scale(1.1)
+    
+}
+:hover.irPersonalizar {
+    transform: rotate(10deg);
+    
 }
 
 
-/* .sombreado {
-    box-shadow: inset 0 10px 20px -10px rgba(0, 0, 0, 0.5);  
-}
-
-:hover.sombreado {
-    box-shadow: inset 0 10px 20px -10px rgba(0, 0, 0, 0.5);  
-} */
 
 
 /*---------descuento----------*/
@@ -286,17 +368,41 @@ height: auto;
     padding: 30px;
     margin-top: 15px;
     font-size: 1.30rem;
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-family: 'outfit';
+    
     
 }
 .active .descuento{
     display: block;
     
+    
 }
 
 .descuento:hover {
-    transform: scale(1.2); /* Escalado al pasar el mouse */
+    transform: scale(1.2); 
 }
+
+.filtro{
+    padding: 30px;
+}
+#inputTitulo{
+    padding: 10px;
+    border: none;
+    box-shadow:0px 2px 4px rgb(42, 122, 110) ;
+    margin: 15px;
+   
+    opacity: 0.7;
+    transition: opacity 0.5s ease-in-out;
+    
+    
+}
+
+:hover#inputTitulo{
+    opacity: 1;
+}
+
+
+
 
 /*------------------------------------------------------------*/
 /*---------------HTML PERSONALIZAR----------------------------*/
@@ -313,20 +419,13 @@ height: auto;
 }
 
 
-
-.elige{
-padding-top: 400px;
-}
-
-
-
-
 .productItem, .disenoItem{
     border: 1px solid #ddd;
     border-radius: 5px;
     padding: 10px;
     text-align: center;
     width: 300px;
+    align-content: space-around;
 }
 
 .productItem img {
@@ -338,7 +437,7 @@ padding-top: 400px;
     height: auto;
 }
 
-.productItem h2 {
+.productItem h3 {
     
     margin: 10px 0;
 }
@@ -350,6 +449,10 @@ padding-top: 400px;
 .productItem .price {
     font-weight: bold;
     
+}
+
+.infoPrecio{
+    font-size: 1rem;
 }
 
 #carrito{
@@ -445,16 +548,15 @@ height: auto;
 
 .fixed-button {
     position: fixed;
-    bottom: 20px; /* Distancia desde el fondo de la pantalla */
-    right: 20px; /* Distancia desde el lado derecho de la pantalla */
-    background-color: #007BFF; /* Color de fondo del botón */
-    color: white; /* Color del texto del botón */
-    border: none; /* Sin borde */
-    padding: 10px 20px; /* Relleno alrededor del texto del botón */
-    
-    border-radius: 5px; /* Bordes redondeados */
-    cursor: pointer; /* Cursor de mano al pasar sobre el botón */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Sombra del botón */
+    bottom: 20px; 
+    right: 20px; 
+    background-color: #007BFF; 
+    color: white; 
+    border: none; 
+    padding: 10px 20px;
+    border: none;  
+    cursor: pointer; 
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); 
 }
 
 .fixed-button:hover {
@@ -476,9 +578,22 @@ height: auto;
 /*---------------HTML DISEÑOS-----------------------------*/
 /*--------------------------------------------------------*/
 
+.sliderContent{
+    margin: 30px;
+    display: flex;
+flex-direction: row;
+
+}
+
+.sliderContent .btn{
+    display: flex;
+flex-direction: row;
+}
 .slider{
 overflow: hidden;
 border: 1px solid black;
+display: flex;
+flex-direction: row;
 }
 
 .slider-images{
@@ -491,11 +606,13 @@ border: 1px solid black;
 .slider-images img{ /*a cada imagen del grupo slider-images*/
     min-width: 400px;
     max-width: 400px;
-    min-height: 600px;
-    max-height: 600px;
+    min-height: auto;
+    
 
     object-fit: contain; /*como me va a mostrar la imagen dentro de la caja, es decir añade barritas en los lados o arriba/abajo para evitar que la foto sea muy ancha o muy larga*/
 }
+
+
 
 .mensaje {
     display: none;
