@@ -584,7 +584,7 @@ document.addEventListener('DOMContentLoaded', function () {
             const disenoItem = document.createElement('div');
             disenoItem.className = 'disenoItem';
             disenoItem.innerHTML = `
-                <img src="${diseno.imagen}" alt="${diseno.nombre}">
+                <img src="${diseno.imagen}" alt="${diseno.nombre}"  loading="lazy">
                 <h3>${diseno.nombre}</h3>
                 <p>${diseno.precio.toFixed(2)} EUR</p>
                 <button class="btnCestaDiseno">Añadir al carrito</button>
