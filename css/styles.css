@@ -80,6 +80,7 @@
     border: none;
     box-shadow: 0px 2px 4px rgb(42, 122, 110);
     margin: 30px;
+    border-radius: 0;
     transition: border-radius 0.5s ease-in-out;
 
 }
@@ -565,27 +566,29 @@
 #products__container,
 #productos__container,
 #disenos__container {
-    
     display: flex;
     flex-wrap: wrap;
-    gap: 20px; 
+    gap: 20px;
     justify-content: center;
+    padding-top: 400px;
     padding: 30px;
     margin-bottom: 100px;
+  flex: 1;
 
 }
 
 /*cada uno de los articulos y diseños llevan esta clase*/
 .productItem,
 .disenoItem {
-    .productItem, .disenoItem {
-    border: 1px solid black; 
+    border: 1px solid #ddd;
     border-radius: 5px;
     padding: 10px;
     text-align: center;
-    width: 300px; 
+    width: 300px;
+    align-content: space-around;
+    border: none;
     box-shadow: 0px 2px 4px rgb(42, 122, 110);
-    margin: 15px; 
+    margin: 30px;
 }
 
 /*hover de la clase anterior*/
@@ -597,7 +600,7 @@
 /*imagenes de diseños + imagenes de productos*/
 .disenoItem img, .productItem img {
     width: 80%;
-    height: auto;
+    height: 200px;
 }
 /*ropa y accesorios: estilos para h3, parrafos y precio de productItem (ropa y accesorios)*/
 
@@ -630,12 +633,13 @@ Si se añade un diseño a la cesta, salta el mensaje #mensaje indicando al usuar
     padding: 10px;
     border-radius: 5px;
     cursor: pointer;
+    display: none;
     transform: translateY(20px); 
     transition: opacity 0.5s ease, transform 0.5s ease; 
     display: none;
 }
 
-#mensaje:hover, #mensajeDiseno:hover {
+:hover#mensaje, :hover#mensajeDiseno {
     opacity: 1; /* Totalmente visible */
     transform: translateY(0);
     display: block; 
@@ -1021,6 +1025,9 @@ width: 80%;
 @media (min-width: 769px) {
     
 }
+
+
+
 
 
 
