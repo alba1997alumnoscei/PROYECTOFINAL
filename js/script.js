@@ -29,28 +29,28 @@ document.addEventListener('DOMContentLoaded', function () {
             console.log("Estoy en Pago");
             iniPersonalizar();
             break;
-
-
     }
 
 
-    //----------------------------------------------------------------------------------------------------------------------------------------------------------
-    //------------------------------------ JS HOME ------------------------------------------------------------------------------------------------
-    //----------------------------------------------------------------------------------------------------------------------------------------------------------
+    //-------------------------------------------------------------------------------------------------------------
+    // JS HOME 
+    //-------------------------------------------------------------------------------------------------------------
 
     //Esta función corresponde al index.html 
 
     function iniHome() {
-
-        
+    
+        //----------------------------------------------
         //1. Definimos variables para hacer un acordeón. 
+        //----------------------------------------------
 
         const acordeon = document.querySelector(".acordeon");
         const headers = acordeon.querySelectorAll(".acordeon__item--titulo");
         const acordeonItems = acordeon.querySelectorAll(".acordeon__item");
         const discount = document.getElementById("descuento")
-
+        //----------------------------------------------
         //2. Hacemos forEach 
+        //----------------------------------------------
         //Como queremos que el acordeón se "abra" vamos a recorrer todos los headers con un forEach   
 
         headers.forEach(header => {
@@ -73,22 +73,24 @@ document.addEventListener('DOMContentLoaded', function () {
 
         //para que al cargar la página el primero [0] esté "abierto"
         acordeonItems[0].classList.add('active');
-
+        //----------------------------------------------
         //3. Ejecutamos los eventos
+        //----------------------------------------------
         //cuando hago click en discount se ejecuta la función del código de descuento. 
         discount.addEventListener('click', function () {
             alert('Enhorabuena! Este es tu codigo descuento: CAMISETA123');
         });
     }
-    //----------------------------------------------------------------------------------------------------------------------------------------------------------
-    //------------------------------------ JS ROPA ---------------------------------------------
-    //----------------------------------------------------------------------------------------------------------------------------------------------------------
+    //-----------------------------------------------------------------------------------------------------------
+    // JS ROPA 
+    //-----------------------------------------------------------------------------------------------------------
 
     //Esta función corresponde al HTML ropa-accesorios.html
     function iniRopa() {
-
-        //1. Declaramos las variables: products-container será donde aparezcan todas las prendas y accesorios. 
-
+        //----------------------------------------------
+        //1. Declaramos las variables 
+        //----------------------------------------------
+        //products-container será donde aparezcan todas las prendas y accesorios.
         const inputText = document.querySelector("#inputText"); //nombre de la prenda a buscar que más 
         const container = document.getElementById('products-container');
 
@@ -157,7 +159,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 imagen: 'imgs/camiseta-take.jpg',
 
             },
-            //------------------------------------------------------------------------------------
+            //------------------------------------
             //sudaderas
             {
                 nombre: 'Sudadera Alien',
@@ -215,7 +217,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 imagen: 'imgs/sudadera-vibing.jpg',
 
             },
-            //-----------------------------------------------------------------------------------
+            //-------------------------------------
             //tote bags 
             {
                 nombre: 'Tote Bag Alien',
@@ -274,10 +276,11 @@ document.addEventListener('DOMContentLoaded', function () {
 
             },
         ];
+        //----------------------------------------------
+        //2. Funciones 
+        //----------------------------------------------
 
-        //2. FUNCIONES 
-
-        //----------Funcion para mostrar todos los productos en la página.--------------- 
+        //--------------- Funcion para mostrar todos los productos en la página --------------- 
         function listaProductos(products) {
             container.innerHTML = ''; //vacia el container para mejor actualización 
             products.forEach(product => { //con un forEach recorremos todas las propiedades del array. 
@@ -296,12 +299,12 @@ document.addEventListener('DOMContentLoaded', function () {
             });
             
         }
-        //---------- Función de filtrar por tipo cuando hago click .---------------
+        //--------------- Función de filtrar por tipo cuando hago click ---------------
         function filtrarTipo(tipo) {
             const productosFiltrados = products.filter(product =>
                 product.nombre.toLowerCase().includes(tipo)
             );
-            listaProductos(productosFiltrados);
+            listaProductos(productosFiltrados); 
         }
 
         listaProductos(products); // Se ejecuta la función listaProductos para mostrar el array
@@ -318,27 +321,24 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 
-        // ----------Filtrar clicando en los botones ----------
+        // ---------------Filtrar clicando en los botones ---------------
         btnTodos.addEventListener("click", () => { //cuando hago clic en Todos, se muestra la lista de productos completa
             listaProductos(products); //llama a la funcion 
 
         });
 
         //hacemos click para filtrar 
-        btnPant.addEventListener("click", () => filtrarTipo("tote")); 
-        btnCha.addEventListener("click", () => filtrarTipo("sudadera"));
-        btnCami.addEventListener("click", () => filtrarTipo("camiseta"));
-
-        
-
+        btnPant.addEventListener("click", () => filtrarTipo("tote")); //filtramos por tote
+        btnCha.addEventListener("click", () => filtrarTipo("sudadera"));//filtramos por sudadera
+        btnCami.addEventListener("click", () => filtrarTipo("camiseta"));//filtramos por camiseta
 
     }
 
 
 
-    //----------------------------------------------------------------------------------------------------------------------------------------------------------
-    //------------------------------------ JS DISEÑOS-------------------------------------------
-    //----------------------------------------------------------------------------------------------------------------------------------------------------------
+    //-------------------------------------------------------------------------------------------------------------
+    //  JS DISEÑOS
+    //-------------------------------------------------------------------------------------------------------------
 //Esta función corresponde al HTML disenos.html
     function iniDisenos() {
         //------------------------------------------------------
@@ -407,9 +407,9 @@ document.addEventListener('DOMContentLoaded', function () {
     };
 
 
-    //----------------------------------------------------------------------------------------------------------------------------------------------------------
-    //------------------------------------ JS PERSONALIZAR----------------------------------------------
-    //----------------------------------------------------------------------------------------------------------------------------------------------------------
+    //-------------------------------------------------------------------------------------------------------------
+    // JS PERSONALIZAR
+    //-------------------------------------------------------------------------------------------------------------
 //esta función pertenece al HTML personalizar.html
     function iniPersonalizar() {
 
