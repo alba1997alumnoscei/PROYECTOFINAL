@@ -269,7 +269,7 @@
     flex-direction: column;
     align-items: center;
     display: block;
-    max-height: AUTOpx;
+    max-height: auto;
 }
 
 /*Titulos de los pasos: siempre visibles*/
@@ -697,8 +697,8 @@ Si se añade un diseño a la cesta, salta el mensaje #mensaje indicando al usuar
 }
 
 .talla{
-  padding: 20x;
-  margin: 40x;
+  padding: 20px;
+  margin: 40px;
 }
 
 
@@ -845,7 +845,7 @@ flex-direction: column;
 /*--------------------------------------------------------*/
 @media (max-width: 480px) {
 
-    //header 
+    /*header*/
     .header {
         height: auto;
         padding: 10px;
@@ -857,7 +857,7 @@ flex-direction: column;
         max-width: 80%;
     }
 
-    //nav 
+    /*nav*/ 
     .nav {
         top: 10%; 
         padding: 10px;
@@ -871,7 +871,7 @@ flex-direction: column;
     
     }
 
-    //footer
+    /*footer*/
   
   .footer__links, .footer__privacidad, .footer__contacto {
         width: 100%;
@@ -896,14 +896,14 @@ flex-direction: column;
         margin: 10px;
         font-size: 1rem;
     }
-    //main 
+    /*main*/ 
     .main {
         
         font-size: 0.8rem;
         margin: 5%;
     }
 
-    //los productos y diseños 
+    /*los productos y diseños*/ 
     #products__container,
     #productos__container,
     #disenos__container {
@@ -916,7 +916,7 @@ flex-direction: column;
         width: 100%; 
     }
 
-    //slider de imagenes 
+    /*slider de imagenes*/ 
     .slider-images {
         
         height: auto;
@@ -926,18 +926,18 @@ flex-direction: column;
         min-width: 100%;
     }
 
-    //ir al carrito 
+    /*ir al carrito*/ 
     .irCarrito, .btnCestaRopa {
         font-size: 1.1rem;
     }
 
-    //seccion pago
+    /*seccion pago*/
     .pago {
         padding: 20px;
         margin: 20px;
     }
 
-    //botones en general
+    /*botones en general*/
     .btn{
 width: 80%;
     }
@@ -1082,7 +1082,7 @@ width: 80%;
     /* Footer */
     .footer__links, .footer__privacidad, .footer__contacto {
         width: 100%;
-        flex-direction: row; /* Ajuste para pantallas más grandes */
+        flex-direction: row; 
         justify-content: space-around;
         font-size: 1.2rem;
         padding: 20px;
@@ -1121,7 +1121,7 @@ width: 80%;
     }
 
     .productItem, .disenoItem {
-        width: 30%; /* Tres columnas de productos */
+        width: 30%;
         margin: 1.5%;
         box-sizing: border-box;
     }
