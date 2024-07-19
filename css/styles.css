@@ -810,16 +810,6 @@ flex-direction: column;
     
 }
 
-
-/*parte del formulario referente al sexo*/
-.contacto__info--sexo{
-    background-color: var(--color-secundario);
-    padding: 30px;
-    color: var(--color-primario);
-    margin: 30px;
-}
-
-
 /*---------------PAGO---------------*/
 
 /*Contenedor genreal de pago
