@@ -33,43 +33,33 @@
 
         <!---------------MAIN-------------------------------->
 
-        <div class="main">
-            
+ <div class="main">
+            <form class="pago" action="url" method="POST">
+                <h1>Formulario de Contacto</h1>
 
-                
-
-                
-
-                <form class="pago"  action="url" method="POST">
-                    <h1>formulario de contacto</h1>
-
-                    <!--Forms de input text-->
-                    <div class="pago__info">
-                        <label value="nombre">Nombre del titular</label>
-                        <input type="text" class="inputText" name="nombre" required>
-                    </div>
-                    <div class="pago__info">
-                        <label value="numeroTarjeta">Nº Tarjeta</label>
-                        <input type="text" class="inputText" name="numeroTarjeta" required>
-                    </div>
-                    <div class="pago__info">
-                        <label value="vencimiento">Vencimiento</label>
-                        <input type="month" class="inputText" name="vencimiento" required>
-                    </div>
-                    <div class="pago__info">
-                        <label value="codigo">CVV</label>
-                        <input type="text" class="inputText" name="codigo" placeholder="?">
-                    </div>
-
-
-                </form>
-
+                <!-- Forms de input text -->
+                <div class="pago__info">
+                    <label for="nombre">Nombre del titular</label>
+                    <input type="text" id="nombre" class="inputText" name="nombre" required>
+                </div>
+                <div class="pago__info">
+                    <label for="numeroTarjeta">Nº Tarjeta</label>
+                    <input type="text" id="numeroTarjeta" class="inputText" name="numeroTarjeta" required>
+                </div>
+                <div class="pago__info">
+                    <label for="vencimiento">Vencimiento</label>
+                    <input type="month" id="vencimiento" class="inputText" name="vencimiento" required>
+                </div>
+                <div class="pago__info">
+                    <label for="codigo">CVV</label>
+                    <input type="text" id="codigo" class="inputText" name="codigo" placeholder="?">
+                </div>
                 <button class="btn">PAGAR</button>
-            
+            </form>
 
             <a href="./index.html" class="volver">
-    <img src="./imgs/volver.png" alt="volver">
-</a>
+                <img src="./imgs/volver.png" alt="volver">
+            </a>
         </div>
 
 
