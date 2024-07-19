@@ -419,13 +419,13 @@ document.addEventListener('DOMContentLoaded', function () {
         //1. Declaramos variables: 
         //----------------------------------------------
         const prodContainer = document.getElementById("productos__container"); //ropa y accesorios que crearemos más adelante en este JS
-        const disenosContainer = document.getElementById("disenos-container"); //ropa y accesorios que crearemos más adelante en este JS
+        const disenosContainer = document.getElementById("disenos__container"); //ropa y accesorios que crearemos más adelante en este JS
 
-        const carritoContainer = document.getElementById("carrito-container"); //parte del carrito donde irá la prenda/accesorio
-        const carritoDisenos = document.getElementById("carrito-disenos"); // parte del carrito donde irá el diseño 
-        const txtInfo = document.querySelector(".infoTotal");
+        const carritoContainer = document.getElementById("carrito__container"); //parte del carrito donde irá la prenda/accesorio
+        const carritoDisenos = document.getElementById("carrito__disenos"); // parte del carrito donde irá el diseño 
+        const txtInfo = document.querySelector(".info__total");
 
-        const btnBorrar = document.getElementById("borrarCarrito"); //botón de vaciar carrito 
+        const btnBorrar = document.getElementById("borrar__carrito"); //botón de vaciar carrito 
         const btnDescuento = document.getElementById("bntAplicarD"); //botón de descuento 
         const btnMensaje = document.getElementById("btnMensaje"); //botón de mensaje  
         
@@ -700,7 +700,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
 
         //funcion de vaciar carrito. 
-        function borrarCarrito() {
+        function borrar__carrito() {
             carritoContainer.innerHTML = ''; //lo deja vacio
             carritoDisenos.innerHTML = ''; //lo deja vacio 
             precioTotal = 0; //lo deja a 0
@@ -710,7 +710,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
 
         // Evento para vaciar el carrito
-        btnBorrar.addEventListener("click", borrarCarrito);
+        btnBorrar.addEventListener("click", borrar__carrito);
 
         // Evento para aplicar el descuento
         btnDescuento.addEventListener("click", actualizarPrecioTotal);
