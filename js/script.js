@@ -90,9 +90,9 @@ document.addEventListener('DOMContentLoaded', function () {
         //----------------------------------------------
         //1. Declaramos las variables 
         //----------------------------------------------
-        //products-container será donde aparezcan todas las prendas y accesorios.
+        //products__container será donde aparezcan todas las prendas y accesorios.
         const inputText = document.querySelector("#inputText"); //nombre de la prenda a buscar que más 
-        const container = document.getElementById('products-container');
+        const container = document.getElementById('products__container');
 
         //Botones: corresponde a los botones de filtrar. 
         const btnTodos = document.querySelector("#btnTodos")
