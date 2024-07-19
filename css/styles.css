@@ -696,11 +696,6 @@ Si se añade un diseño a la cesta, salta el mensaje #mensaje indicando al usuar
 
 }
 
-.talla{
-  padding: 20px;
-  margin: 40px;
-}
-
 
 /*borrar el carrito*/
 #borrar__carrito {
