@@ -202,6 +202,13 @@ body {
     font-size: 1.30rem;
     justify-content: space-around;
     transition:  0.5s ease, transform 0.5s ease;
+    text-align: center;
+    margin: 15px;
+    border: 1px solid black;
+    
+    
+    
+   
     
 }
 
