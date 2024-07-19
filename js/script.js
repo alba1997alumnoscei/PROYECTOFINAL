@@ -324,6 +324,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         });
 
+        //hacemos click para filtrar 
         btnPant.addEventListener("click", () => filtrarTipo("tote")); 
         btnCha.addEventListener("click", () => filtrarTipo("sudadera"));
         btnCami.addEventListener("click", () => filtrarTipo("camiseta"));
@@ -571,7 +572,7 @@ document.addEventListener('DOMContentLoaded', function () {
         });
 
 
-        // Listar diseños
+        // Listar diseños en la pagina: recorre el array de diseños para crear un div con la clase disenoItem 
         disenos.forEach(diseno => {
             const disenoItem = document.createElement('div');
             disenoItem.className = 'disenoItem';
@@ -608,7 +609,7 @@ document.addEventListener('DOMContentLoaded', function () {
             
         }
 
-        // Función para cerrar el mensaje
+        // Función para cerrar el mensaje de ropa
         function cerrarMensaje() {//CerraMensaje seleccionado
             const mensaje = document.getElementById('mensaje');
             //Cerramos el mensaje
@@ -625,7 +626,7 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         }
 
-        // Función para cerrar el mensaje
+        // Función para cerrar el mensaje de Diseno 
         function cerrarMensajeDiseno() {
             const mensaje = document.getElementById('mensajeDiseno');
             mensaje.style.display = 'none';
@@ -642,10 +643,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 <img src="${item.imagen}" alt="${item.nombre}">
                 <h3>${item.nombre}</h3>
                 <p>${item.precio.toFixed(2)} EUR</p>
-                
-                
-                
-                
+               
             `;
             carritoContainer.appendChild(carritoItem); //en el container añade el producto 
             productoRopaSeleccionado = item; //ahora el productoRopaSeleccionado será el nuevo item que acabamos de añadir. 
@@ -670,6 +668,7 @@ document.addEventListener('DOMContentLoaded', function () {
             actualizarPrecioTotal();
         }
 
+        //funcion actualizar el precio 
         function actualizarPrecioTotal() { //ejecutamos la funcion de actualizar el precio 
             let precioTotalCalculado = 0; //incializamos la variable del precio en 0
             if (productoRopaSeleccionado) { //comprobamos si hay algun producto seleccionado 
@@ -679,7 +678,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 precioTotalCalculado += diseñoSeleccionado.precio; //sumamos el precioTotalCalculado, es decir 0, al precio del diseñoSeleccionado. 
             }
 
-            //DESCUENTO 
+            //Obtener descuento  
             const codigoDescuento = document.getElementById('codigo').value; //del HTML, obtenemos el valor del div #codigo. 
             if (codigoDescuento === "CAMISETA123") { //si es exactamente igual a CAMISETA123
                 precioTotalCalculado *= 0.85; // Aplicar descuento del 15%
