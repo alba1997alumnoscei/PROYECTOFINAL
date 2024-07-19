@@ -418,7 +418,7 @@ document.addEventListener('DOMContentLoaded', function () {
         //----------------------------------------------
         //1. Declaramos variables: 
         //----------------------------------------------
-        const prodContainer = document.getElementById("productos-container"); //ropa y accesorios que crearemos más adelante en este JS
+        const prodContainer = document.getElementById("productos__container"); //ropa y accesorios que crearemos más adelante en este JS
         const disenosContainer = document.getElementById("disenos-container"); //ropa y accesorios que crearemos más adelante en este JS
 
         const carritoContainer = document.getElementById("carrito-container"); //parte del carrito donde irá la prenda/accesorio
