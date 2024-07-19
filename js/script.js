@@ -426,7 +426,7 @@ document.addEventListener('DOMContentLoaded', function () {
         const txtInfo = document.querySelector(".info__total");
 
         const btnBorrar = document.getElementById("borrar__carrito"); //botón de vaciar carrito 
-        const btnDescuento = document.getElementById("bntAplicarD"); //botón de descuento 
+        const btnDescuento = document.getElementById("bntAplicar"); //botón de descuento 
         const btnMensaje = document.getElementById("btnMensaje"); //botón de mensaje  
         
 
