@@ -16,26 +16,31 @@
     --color-texto: #000000;
     --color-primario: #ffffff;
     --color-secundario: #184c41;
+  
    
 }
 
-
-body {
+/*Donde aplicaremos la fuente, color de fondo y height del body*/
+/*body {
     font-family: 'outfit';
     background-color: var(--color-fondo);
-    height: 100%;
-}
+    
+}*/
+
 
 .container {
+  font-family: 'outfit';
+    background-color: var(--color-fondo);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     height: auto;
     width: 100vw;
     flex: 1;
+  height: 100%;
 }
 
-/*-------Botones y otros en común-------------------*/
+/*-------Botones y otras clases comunes en todos los HTML -------------------*/
 
 .main {
     display: flex;
@@ -64,6 +69,8 @@ body {
     width: 50%;
 }
 
+/*clase aplicada a algunos botones*/
+
 .btn {
     padding: 20px;
     border-radius: 10%;
@@ -84,7 +91,7 @@ body {
 /*-------------------------------------------------------------------------------------------------*/
 
 /*-----------------------HEADER ----------------------*/
-
+/*header ocupa una posición fija en la pantalla*/
 .header {
     height: 20%;
     background-color: var(--color-primario);
@@ -95,6 +102,8 @@ body {
     top: 0;
 }
 
+/*logo del header*/
+
 .header__logo {
     max-width: 100%;
     height: auto;
@@ -102,26 +111,27 @@ body {
 
 
 /*-----------------------Footer ----------------------*/
+/*Lleva la misma imagen de fondo que el Nav*/
 .footer {
 
     background-color: var(--color-primario);
     width: 100%;
     display: flex;
     justify-content: space-evenly;
-    
     font: 1.3rem;
     align-items: center;
     background-image: url(/imgs/fondo.jpg);
-    background-size: cover;
+    background-size: cover; /*la imagen de fondo se ajusta al footer*/
     background-position: center bottom;
     padding: 20px;
-    position: relative; /* Asegúrate de que el footer esté en flujo normal de documentos */
+    position: relative; 
     margin-top: auto; 
     
 }
 
-.footer__links {
+/*apartado de RRSS del footer*/
 
+.footer__links {
     width: 33%;
     display: flex;
     justify-content: space-around;
@@ -130,6 +140,7 @@ body {
 
 }
 
+/*Apartado de privacidad y contacto del footer */
 .footer__privacidad,
 .footer__contacto {
 
@@ -140,6 +151,7 @@ body {
 
 }
 
+/*Privacidad y contacto del footer: links */
 .footer__privacidad a,
 .footer__contacto a {
     text-decoration: none;
@@ -147,16 +159,20 @@ body {
     font-weight: 500;
 }
 
+/*Privacidad y contacto del footer: links + transform*/
 :hover.footer__privacidad a,
 :hover.footer__contacto a,
 :hover.rrss img {
     transform: scale(1.2);
 }
 
+/*Contenedores de RRSS*/
+
 .rrss {
     width: 33%;
 }
 
+/*Imagenes de RRSS*/
 .rrss img {
     width: 3em;
     height: auto;
@@ -164,8 +180,8 @@ body {
 
 
 /*-----------------------NAV----------------------*/
+/*Corresponde al panel de navegación: Ropa y Accesorios, Diseños y Personalizar*/
 .nav {
-
     width: 100%;
     background-color: var(--color-secundario);
     padding: 10px;
@@ -206,20 +222,19 @@ body {
     margin: 15px;
     border: 1px solid black;
     
-    
-    
-   
-    
 }
+
+/*Transiciones de los botones*/
 
 :hover.nav__btn {
     transform: scale(1.1);
     /* Escalado al pasar el mouse */
 }
 
+/*Estilos de los links*/
 .nav__btn a {
     color: var(--color-texto);
-    text-decoration: none;
+    text-decoration: none; /*hemos puesto esto para que no se vea subrayado*/
 }
 
 
@@ -227,8 +242,10 @@ body {
 /*----------------------------HTML INDEX----------------------------*/
 /*------------------------------------------------------------------*/
 
+
 /*---------Acordeón----------*/
 
+/*Todo el acordeón*/
 .acordeon {
     background-color: #fff;
     border-radius: 15px;
@@ -239,6 +256,8 @@ body {
     flex-direction: column;
     text-align: left;
 }
+
+/*Pasos del acordeón*/
 
 .acordeon__item {
 
@@ -252,6 +271,8 @@ body {
     display: block;
     max-height: 250px;
 }
+
+/*Titulos de los pasos: siempre visibles*/
 
 .acordeon__item--titulo {
     border-radius: 10px;
@@ -267,16 +288,20 @@ body {
     color: var(--color-secundario);
 }
 
+/*El contenido de cada paso, se muestra oculto por norma general*/
+
 .acordeon__item--contenido {
     display: none;
 }
 
+/*menos cuando lleva aplicado la clase active, esto es cuando hacemos clic en el titulo*/
 .active .acordeon__item--contenido {
     display: block;
     padding: 30px;
 }
 
 /*---------descuento del paso 4 del acordeón----------*/
+/*en el paso 4 hemos hecho un pequeño div, que tendrá las mismas propiedades que el contenido del acordeón. Se muestra oculto, a no ser que lleve aplicado la clase active*/
 
 .descuento {
     display: none;
@@ -290,19 +315,24 @@ body {
     display: block;
 }
 
+/*cuando pasamos el ratón por encima se escala*/
 .descuento:hover {
     transform: scale(1.1);
 }
+/*FIN DEL ACORDEON*/
+
 
 /*Botones que te redirigen al resto de htmls*/
 
-.redirection {
+/*Contenedor general de Redirección*/
+/*.redirection {
     display: flex;
     flex-direction: column;
     align-items: center;
     margin-top: 20px;
-}
+}*/
 
+/*Contenedor general de Redirección*/
 .redirection__btns {
     display: flex;
     justify-content: space-around;
@@ -315,12 +345,15 @@ body {
 
 }
 
+/*Divs del contenedor: links */
+
 .redirection__btns a {
     font-family: 'outfit';
     font-size: 1.30rem;
     color: var(--color-texto);
 }
 
+/*Divs del contenedor: imagenes */
 .redirection__btns img {
     width: 300px;
     height: auto;
@@ -328,6 +361,8 @@ body {
     margin-top: 30px;
 }
 
+
+/*Cada uno de los divs, que te lleva a la pagina en cuestión*/
 .irRopa,
 .irDisenos,
 .irPersonalizar {
@@ -337,12 +372,14 @@ body {
     align-items: center;
     width: auto;
     max-width: 500px;
-
     cursor: pointer;
     border: none;
     box-shadow: 0px 2px 4px rgb(42, 122, 110);
 
 }
+
+/*Transiciones para estos botones*/
+/*hover con rotate y scale*/
 
 :hover.irRopa {
     transform: rotate(-10deg);
@@ -356,7 +393,6 @@ body {
     transform: rotate(10deg);
 
 }
-
 
 /*--------------------------------------------------------*/
 /*---------------HTML ROPA-----------------------------*/
