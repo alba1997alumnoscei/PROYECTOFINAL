@@ -299,13 +299,7 @@ document.addEventListener('DOMContentLoaded', function () {
             });
 
         }
-        //--------------- Función de filtrar por tipo cuando hago click ---------------
-        function filtrarTipo(tipo) {
-            const productosFiltrados = products.filter(product =>
-                product.nombre.toLowerCase().includes(tipo)
-            );
-            listaProductos(productosFiltrados);
-        }
+       
 
 
         // ----------Evento para filtrar por título al escribir en el input----------
@@ -320,6 +314,13 @@ document.addEventListener('DOMContentLoaded', function () {
         listaProductos(products); // Se ejecuta la función listaProductos para mostrar el array
 
         // ---------------Filtrar clicando en los botones ---------------
+       
+         function filtrarTipo(tipo) {
+            const productosFiltrados = products.filter(product =>
+                product.nombre.toLowerCase().includes(tipo) 
+            );
+            listaProductos(productosFiltrados);
+        }
         btnTodos.addEventListener("click", () => { //cuando hago clic en Todos, se muestra la lista de productos completa
             listaProductos(products); //llama a la funcion 
 

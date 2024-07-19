@@ -20,12 +20,12 @@
 
 }
 
-/*Donde aplicaremos la fuente, color de fondo y height del body*/
-/*body {
+
+body {
     font-family: 'outfit';
     background-color: var(--color-fondo);
-    
-}*/
+}
+
 
 
 .container {
@@ -128,7 +128,8 @@
     /*la imagen de fondo se ajusta al footer*/
     background-position: center bottom;
     padding: 20px;
-    position: relative;
+    position: fixed;
+    bottom: 0;
     margin-top: auto;
 
 }
