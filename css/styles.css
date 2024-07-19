@@ -128,7 +128,7 @@ body {
     /*la imagen de fondo se ajusta al footer*/
     background-position: center bottom;
     padding: 20px;
-    position: fixed;
+    position: relative;
     bottom: 0;
     margin-top: auto;
 
