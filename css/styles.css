@@ -596,18 +596,11 @@
     transform: scale(1.1);
 }
 
-/*imagenes de diseños*/
-.disenoItem img {
-    width: 100%;
+/*imagenes de diseños + imagenes de productos*/
+.disenoItem img, .productItem img {
+    width: 80%;
     height: auto;
 }
-
-/*imagenes de ropa y accesorios*/
-.productItem img {
-    width: 100%;
-    height: auto;
-}
-
 /*ropa y accesorios: estilos para h3, parrafos y precio de productItem (ropa y accesorios)*/
 
 .productItem h3 {
