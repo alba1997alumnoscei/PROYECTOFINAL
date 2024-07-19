@@ -563,7 +563,7 @@
 
 /*container donde están los articulos: prendas y ropa*/
 
-#products-container,
+#products__container,
 #productos-container,
 #disenos-container {
     display: flex;
