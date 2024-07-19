@@ -62,11 +62,14 @@
     padding: 5px;
     border-radius: 5px;
     cursor: pointer;
+    align-items: center;
+    
 }
 
 /*foto de la casita*/
 .volver img {
     width: 50%;
+    
 }
 
 /*clase aplicada a algunos botones*/
@@ -221,6 +224,8 @@
     text-align: center;
     margin: 15px;
     border: 1px solid black;
+    color: var(--color-texto); 
+    text-decoration: none;
     
 }
 
@@ -232,10 +237,7 @@
 }
 
 /*Estilos de los links*/
-.nav__btn a {
-    color: var(--color-texto);
-    text-decoration: none; /*hemos puesto esto para que no se vea subrayado*/
-}
+
 
 
 /*------------------------------------------------------------------*/
@@ -407,6 +409,12 @@
     padding: 20px;
 }
 
+.filtro__botones{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
 
 /*este inputText ha sido utilizado para todos los input de la página web*/
 .inputText {
@@ -443,14 +451,14 @@
 
 }
 
-
-
-/*.sliderContent .btn {
+.sliderContent img{
     display: flex;
-    flex-direction: row;
-    border: none;
+    max-width: 50%;
 
-}*/
+
+
+}
+
 
 /*Slider de fotos*/
 .slider {
@@ -466,7 +474,8 @@
 
 .slider-images {
     display: flex;
-    width: 250px;
+    min-width: 250px;
+    max-width: 250px;
     height: auto;
     transition: transform 0.5s ease;
 }
@@ -485,10 +494,12 @@
 .btnAnterior,
 .btnSiguiente {
     color: var(--color-secundario);
-    font-size: 1.30rem;
+    
     font-family: 'outfit';
     border: none;
     border-radius: 0;
+    margin: 0;
+    padding: 0;
     height: fit-content;
     align-items: center;
 
@@ -600,7 +611,7 @@
 /*imagenes de diseños + imagenes de productos*/
 .disenoItem img, .productItem img {
     width: 80%;
-    height: 200px;
+    height: auto;
 }
 /*ropa y accesorios: estilos para h3, parrafos y precio de productItem (ropa y accesorios)*/
 
@@ -685,6 +696,7 @@ Si se añade un diseño a la cesta, salta el mensaje #mensaje indicando al usuar
 #carrito__container,
 #carrito__disenos {
     display: flex;
+    justify-content: center;
 
 }
 
@@ -768,13 +780,16 @@ flex-direction: column;
 
 /*Botón de pagar que lleva a la pagina de pago*/
 
-.irPago {
-    
-    width: auto;
-    display: flex;
-    align-items: center;
+.irPago  {
+    padding: 10px;
+    border-radius: 10%;
+    color: var(--color-primario);
+    font-size: 1rem;
+    font-family: 'outfit';
     border: none;
-    
+    box-shadow: 0px 2px 4px rgb(42, 122, 110);
+    margin: 30px;
+    border-radius: 0;
 }
 
 
@@ -919,12 +934,56 @@ flex-direction: column;
 
     .slider-images img {
         min-width: 100%;
+       max-width: 400px;
+       display: flex;
+       align-items: center;
     }
 
-    /*ir al carrito*/ 
-    .irCarrito, .btnCestaRopa {
-        font-size: 1.1rem;
+    .btnAnterior {
+       
+       width: auto;
+       position: fixed;
+       bottom: 40%;
+       left: 0;
+       
     }
+    .btnSiguiente {
+       
+       width: auto;
+        position: fixed;
+        bottom: 40%;
+       right: 0;
+       
+       
+        
+     }
+
+     .btnAnterior button{
+       
+        width: auto;
+        position: fixed;
+        bottom: 40%;
+        left: 0;
+        
+     }
+     .btnSiguiente button{
+        
+         
+        width: auto; 
+        position: fixed;
+         bottom: 40%;
+        right: 0;
+        
+         
+      }
+ 
+
+    /*ir al carrito*/ 
+    .irCarrito, .btnCestaRopa, .btnCestaDiseno {
+        font-size: 0.8rem;
+    }
+
+   
 
     /*seccion pago*/
     .pago {
@@ -1027,8 +1086,9 @@ width: 80%;
     }
 
     /* Ir al carrito */
-    .irCarrito, .btnCestaRopa {
+    .irCarrito, .btnCestaRopa, .btnCestaDiseno {
         font-size: 1.2rem;
+        
     }
 
     /* Sección pago */
@@ -1131,7 +1191,7 @@ width: 80%;
     }
 
     /* Ir al carrito */
-    .irCarrito, .btnCestaRopa {
+    .irCarrito, .btnCestaRopa, .btnCestaDiseno{
         font-size: 1.5rem;
     }
 

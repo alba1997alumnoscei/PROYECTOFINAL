@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', function () {
             iniDisenos();
             break;
 
-        
+
         case "personalizar":
             console.log("Estoy en Pago");
             iniPersonalizar();
@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded', function () {
     //Esta función corresponde al index.html 
 
     function iniHome() {
-    
+
         //----------------------------------------------
         //1. Definimos variables para hacer un acordeón. 
         //----------------------------------------------
@@ -297,14 +297,14 @@ document.addEventListener('DOMContentLoaded', function () {
             `;
                 container.appendChild(productItem);//añade dentro del container, al final 
             });
-            
+
         }
         //--------------- Función de filtrar por tipo cuando hago click ---------------
         function filtrarTipo(tipo) {
             const productosFiltrados = products.filter(product =>
                 product.nombre.toLowerCase().includes(tipo)
             );
-            listaProductos(productosFiltrados); 
+            listaProductos(productosFiltrados);
         }
 
 
@@ -317,7 +317,7 @@ document.addEventListener('DOMContentLoaded', function () {
             listaProductos(productosFiltrados); // se ejecuta la función de listarProductos para ver los productos que hay 
         });
 
-
+        listaProductos(products); // Se ejecuta la función listaProductos para mostrar el array
 
         // ---------------Filtrar clicando en los botones ---------------
         btnTodos.addEventListener("click", () => { //cuando hago clic en Todos, se muestra la lista de productos completa
@@ -331,17 +331,15 @@ document.addEventListener('DOMContentLoaded', function () {
         btnCami.addEventListener("click", () => filtrarTipo("camiseta"));//filtramos por camiseta
 
     }
-        //----------------------------------------------
-        //3. Ejecutamos 
-        //----------------------------------------------
 
-    listaProductos(products); // Se ejecuta la función listaProductos para mostrar el array
+
+
 
 
     //-----------------------------------------------------------------------------------------------------------
     //  JS DISEÑOS
     //-----------------------------------------------------------------------------------------------------------
-//Esta función corresponde al HTML disenos.html
+    //Esta función corresponde al HTML disenos.html
     function iniDisenos() {
         //------------------------------------------------------
         // 1. Declaramos variables y constantes
@@ -381,7 +379,7 @@ document.addEventListener('DOMContentLoaded', function () {
             actualizarSlider(); //se actualiza el slider 
             actualizarContador(); //y se actualiza el contador
         }
-    // Función para ver la imagen anterior
+        // Función para ver la imagen anterior
         function prevImagen() {
             imgIndex--; //cada vez que hago prevImage el indice se decrementa en 1
             if (imgIndex < 0) {//si el indice es menor a 0
@@ -412,7 +410,7 @@ document.addEventListener('DOMContentLoaded', function () {
     //-------------------------------------------------------------------------------------------------------------
     // JS PERSONALIZAR
     //-------------------------------------------------------------------------------------------------------------
-//esta función pertenece al HTML personalizar.html
+    //esta función pertenece al HTML personalizar.html
     function iniPersonalizar() {
 
         //----------------------------------------------
@@ -428,7 +426,7 @@ document.addEventListener('DOMContentLoaded', function () {
         const btnBorrar = document.getElementById("borrar__carrito"); //botón de vaciar carrito 
         const btnDescuento = document.getElementById("aplicarDescuento"); //botón de descuento 
         const btnMensaje = document.getElementById("btnMensaje"); //botón de mensaje  
-        
+
 
         let precioTotal = 0; //el precio de nuestro carrito inicialmente será 0 
         let productoRopaSeleccionado = null; //lo inicializamos en null la primera vez, para que despues se pueda ir actualizando 
@@ -547,12 +545,12 @@ document.addEventListener('DOMContentLoaded', function () {
             },
 
         ];
-        
-            //----------------------------------------------
-            //2. forEach, eventos y funciones para ir ejecutando 
-            //----------------------------------------------
-           // Listar productos de ropa: recorre el array de products para crear un div con la clase productItem 
-           products.forEach(producto => {
+
+        //----------------------------------------------
+        //2. forEach, eventos y funciones para ir ejecutando 
+        //----------------------------------------------
+        // Listar productos de ropa: recorre el array de products para crear un div con la clase productItem 
+        products.forEach(producto => {
             const productItem = document.createElement('div');
             productItem.className = 'productItem';
 
@@ -573,7 +571,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 //Se ejecuta la funcion para mostrar el mensaje de que falta el diseño
                 mostrarMensaje();
                 //Se cierra dicho mensaje
-                cerrarMensajeDiseno();                
+                cerrarMensajeDiseno();
             });
 
         });
@@ -602,18 +600,18 @@ document.addEventListener('DOMContentLoaded', function () {
 
         });
 
-            // Mostrar el total inicial para que me muestre que el total a pagar es 0,00 EUR 
-            verTotal();
+        // Mostrar el total inicial para que me muestre que el total a pagar es 0,00 EUR 
+        verTotal();
 
-            //funcion que te muestra el mensaje de que falta por añadir el diseño 
+        //funcion que te muestra el mensaje de que falta por añadir el diseño 
         function mostrarMensaje() {
             const mensaje = document.getElementById('mensaje');
-            if(diseñoSeleccionado){//comprobamos si hay algun diseño seleccionado
+            if (diseñoSeleccionado) {//comprobamos si hay algun diseño seleccionado
                 console.log("Ya hay un diseño seleccionado");
-            }else{//en el caso de que no haya mostramos el mensaje
+            } else {//en el caso de que no haya mostramos el mensaje
                 mensaje.style.display = 'block';
             }
-            
+
         }
 
         // Función para cerrar el mensaje de ropa
@@ -622,13 +620,13 @@ document.addEventListener('DOMContentLoaded', function () {
             //Cerramos el mensaje
             mensaje.style.display = 'none';
         }
-            //funcion que te muestra el mensaje de que falta por añadir una camiseta, sudadera o Tote Bag
+        //funcion que te muestra el mensaje de que falta por añadir una camiseta, sudadera o Tote Bag
         function mostrarMensajeDiseno() {
             const mensaje = document.getElementById('mensajeDiseno');
             //comprobamos si hay alguna prenda de ropa seleccionada
-            if(productoRopaSeleccionado){
+            if (productoRopaSeleccionado) {
                 console.log("Ya hay seleccionado una camiseta, sudadera o Tote Bag")
-            }else{//en el caso de que no haya mostramos el mensaje
+            } else {//en el caso de que no haya mostramos el mensaje
                 mensaje.style.display = 'block';
             }
         }
@@ -657,6 +655,7 @@ document.addEventListener('DOMContentLoaded', function () {
             actualizarPrecioTotal(); //ejecutamos funcion de actualizarPrecio 
         }
 
+        //es igiual que la anterior función pero con los diseños. 
         function agregarDisenoAlCarrito(item) {
             if (diseñoSeleccionado) {
                 carritoDisenos.innerHTML = '';
@@ -715,15 +714,15 @@ document.addEventListener('DOMContentLoaded', function () {
         // Evento para aplicar el descuento
         btnDescuento.addEventListener("click", actualizarPrecioTotal);
 
-      // Función para desplazarse al div con id "carrito"
-    function scrollToCarrito() {
-        const carritoDiv = document.getElementById("carrito");
-        carritoDiv.scrollIntoView({ behavior: 'smooth' });
-    }
+        // Función para desplazarse al div con id "carrito"
+        function scrollToCarrito() {
+            const carritoDiv = document.getElementById("carrito");
+            carritoDiv.scrollIntoView({ behavior: 'smooth' });
+        }
 
-    // Event listener para el botón "Ir al Carrito"
-    const botonIrAlCarrito = document.querySelector('.irCarrito');
-    botonIrAlCarrito.addEventListener('click', scrollToCarrito);
+        // Event listener para el botón "Ir al Carrito"
+        const botonIrAlCarrito = document.querySelector('.irCarrito');
+        botonIrAlCarrito.addEventListener('click', scrollToCarrito);
 
     }
 
