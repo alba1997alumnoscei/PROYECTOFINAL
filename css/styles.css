@@ -565,11 +565,11 @@
 #products__container,
 #productos__container,
 #disenos__container {
+    
     display: flex;
     flex-wrap: wrap;
-    gap: 20px;
+    gap: 20px; 
     justify-content: center;
-    padding-top: 400px;
     padding: 30px;
     margin-bottom: 100px;
 
@@ -578,15 +578,14 @@
 /*cada uno de los articulos y diseños llevan esta clase*/
 .productItem,
 .disenoItem {
-    border: 1px solid #ddd;
+    .productItem, .disenoItem {
+    border: 1px solid black; 
     border-radius: 5px;
     padding: 10px;
     text-align: center;
-    width: 300px;
-    align-content: space-around;
-    border: none;
+    width: 300px; 
     box-shadow: 0px 2px 4px rgb(42, 122, 110);
-    margin: 30px;
+    margin: 15px; 
 }
 
 /*hover de la clase anterior*/
