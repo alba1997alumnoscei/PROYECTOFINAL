@@ -32,77 +32,66 @@
     </nav>
 
         <!---------------MAIN-------------------------------->
-
-        <div class="main">
+ <div class="main">
             <section>
-
-
                 <form class="contacto" action="url" method="POST">
                     <h1>Formulario de contacto</h1>
 
-                    <!--Forms de input text-->
-
+                    <!-- Forms de input text -->
                     <div class="contacto__info">
-                        <label value="nombre">Nombre</label>
-                        <input type="text" name="nombre" class="inputText" placeholder="Escribe tu nombre" required>
+                        <label for="nombre">Nombre</label>
+                        <input type="text" id="nombre" name="nombre" class="inputText" placeholder="Escribe tu nombre" required>
                     </div>
 
                     <div class="contacto__info">
-                        <label value="apellido">Apellidos</label>
-                        <input type="text" name="apellido" class="inputText" placeholder="Escribe tu apellido" required>
+                        <label for="apellido">Apellidos</label>
+                        <input type="text" id="apellido" name="apellido" class="inputText" placeholder="Escribe tu apellido" required>
                     </div>
 
                     <div class="contacto__info">
-                        <label value="email">Tu email</label>
-                        <input type="text" name="email" class="inputText" placeholder="juanito@gmail.com" required>
+                        <label for="email">Tu email</label>
+                        <input type="email" id="email" name="email" class="inputText" placeholder="juanito@gmail.com" required>
                     </div>
 
                     <div class="contacto__info">
-                        <label value="telefono">Tu número de teléfono</label>
-                        <input type="text" name="telefono" class="inputText" placeholder="(+34)..." required>
+                        <label for="telefono">Tu número de teléfono</label>
+                        <input type="tel" id="telefono" name="telefono" class="inputText" placeholder="(+34)..." required>
                     </div>
-                    <!--Forms de input radio-->
-                    <div class="contacto__info">Sexo:
+
+                    <!-- Forms de input radio -->
+                    <div class="contacto__info">
+                        <p>Sexo:</p>
                         <div class="contacto__info">
-
-                            <label value="Mujer">Mujer</label>
-                            <input type="radio" value="Mujer" name="opcionSexo">
-
+                            <label for="sexoMujer">Mujer</label>
+                            <input type="radio" id="sexoMujer" value="Mujer" name="opcionSexo">
                         </div>
                         <div class="contacto__info">
-                            <label value="Hombre">Hombre</label>
-                            <input type="radio" value="Hombre" name="opcionSexo">
+                            <label for="sexoHombre">Hombre</label>
+                            <input type="radio" id="sexoHombre" value="Hombre" name="opcionSexo">
                         </div>
-
                         <div class="contacto__info">
-                            <label value="noContesta">Prefiero no contestar</label>
-                            <input type="radio" value="noContesta" name="opcionSexo">
+                            <label for="sexoNoContesta">Prefiero no contestar</label>
+                            <input type="radio" id="sexoNoContesta" value="noContesta" name="opcionSexo">
                         </div>
-
                     </div>
 
                     <div class="contacto__info">
-                        <label value="departamento">¿Con qué departamento quieres contactar?</label>
-                        <select type="departamento" name="departamento" required>
+                        <label for="departamento">¿Con qué departamento quieres contactar?</label>
+                        <select id="departamento" name="departamento" required>
                             <option value="rrhh">RR.HH.</option>
                             <option value="ventas">Ventas</option>
                             <option value="att">Atención al cliente</option>
                             <option value="otros">Otros</option>
-
                         </select>
                     </div>
+
+                    <button type="submit" class="btn">Enviar</button>
                 </form>
-
-
-
-
-
             </section>
 
-             <a href="./index.html" class="volver">
-    <img src="./imgs/volver.png" alt="volver">
-</a>
-
+            <a href="./index.html" class="volver">
+                <img src="./imgs/volver.png" alt="volver">
+            </a>
         </div>
 
 
