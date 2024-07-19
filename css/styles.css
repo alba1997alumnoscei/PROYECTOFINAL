@@ -564,7 +564,7 @@
 /*container donde están los articulos: prendas y ropa*/
 
 #products__container,
-#productos-container,
+#productos__container,
 #disenos-container {
     display: flex;
     flex-wrap: wrap;
