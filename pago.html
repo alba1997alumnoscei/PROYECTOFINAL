@@ -19,8 +19,8 @@
         <div class="header">
             <div class="header__logo"></div>
             <img src="./imgs/logo-pago.png" alt="logo">
-           
-           
+
+
         </div>
         <!--Barra de navegación-->
         <nav class="nav">
@@ -28,7 +28,7 @@
             <div class="nav__buttons">
                 <button class="nav__btn">
                     <a href="./ropa-accesorios.html">Ropa y Accesorios</a>
-                    
+
                 </button>
                 <button class="nav__btn">
                     <a href="./disenos.html">Diseños</a>
@@ -41,31 +41,38 @@
         <!---------------MAIN-------------------------------->
 
         <div class="main">
-            <section>
+            
 
+                
 
-                <form class="contacto">
+                
+
+                <form class="pago">
                     <h1>formulario de contacto</h1>
 
                     <!--Forms de input text-->
+                    <div class="pago__info">
+                        <label value="nombre">Nombre del titular</label>
+                        <input type="text" class="inputText" name="nombre" required>
+                    </div>
+                    <div class="pago__info">
+                        <label value="numeroTarjeta">Nº Tarjeta</label>
+                        <input type="text" class="inputText" name="numeroTarjeta" required>
+                    </div>
+                    <div class="pago__info">
+                        <label value="vencimiento">Vencimiento</label>
+                        <input type="month" class="inputText" name="vencimiento" required>
+                    </div>
+                    <div class="pago__info">
+                        <label value="codigo">CVV</label>
+                        <input type="text" class="inputText" name="codigo" placeholder="?">
+                    </div>
 
-                    <label value="nombre">Nombre del titular</label>
-                    <input type="text" name="nombre"  required>
-
-                    <label value="numeroTarjeta">Nº Tarjeta</label>
-                    <input type="text" name="numeroTarjeta" required>
-
-                    <label value="vencimiento">Vencimiento</label>
-                    <input type="month" name="vencimiento" required>
-
-                    <label value="codigo">CVV</label>
-                    <input type="text" name="codigo" placeholder="?">
-                    
 
                 </form>
 
-                <button class="pagofinal">PAGAR</button>
-            </section>
+                <button class="btn">PAGAR</button>
+            
 
             <button class="volver">
                 <a href="./index.html"><img src="./imgs/volver.png" alt="volver"></a>
@@ -79,7 +86,7 @@
         <div class="footer">
 
             <div class=""></div>
-    
+
             <div class="footer__links">
                 <div class="rrss">
                     <a href="https://www.facebook.com/" target="_blank">
@@ -89,25 +96,25 @@
                 <div class="rrss">
                     <a href="https://x.com/" target="_blank">
                         <img src="./imgs/X.png" alt="X"></a>
-                    
+
                 </div>
                 <div class="rrss">
                     <a href="https://www.instagram.com/" target="_blank">
                         <img src="imgs/instagram.png" alt="instagram"></a>
-                    
+
                 </div>
-                
+
             </div>
-    
+
             <div class="footer__privacidad">
                 <a href="https://policies.google.com/privacy?hl=es" target="_blank">Política de Privacidad</a>
             </div>
-    
+
             <div class="footer__contacto">
                 <a href="./contacto.html" class="">Formulario de Contacto</a>
             </div>
-    
-    
+
+
         </div>
 
     </div>

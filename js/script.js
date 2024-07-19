@@ -24,20 +24,12 @@ document.addEventListener('DOMContentLoaded', function () {
             iniDisenos();
             break;
 
-        case "contacto":
-            console.log("Estoy en Contacto");
-            iniContacto();
-            break;
-
+        
         case "personalizar":
             console.log("Estoy en Pago");
             iniPersonalizar();
             break;
 
-        case "pago":
-            console.log("Estoy en Pago");
-            iniPago();
-            break;
 
     }
 
@@ -97,7 +89,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         //1. Declaramos las variables: products-container será donde aparezcan todas las prendas y accesorios. 
 
-        const inputTitulo = document.querySelector("#inputTitulo"); //nombre de la prenda a buscar que más 
+        const inputText = document.querySelector("#inputText"); //nombre de la prenda a buscar que más 
         const container = document.getElementById('products-container');
 
         //Botones: corresponde a los botones de filtrar. 
@@ -316,8 +308,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
         // ----------Evento para filtrar por título al escribir en el input----------
-        inputTitulo.addEventListener("input", () => { //cuando escribimos texto en el input 
-            const texto = inputTitulo.value.toLowerCase();//obtiene el valor que escribimos y se convierte a minúsculas para que filtre mejor 
+        inputText.addEventListener("input", () => { //cuando escribimos texto en el input 
+            const texto = inputText.value.toLowerCase();//obtiene el valor que escribimos y se convierte a minúsculas para que filtre mejor 
             const productosFiltrados = products.filter(product => //del array "products" filtramos por nombre 
                 product.nombre.toLowerCase().includes(texto) //que incluya el value que hemos escrito en el input
             );
@@ -357,7 +349,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         //Botones de siguiente y anterior
         const btnAnterior = document.querySelector(".btnAnterior");
-        const btnNext = document.querySelector(".btnNext");
+        const btnSiguiente = document.querySelector(".btnSiguiente");
 
 
         //Numera en que posición se encuentra con respecto al total de diseños
@@ -370,7 +362,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         //EventListener
 
-        btnNext.addEventListener("click", nextImagen); //2 parametros: click + funcion
+        btnSiguiente.addEventListener("click", nextImagen); //2 parametros: click + funcion
         btnAnterior.addEventListener("click", prevImagen); //2 parametros: click + funcion
 
         //------------------------------------------------------
@@ -396,9 +388,9 @@ document.addEventListener('DOMContentLoaded', function () {
             actualizarContador(); //y se actualiza contador 
         }
 
-        function actualizarSlider() {// como el minwidth de las imagenes es 400px 
-            const width = 400; //tomamos el ancho de mi slider 
-            sliderImages.style.transform = `translateX(${-width * imgIndex}px)`//aplico CSS para mover en X 400px mi slider 
+        function actualizarSlider() {// como el minwidth de las imagenes es 250px 
+            const width = 250; //tomamos el ancho de mi slider 
+            sliderImages.style.transform = `translateX(${-width * imgIndex}px)`//aplico CSS para mover en X 250px mi slider 
         }
 
         function actualizarContador() { //funcion para que se actualice el contador de imagenes 
@@ -429,7 +421,7 @@ document.addEventListener('DOMContentLoaded', function () {
         const txtInfo = document.querySelector(".infoTotal");
 
         const btnBorrar = document.getElementById("borrarCarrito"); //botón de vaciar carrito 
-        const btnDescuento = document.getElementById("aplicarDescuento"); //botón de descuento 
+        const btnDescuento = document.getElementById("bntAplicarD"); //botón de descuento 
         const btnMensaje = document.getElementById("btnMensaje"); //botón de mensaje  
         
 
@@ -724,12 +716,14 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     // Event listener para el botón "Ir al Carrito"
-    const botonIrAlCarrito = document.querySelector('.fixed-button');
+    const botonIrAlCarrito = document.querySelector('.irCarrito');
     botonIrAlCarrito.addEventListener('click', scrollToCarrito);
 
 
 
     }
+
+    
 
 });
 

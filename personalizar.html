@@ -19,11 +19,11 @@
         <div class="header">
             <div class="header__logo"></div>
             <img src="./imgs/logo-personalizar.png" alt="logo">
-            
-           
+
+
         </div>
-       
-        
+
+
         <!--Barra de navegación-->
         <nav class="nav">
 
@@ -44,30 +44,27 @@
 
         <div class="main">
 
-            <button class="fixed-button">Ir al Carrito</button>
+            <button class="irCarrito">Ir al Carrito</button>
             <!-- Contenedor para los productos -->
-            <p>Elige el modelo de camiseta, sudadera o Tote Bag</p>
+            <h2>Paso 1: Elige el modelo de camiseta, sudadera o Tote Bag</h2>
             <div id="productos-container"></div>
 
-            <p>Elige el diseño</p>
+            <h2>Paso 2: Elige tu diseño</h2>
+
             <div id="disenos-container"></div>
-
-
-
 
             <div id="mensaje" class="mensaje">
                 Elige tu diseño
-                <button id="btnMensaje" ></button>
+                <button id="btnMensaje"></button>
             </div>
             <div id="mensajeDiseno" class="mensaje">
                 Elige tu camiseta, sudadera o Tote Bag
-                <button id="btnMensajeDiseno" ></button>
+                <button id="btnMensajeDiseno"></button>
             </div>
- 
 
             <!-- Contenedor para los productos agregados al carrito -->
 
-            TU CARRITO:
+            <h3> TU CARRITO:</h3>
             <div id="carrito">
 
                 <div class="carritoResumen">
@@ -80,27 +77,29 @@
 
                 </div>
 
-                <button id="borrarCarrito">Vaciar carrito</button>
-
+                <div class="borrarCarrito">
+                    <h3>¿Quieres vaciar el carrito?</h3>
+                    <button id="borrarCarrito" class="btn"> <img src="./imgs/vaciar-carrito.png" alt=""></button>
+                </div>
 
                 <div class="carritoPago">
 
 
 
-                    <div class="infoTotal">Aquí tiene su resultado total</div>
+                    <div class="infoTotal"></div>
 
 
                     <div class="aplicar">
-                        <form class="aplicardescuento">
-                            <label for="codigo">Código de Descuento</label>
-                            <input type="text" id="codigo" name="codigo" placeholder="Ingresa tu código descuento"
-                                required>
-                            <button type="button" id="aplicarDescuento">Aplicar Descuento</button>
+                        <form class="btnDescuento">
+                            <label for="codigo">Código Descuento</label>
+                            <input type="text" id="codigo" name="codigo" class="inputText"
+                                placeholder="Ingresa tu código descuento" required>
+                            <button type="button" id="btnDescuento" class="btn">Aplicar Descuento</button>
                         </form>
                     </div>
 
                     <button class="irPago">
-                        <a href="/pago.html">PAGAR</a>
+                        <a href="/pago.html" class="btn">PAGAR</a>
 
                     </button>
                 </div>
@@ -108,9 +107,9 @@
 
             </div>
 
-           <button class="volver">
-        <a href="./index.html"><img src="./imgs/volver.png" alt="volver"></a>
-    </button>
+            <button class="volver">
+                <a href="./index.html"><img src="./imgs/volver.png" alt="volver"></a>
+            </button>
 
 
         </div>
@@ -121,7 +120,7 @@
         <div class="footer">
 
             <div class=""></div>
-    
+
             <div class="footer__links">
                 <div class="rrss">
                     <a href="https://www.facebook.com/" target="_blank">
@@ -131,25 +130,25 @@
                 <div class="rrss">
                     <a href="https://x.com/" target="_blank">
                         <img src="./imgs/X.png" alt="X"></a>
-                    
+
                 </div>
                 <div class="rrss">
                     <a href="https://www.instagram.com/" target="_blank">
                         <img src="imgs/instagram.png" alt="instagram"></a>
-                    
+
                 </div>
-                
+
             </div>
-    
+
             <div class="footer__privacidad">
                 <a href="https://policies.google.com/privacy?hl=es" target="_blank">Política de Privacidad</a>
             </div>
-    
+
             <div class="footer__contacto">
                 <a href="./contacto.html" class="">Formulario de Contacto</a>
             </div>
-    
-    
+
+
         </div>
 
     </div>

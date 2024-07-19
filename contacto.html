@@ -19,7 +19,7 @@
         <div class="header">
             <div class="header__logo"></div>
             <img src="./imgs/logo-pago.png" alt="logo">
-            
+
 
         </div>
         <!--Barra de navegación-->
@@ -28,7 +28,7 @@
             <div class="nav__buttons">
                 <button class="nav__btn">
                     <a href="./ropa-accesorios.html">Ropa y Accesorios</a>
-                    
+
                 </button>
                 <button class="nav__btn">
                     <a href="./disenos.html">Diseños</a>
@@ -45,44 +45,65 @@
 
 
                 <form class="contacto">
-                    <h1>formulario de contacto</h1>
+                    <h1>Formulario de contacto</h1>
 
                     <!--Forms de input text-->
 
-                    <label value="nombre">Nombre</label>
-                    <input type="text" name="nombre" placeholder="Escribe tu nombre" required>
+                    <div class="contacto__info">
+                        <label value="nombre">Nombre</label>
+                        <input type="text" name="nombre" class="inputText" placeholder="Escribe tu nombre" required>
+                    </div>
 
-                    <label value="apellido">Apellidos</label>
-                    <input type="text" name="apellido" placeholder="Escribe tu apellido" required>
+                    <div class="contacto__info">
+                        <label value="apellido">Apellidos</label>
+                        <input type="text" name="apellido" class="inputText" placeholder="Escribe tu apellido" required>
+                    </div>
 
-                    <label value="email">Tu email</label>
-                    <input type="text" name="email" placeholder="juanito@gmail.com" required>
+                    <div class="contacto__info">
+                        <label value="email">Tu email</label>
+                        <input type="text" name="email" class="inputText" placeholder="juanito@gmail.com" required>
+                    </div>
 
-                    <label value="telefono">Tu número de teléfono</label>
-                    <input type="text" name="telefono" placeholder="(+34)..." required>
-
+                    <div class="contacto__info">
+                        <label value="telefono">Tu número de teléfono</label>
+                        <input type="text" name="telefono" class="inputText" placeholder="(+34)..." required>
+                    </div>
                     <!--Forms de input radio-->
+                    <div class="contacto__info">Sexo:
+                        <div class="contacto__info">
 
-                    Sexo:
-                    <label value="Mujer">Mujer</label>
-                    <input type="radio" value="Mujer" name="opcionSexo">
+                            <label value="Mujer">Mujer</label>
+                            <input type="radio" value="Mujer" name="opcionSexo">
 
-                    <label value="Hombre">Hombre</label>
-                    <input type="radio" value="Hombre" name="opcionSexo">
+                        </div>
+                        <div class="contacto__info">
+                            <label value="Hombre">Hombre</label>
+                            <input type="radio" value="Hombre" name="opcionSexo">
+                        </div>
 
-                    <label value="noContesta">Prefiero no contestar</label>
-                    <input type="radio" value="noContesta" name="opcionSexo">
+                        <div class="contacto__info">
+                            <label value="noContesta">Prefiero no contestar</label>
+                            <input type="radio" value="noContesta" name="opcionSexo">
+                        </div>
 
-                    <label value="departamento">¿Con qué departamento quieres contactar?</label>
-                    <select type="departamento" name="departamento" required>
-                        <option value="rrhh">RR.HH.</option>
-                        <option value="ventas">Ventas</option>
-                        <option value="att">Atención al cliente</option>
-                        <option value="otros">Otros</option>
+                    </div>
 
-                    </select>
+                    <div class="contacto__info">
+                        <label value="departamento">¿Con qué departamento quieres contactar?</label>
+                        <select type="departamento" name="departamento" required>
+                            <option value="rrhh">RR.HH.</option>
+                            <option value="ventas">Ventas</option>
+                            <option value="att">Atención al cliente</option>
+                            <option value="otros">Otros</option>
 
+                        </select>
+                    </div>
                 </form>
+
+
+
+
+
             </section>
 
             <button class="volver">
@@ -97,7 +118,7 @@
         <div class="footer">
 
             <div class=""></div>
-    
+
             <div class="footer__links">
                 <div class="rrss">
                     <a href="https://www.facebook.com/" target="_blank">
@@ -107,25 +128,25 @@
                 <div class="rrss">
                     <a href="https://x.com/" target="_blank">
                         <img src="./imgs/X.png" alt="X"></a>
-                    
+
                 </div>
                 <div class="rrss">
                     <a href="https://www.instagram.com/" target="_blank">
                         <img src="imgs/instagram.png" alt="instagram"></a>
-                    
+
                 </div>
-                
+
             </div>
-    
+
             <div class="footer__privacidad">
                 <a href="https://policies.google.com/privacy?hl=es" target="_blank">Política de Privacidad</a>
             </div>
-    
+
             <div class="footer__contacto">
                 <a href="./contacto.html" class="">Formulario de Contacto</a>
             </div>
-    
-    
+
+
         </div>
 
     </div>
