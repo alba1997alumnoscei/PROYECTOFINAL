@@ -307,8 +307,6 @@ document.addEventListener('DOMContentLoaded', function () {
             listaProductos(productosFiltrados); 
         }
 
-        listaProductos(products); // Se ejecuta la función listaProductos para mostrar el array
-
 
         // ----------Evento para filtrar por título al escribir en el input----------
         inputText.addEventListener("input", () => { //cuando escribimos texto en el input 
@@ -333,7 +331,11 @@ document.addEventListener('DOMContentLoaded', function () {
         btnCami.addEventListener("click", () => filtrarTipo("camiseta"));//filtramos por camiseta
 
     }
+         //----------------------------------------------
+        //2. Ejecutamos 
+        //----------------------------------------------
 
+    listaProductos(products); // Se ejecuta la función listaProductos para mostrar el array
 
 
     //-------------------------------------------------------------------------------------------------------------
