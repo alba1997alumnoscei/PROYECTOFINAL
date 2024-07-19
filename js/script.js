@@ -331,16 +331,16 @@ document.addEventListener('DOMContentLoaded', function () {
         btnCami.addEventListener("click", () => filtrarTipo("camiseta"));//filtramos por camiseta
 
     }
-         //----------------------------------------------
-        //2. Ejecutamos 
+        //----------------------------------------------
+        //3. Ejecutamos 
         //----------------------------------------------
 
     listaProductos(products); // Se ejecuta la función listaProductos para mostrar el array
 
 
-    //-------------------------------------------------------------------------------------------------------------
+    //-----------------------------------------------------------------------------------------------------------
     //  JS DISEÑOS
-    //-------------------------------------------------------------------------------------------------------------
+    //-----------------------------------------------------------------------------------------------------------
 //Esta función corresponde al HTML disenos.html
     function iniDisenos() {
         //------------------------------------------------------
@@ -415,7 +415,9 @@ document.addEventListener('DOMContentLoaded', function () {
 //esta función pertenece al HTML personalizar.html
     function iniPersonalizar() {
 
-        //1. Declaramos variables para obtener: 
+        //----------------------------------------------
+        //1. Declaramos variables: 
+        //----------------------------------------------
         const prodContainer = document.getElementById("productos-container"); //ropa y accesorios que crearemos más adelante en este JS
         const disenosContainer = document.getElementById("disenos-container"); //ropa y accesorios que crearemos más adelante en este JS
 
@@ -545,7 +547,10 @@ document.addEventListener('DOMContentLoaded', function () {
             },
 
         ];
-
+        
+            //----------------------------------------------
+            //2. forEach, eventos y funciones para ir ejecutando 
+            //----------------------------------------------
            // Listar productos de ropa: recorre el array de products para crear un div con la clase productItem 
            products.forEach(producto => {
             const productItem = document.createElement('div');
@@ -720,11 +725,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const botonIrAlCarrito = document.querySelector('.irCarrito');
     botonIrAlCarrito.addEventListener('click', scrollToCarrito);
 
-
-
     }
-
-    
 
 });
 
