@@ -398,22 +398,27 @@
 /*---------------HTML ROPA-----------------------------*/
 /*--------------------------------------------------------*/
 
+
+/*Estilos para filtro cuando escribimos un input */
 .filtro {
     padding: 20px;
 }
 
+
+/*este inputText ha sido utilizado para todos los input de la página web*/
 .inputText {
     padding: 10px;
     border: none;
     box-shadow: 0px 2px 4px rgb(42, 122, 110);
     margin: 15px;
-    opacity: 0.7;
+    opacity: 0.7; /*ponemos una opacidad de 0.7 y abajo está la transición de opacidad*/
     transition: opacity 0.5s ease-in-out;
     width: 100%;
 
 
 }
 
+/*efecto de transición*/
 :hover#inputText {
     opacity: 1;
 }
@@ -425,6 +430,7 @@
 /*---------------HTML DISEÑOS-----------------------------*/
 /*--------------------------------------------------------*/
 
+/*Contenedor genereal de todo el Slider*/
 .sliderContent {
     margin: 30px;
     display: flex;
@@ -434,21 +440,26 @@
 
 }
 
-.sliderContent .btn {
+
+
+/*.sliderContent .btn {
     display: flex;
     flex-direction: row;
     border: none;
 
-}
+}*/
 
+/*Slider de fotos*/
 .slider {
-    overflow: hidden;
+    overflow: hidden; 
     display: flex;
     flex-direction: row;
     border: none;
     box-shadow: 0px 2px 4px rgb(42, 122, 110);
     margin: 30px;
 }
+
+/*Contenedor de imágenes*/
 
 .slider-images {
     display: flex;
@@ -457,21 +468,19 @@
     transition: transform 0.5s ease;
 }
 
+/*Imagénes en sí*/
 .slider-images img {
     /*a cada imagen del grupo slider-images*/
     min-width: 250px;
     max-width: 250px;
-
-
-
     object-fit: contain;
-    /*como me va a mostrar la imagen dentro de la caja, es decir añade barritas en los lados o arriba/abajo para evitar que la foto sea muy ancha o muy larga*/
+    /*como me va a mostrar la imagen dentro de la caja, añade barritas en los lados o arriba/abajo para evitar que la foto sea muy ancha o muy larga*/
 }
+
+/*Botones de anterior y siguiente*/
 
 .btnAnterior,
 .btnSiguiente {
-
-
     color: var(--color-secundario);
     font-size: 1.30rem;
     font-family: 'outfit';
@@ -483,11 +492,15 @@
 
 }
 
+/*Hover de scale al pasar el mouse por estos borones*/
+
 :hover.btnAnterior,
 :hover.btnSiguiente {
     transform: scale(1.2);
 
 }
+
+/*Contador total de imagenes, donde marca la posición actual con respecto al total*/
 
 .slider-contador {
     background-color: var(--color-secundario);
@@ -498,6 +511,7 @@
     cursor: pointer;
     padding: 20px;
 }
+
 
 
 /*------------------------------------------------------------*/
