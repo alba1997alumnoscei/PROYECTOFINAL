@@ -16,8 +16,8 @@
     --color-texto: #000000;
     --color-primario: #ffffff;
     --color-secundario: #184c41;
-  
-   
+
+
 }
 
 /*Donde aplicaremos la fuente, color de fondo y height del body*/
@@ -29,7 +29,7 @@
 
 
 .container {
-  font-family: 'outfit';
+    font-family: 'outfit';
     background-color: var(--color-fondo);
     display: flex;
     flex-direction: column;
@@ -37,7 +37,7 @@
     height: auto;
     width: 100vw;
     flex: 1;
-  height: 100%;
+    height: 100%;
 }
 
 /*-------Botones y otras clases comunes en todos los HTML -------------------*/
@@ -48,7 +48,7 @@
     align-items: center;
     flex: 1;
     margin-top: 30%;
-  
+
 }
 
 /*Botón fijo en la pantalla (derecha) para volver al index.html*/
@@ -63,13 +63,13 @@
     border-radius: 5px;
     cursor: pointer;
     align-items: center;
-    
+
 }
 
 /*foto de la casita*/
 .volver img {
     width: 50%;
-    
+
 }
 
 /*clase aplicada a algunos botones*/
@@ -124,12 +124,13 @@
     font: 1.3rem;
     align-items: center;
     background-image: url(/imgs/fondo.jpg);
-    background-size: cover; /*la imagen de fondo se ajusta al footer*/
+    background-size: cover;
+    /*la imagen de fondo se ajusta al footer*/
     background-position: center bottom;
     padding: 20px;
-    position: relative; 
-    margin-top: auto; 
-    
+    position: relative;
+    margin-top: auto;
+
 }
 
 /*apartado de RRSS del footer*/
@@ -206,7 +207,7 @@
     justify-content: space-around;
     font-size: 1.3rem;
     min-width: 100px;
-    
+
 }
 
 /*Botones del nav*/
@@ -220,13 +221,13 @@
     font-family: 'outfit';
     font-size: 1.30rem;
     justify-content: space-around;
-    transition:  0.5s ease, transform 0.5s ease;
+    transition: 0.5s ease, transform 0.5s ease;
     text-align: center;
     margin: 15px;
     border: 1px solid black;
-    color: var(--color-texto); 
+    color: var(--color-texto);
     text-decoration: none;
-    
+
 }
 
 /*Transiciones de los botones*/
@@ -271,7 +272,7 @@
     flex-direction: column;
     align-items: center;
     display: block;
-    
+
 }
 
 /*Titulos de los pasos: siempre visibles*/
@@ -321,18 +322,9 @@
 .descuento:hover {
     transform: scale(1.1);
 }
+
 /*FIN DEL ACORDEON*/
 
-
-/*Botones que te redirigen al resto de htmls*/
-
-/*Contenedor general de Redirección*/
-/*.redirection {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 20px;
-}*/
 
 /*Contenedor general de Redirección*/
 .redirection__btns {
@@ -341,7 +333,7 @@
     padding: 50px;
     gap: 100px;
     flex: 1;
-  	flex-wrap: wrap;
+    flex-wrap: wrap;
     height: auto;
     width: 100%;
     font-size: 1.30rem;
@@ -378,8 +370,8 @@
     cursor: pointer;
     border: none;
     box-shadow: 0px 2px 4px rgb(42, 122, 110);
-  flex-wrap: wrap;
-  flex: 1;
+    flex-wrap: wrap;
+    flex: 1;
 
 }
 
@@ -409,7 +401,7 @@
     padding: 20px;
 }
 
-.filtro__botones{
+.filtro__botones {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -422,7 +414,8 @@
     border: none;
     box-shadow: 0px 2px 4px rgb(42, 122, 110);
     margin: 15px;
-    opacity: 0.7; /*ponemos una opacidad de 0.7 y abajo está la transición de opacidad*/
+    opacity: 0.7;
+    /*ponemos una opacidad de 0.7 y abajo está la transición de opacidad*/
     transition: opacity 0.5s ease-in-out;
     width: 100%;
 
@@ -451,7 +444,7 @@
 
 }
 
-.sliderContent img{
+.sliderContent img {
     display: flex;
     max-width: 50%;
 
@@ -462,7 +455,7 @@
 
 /*Slider de fotos*/
 .slider {
-    overflow: hidden; 
+    overflow: hidden;
     display: flex;
     flex-direction: row;
     border: none;
@@ -494,7 +487,7 @@
 .btnAnterior,
 .btnSiguiente {
     color: var(--color-secundario);
-    
+
     font-family: 'outfit';
     border: none;
     border-radius: 0;
@@ -534,7 +527,7 @@
 
 
 /*Botón de ir al carrito, te lleva a la parte de abajo*/
-.irCarrito{
+.irCarrito {
     padding: 20px;
     border-radius: 10%;
     color: var(--color-secundario);
@@ -550,7 +543,8 @@
 
 /*estilo de los botones para añadir al carrito*/
 
-.btnCestaRopa, .btnCestaDiseno{
+.btnCestaRopa,
+.btnCestaDiseno {
     padding: 10px;
     border-radius: 10%;
     color: var(--color-secundario);
@@ -560,12 +554,13 @@
     box-shadow: 0px 2px 4px rgb(42, 122, 110);
     margin: 30px;
     border-radius: 0;
-    
+
 }
 
 /*hover de estos ultimos borones*/
 
-:hover.btn, :hover.irCarrito {
+:hover.btn,
+:hover.irCarrito {
     border-radius: 30%;
 
 
@@ -584,7 +579,7 @@
     padding-top: 400px;
     padding: 30px;
     margin-bottom: 100px;
-  flex: 1;
+    flex: 1;
 
 }
 
@@ -609,10 +604,12 @@
 }
 
 /*imagenes de diseños + imagenes de productos*/
-.disenoItem img, .productItem img {
+.disenoItem img,
+.productItem img {
     width: 80%;
     height: auto;
 }
+
 /*ropa y accesorios: estilos para h3, parrafos y precio de productItem (ropa y accesorios)*/
 
 .productItem h3 {
@@ -634,7 +631,8 @@
 /*Cuando se añade un artículo a la cesta, aparece el #mensajeDiseno, indicando al usuario que debe elegir un diseño. 
 Si se añade un diseño a la cesta, salta el mensaje #mensaje indicando al usuario que debe elegir una prenda o accesorio*/
 
-#mensaje, #mensajeDiseno {
+#mensaje,
+#mensajeDiseno {
     position: fixed;
     bottom: 60px;
     left: 20px;
@@ -645,15 +643,17 @@ Si se añade un diseño a la cesta, salta el mensaje #mensaje indicando al usuar
     border-radius: 5px;
     cursor: pointer;
     display: none;
-    transform: translateY(20px); 
-    transition: opacity 0.5s ease, transform 0.5s ease; 
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
     display: none;
 }
 
-:hover#mensaje, :hover#mensajeDiseno {
-    opacity: 1; /* Totalmente visible */
+:hover#mensaje,
+:hover#mensajeDiseno {
+    opacity: 1;
+    /* Totalmente visible */
     transform: translateY(0);
-    display: block; 
+    display: block;
 }
 
 
@@ -670,12 +670,12 @@ Si se añade un diseño a la cesta, salta el mensaje #mensaje indicando al usuar
     width: 80%;
     height: auto;
     flex-direction: column;
-  align-items: center;
+    align-items: center;
     justify-content: space-around;
     flex-wrap: wrap;
     padding: 30px;
     margin: 30px;
-   
+
 }
 
 /*resumen del carrito*/
@@ -715,17 +715,17 @@ Si se añade un diseño a la cesta, salta el mensaje #mensaje indicando al usuar
     margin: 20px;
 }
 
-.borrar__carrito{
-display: flex;
-align-items: center;
-flex-direction: column;
-  margin: 40px;
+.borrar__carrito {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin: 40px;
 }
 
 /*Dentro del carrito, la parte del pago */
 
 .carrito__pago {
-    
+
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -752,21 +752,23 @@ flex-direction: column;
     color: var(--color-secundario);
     margin: 50px;
     border: none;
-    box-shadow: -2px 4px 4px  rgb(42, 122, 110);
-    transition:  0.5s ease, transform 0.5s ease;
+    box-shadow: -2px 4px 4px rgb(42, 122, 110);
+    transition: 0.5s ease, transform 0.5s ease;
     flex-wrap: wrap;
     min-width: 200px;
 }
 
-:hover.aplicar{
-    transform: scale(1.1) ;
-    
+:hover.aplicar {
+    transform: scale(1.1);
+
 }
 
-#aplicarDescuento, #codigo {
+#aplicarDescuento,
+#codigo {
     padding: 10px;
     display: block;
-  width: 100%; }
+    width: 100%;
+}
 
 
 
@@ -780,7 +782,7 @@ flex-direction: column;
 
 /*Botón de pagar que lleva a la pagina de pago*/
 
-.irPago  {
+.irPago {
     padding: 10px;
     border-radius: 10%;
     color: var(--color-primario);
@@ -798,46 +800,26 @@ flex-direction: column;
 /*---------------HTML CONTACTO----------------------------*/
 /*--------------------------------------------------------*/
 
-/*Contenedor general para el formulario de contacto
-
-.contacto {
-    display: flex;
-    flex-direction: column;
-    padding: 20px;
-    margin: 20px;
-    width: 100%;
-}
 
 /*partes del formulario de contacto*/
-.contacto__info{
-    padding:15px;
+.contacto__info {
+    padding: 15px;
 
 }
 
 /*labels de .contacto__info*/
 
 .contacto__info label {
-    margin-right: 50px; 
+    margin-right: 50px;
     flex: 1;
-    
+
 }
 
 /*---------------PAGO---------------*/
 
-/*Contenedor genreal de pago
-.pago {
-    display: flex;
-    flex-direction: column;
-    padding: 50px;
-    margin: 50px;
-    justify-content: space-between;
-    
-
-}
-
 /*partes del formulario de pago*/
 
-.pago__info { 
+.pago__info {
     padding: 20px;
 
 }
@@ -850,7 +832,7 @@ flex-direction: column;
 /*--------------------------------------------------------*/
 
 /*--------------------------------------------------------*/
-/* Pantallas pequeñas (móviles) */ 
+/* Pantallas pequeñas (móviles) */
 /*con un ancho maximo de 480px*/
 /*--------------------------------------------------------*/
 @media (max-width: 480px) {
@@ -859,7 +841,7 @@ flex-direction: column;
     .header {
         height: auto;
         padding: 10px;
-        position: relative; 
+        position: relative;
         top: 0
     }
 
@@ -867,27 +849,29 @@ flex-direction: column;
         max-width: 80%;
     }
 
-    /*nav*/ 
+    /*nav*/
     .nav {
-        top: 10%; 
+        top: 10%;
         padding: 10px;
         position: relative;
     }
 
     .nav__btn {
-        width: 100%; 
+        width: 100%;
         height: auto;
         font-size: 1rem;
-    
+
     }
 
     /*footer*/
-  
-  .footer__links, .footer__privacidad, .footer__contacto {
+
+    .footer__links,
+    .footer__privacidad,
+    .footer__contacto {
         width: 100%;
         flex-direction: column;
         align-items: center;
-      font-size: 1rem;
+        font-size: 1rem;
         padding: 10px;
     }
 
@@ -896,7 +880,7 @@ flex-direction: column;
     }
 
     .rrss img {
-        width: 2em; 
+        width: 2em;
         width: 80%;
         padding: 2px;
     }
@@ -906,84 +890,90 @@ flex-direction: column;
         margin: 10px;
         font-size: 1rem;
     }
-    /*main*/ 
+
+    /*main*/
     .main {
-        
+
         font-size: 0.8rem;
         margin: 5%;
     }
 
-    /*los productos y diseños*/ 
+    /*los productos y diseños*/
     #products__container,
     #productos__container,
     #disenos__container {
-    display: flex;
-    flex-wrap: wrap;
-    flex: 1;
-}
-
-    .productItem, .disenoItem {
-        width: 100%; 
+        display: flex;
+        flex-wrap: wrap;
+        flex: 1;
     }
 
-    /*slider de imagenes*/ 
+    .productItem,
+    .disenoItem {
+        width: 100%;
+    }
+
+    /*slider de imagenes*/
     .slider-images {
-        
+
         height: auto;
     }
 
     .slider-images img {
         min-width: 100%;
-       max-width: 400px;
-       display: flex;
-       align-items: center;
+        max-width: 400px;
+        display: flex;
+        align-items: center;
     }
 
     .btnAnterior {
-       
-       width: auto;
-       position: fixed;
-       bottom: 40%;
-       left: 0;
-       
-    }
-    .btnSiguiente {
-       
-       width: auto;
-        position: fixed;
-        bottom: 40%;
-       right: 0;
-       
-       
-        
-     }
 
-     .btnAnterior button{
-       
         width: auto;
         position: fixed;
         bottom: 40%;
         left: 0;
-        
-     }
-     .btnSiguiente button{
-        
-         
-        width: auto; 
-        position: fixed;
-         bottom: 40%;
-        right: 0;
-        
-         
-      }
- 
 
-    /*ir al carrito*/ 
-    .irCarrito, .btnCestaRopa, .btnCestaDiseno {
+    }
+
+    .btnSiguiente {
+
+        width: auto;
+        position: fixed;
+        bottom: 40%;
+        right: 0;
+
+
+
+    }
+
+    .btnAnterior button {
+
+        width: auto;
+        position: fixed;
+        bottom: 40%;
+        left: 0;
+
+    }
+
+    .btnSiguiente button {
+
+
+        width: auto;
+        position: fixed;
+        bottom: 40%;
+        right: 0;
+
+
+    }
+
+
+    /*ir al carrito*/
+    .irCarrito,
+    .btnCestaRopa,
+    .btnCestaDiseno {
         font-size: 0.8rem;
     }
 
-   
+
 
     /*seccion pago*/
     .pago {
@@ -992,10 +982,11 @@ flex-direction: column;
     }
 
     /*botones en general*/
-    .btn{
-width: 80%;
+    .btn {
+        width: 80%;
     }
 }
+
 /*--------------------------------------------------------*/
 /*PARA TABLETS*/
 /*minimo 481px hasta 768px*/
@@ -1016,12 +1007,12 @@ width: 80%;
 
     /* Nav */
     .nav {
-         
+
         height: auto;
         padding: 15px;
         position: relative;
         top: 0;
-        
+
     }
 
     .nav__btn {
@@ -1031,7 +1022,9 @@ width: 80%;
     }
 
     /* Footer */
-    .footer__links, .footer__privacidad, .footer__contacto {
+    .footer__links,
+    .footer__privacidad,
+    .footer__contacto {
         width: 100%;
         flex-direction: column;
         align-items: center;
@@ -1058,7 +1051,7 @@ width: 80%;
     .main {
         font-size: 0.9rem;
         margin: 5%;
-    
+
     }
 
     /* Productos y diseños */
@@ -1070,7 +1063,8 @@ width: 80%;
         flex: 1;
     }
 
-    .productItem, .disenoItem {
+    .productItem,
+    .disenoItem {
         width: 48%;
         margin: 1%;
         box-sizing: border-box;
@@ -1086,9 +1080,11 @@ width: 80%;
     }
 
     /* Ir al carrito */
-    .irCarrito, .btnCestaRopa, .btnCestaDiseno {
+    .irCarrito,
+    .btnCestaRopa,
+    .btnCestaDiseno {
         font-size: 1.2rem;
-        
+
     }
 
     /* Sección pago */
@@ -1123,7 +1119,7 @@ width: 80%;
 
     /* Nav */
     .nav {
-        top: 10%; 
+        top: 10%;
         padding: 20px;
         position: relative;
     }
@@ -1135,9 +1131,11 @@ width: 80%;
     }
 
     /* Footer */
-    .footer__links, .footer__privacidad, .footer__contacto {
+    .footer__links,
+    .footer__privacidad,
+    .footer__contacto {
         width: 100%;
-        flex-direction: row; 
+        flex-direction: row;
         justify-content: space-around;
         font-size: 1.2rem;
         padding: 20px;
@@ -1175,7 +1173,8 @@ width: 80%;
         flex: 1;
     }
 
-    .productItem, .disenoItem {
+    .productItem,
+    .disenoItem {
         width: 30%;
         margin: 1.5%;
         box-sizing: border-box;
@@ -1191,7 +1190,9 @@ width: 80%;
     }
 
     /* Ir al carrito */
-    .irCarrito, .btnCestaRopa, .btnCestaDiseno{
+    .irCarrito,
+    .btnCestaRopa,
+    .btnCestaDiseno {
         font-size: 1.5rem;
     }
 
@@ -1206,4 +1207,3 @@ width: 80%;
         width: 60%;
     }
 }
-

@@ -24,14 +24,14 @@
         </div>
 
 
-         <!--Barra de navegación-->
-    <nav class="nav">
-        <div class="nav__buttons">
-            <a href="./ropa-accesorios.html" class="nav__btn" title="ropa">Ropa y Accesorios</a>
-            <a href="./disenos.html" class="nav__btn" title="disenos">Diseños</a>
-            <a href="./personalizar.html" class="nav__btn" title="personalizar">Personalizar</a>
-        </div>
-    </nav>
+        <!--Barra de navegación-->
+        <nav class="nav">
+            <div class="nav__buttons">
+                <a href="./ropa-accesorios.html" class="nav__btn" title="ropa">Ropa y Accesorios</a>
+                <a href="./disenos.html" class="nav__btn" title="disenos">Diseños</a>
+                <a href="./personalizar.html" class="nav__btn" title="personalizar">Personalizar</a>
+            </div>
+        </nav>
 
         <!---------------MAIN-------------------------------->
 
@@ -45,6 +45,8 @@
             <h2>Paso 2: Elige tu diseño</h2>
 
             <div id="disenos__container"></div>
+
+            <!-- Mensaje al agregar producto/diseño -->
 
             <div id="mensaje" class="mensaje">
                 Elige tu diseño
@@ -61,41 +63,42 @@
             <div id="carrito">
 
                 <div class="carrito__resumen">
-
+                    <!-- contenedor para los productos -->
                     <div id="carrito__container">
 
                     </div>
-
+                    <!-- contenedor para los diseños -->
                     <div id="carrito__disenos"></div>
 
                 </div>
+                <!-- contenedor para elegir tallas -->
                 <div class="talla">
-                        <label for="talla">Elige tu talla</label>
-                        <select id="talla" name="talla" required>
-                            <option value="" disabled selected>Selecciona una talla</option>
-                            <option value="14-16">14-16</option>
-                            <option value="S">S</option>
-                            <option value="M">M</option>
-                            <option value="L">L</option>
-                            <option value="XL">XL</option>
-                            <option value="XXL">XXL</option>
-                            <option value="XXXL">XXXL</option>
-                            
-                        </select>
-                    </div>
+                    <label for="talla">Elige tu talla</label>
+                    <select id="talla" name="talla" required>
+                        <option value="" disabled selected>Selecciona una talla</option>
+                        <option value="14-16">14-16</option>
+                        <option value="S">S</option>
+                        <option value="M">M</option>
+                        <option value="L">L</option>
+                        <option value="XL">XL</option>
+                        <option value="XXL">XXL</option>
+                        <option value="XXXL">XXXL</option>
 
+                    </select>
+                </div>
+                <!-- Opcion de borrar carrito -->
                 <div class="borrar__carrito">
                     <h3>¿Quieres vaciar el carrito?</h3>
                     <button id="borrar__carrito" class="btn"> <img src="./imgs/vaciar-carrito.png" alt=""></button>
                 </div>
-
+                <!-- PAGO -->
                 <div class="carrito__pago">
 
 
-
+                    <!-- Total a pagar -->
                     <div class="info__total"></div>
 
-
+                    <!-- Aplicar descuento -->
                     <div class="aplicar">
                         <form class="aplicar__descuento">
                             <label for="codigo">Código Descuento</label>
@@ -105,64 +108,63 @@
                         </form>
                     </div>
 
-                    
-                        <a href="/pago.html" class="irPago" title="irPago">PAGAR</a>
+                    <!-- Boton para ir a pagar -->
+                    <a href="/pago.html" class="irPago" title="irPago">PAGAR</a>
 
-                    
+
                 </div>
 
 
             </div>
 
-           <a href="./index.html" class="volver" title="volver">
-        <img src="./imgs/volver.png" alt="volver">
-    </a>
-
-        </div>
-
- <!-------------------------FOOTER----------------------------------->
-
-  <div class="footer">
-
-    <div class="footer__links">
-        <div class="rrss">
-            <a href="https://www.facebook.com/" target="_blank" rel="noreferrer" title="facebook">
-                <img src="./imgs/facebook.png" alt="Facebook">
+            <a href="./index.html" class="volver" title="volver">
+                <img src="./imgs/volver.png" alt="volver">
             </a>
+
         </div>
-        <div class="rrss">
-            <a href="https://x.com/" target="_blank" rel="noreferrer" title="X">
-                <img src="./imgs/X.png" alt="X">
-            </a>
+
+        <!-------------------------FOOTER----------------------------------->
+        <div class="footer">
+
+            <!--RRSS-->
+            <div class="footer__links">
+                <div class="rrss">
+                    <a href="https://www.facebook.com/" target="_blank">
+                        <img src="./imgs/facebook.png" alt="Facebook">
+                    </a>
+                </div>
+                <div class="rrss">
+                    <a href="https://x.com/" target="_blank">
+                        <img src="./imgs/X.png" alt="X">
+                    </a>
+                </div>
+                <div class="rrss">
+                    <a href="https://www.instagram.com/" target="_blank">
+                        <img src="./imgs/instagram.png" alt="Instagram">
+                    </a>
+                </div>
+            </div>
+
+            <!--Privacidad-->
+            <div class="footer__privacidad">
+                <a href="https://policies.google.com/privacy?hl=es" target="_blank">Política de Privacidad</a>
+            </div>
+
+            <!--Contacto-->
+            <div class="footer__contacto">
+                <a href="./contacto.html">Formulario de Contacto</a>
+            </div>
+
         </div>
-        <div class="rrss">
-            <a href="https://www.instagram.com/" target="_blank" rel="noreferrer" title="instagram">
-                <img src="./imgs/instagram.png" alt="Instagram">
-            </a>
-        </div>
+
+
     </div>
+    <!--Enlace a JS-->
 
-    <div class="footer__privacidad">
-        <a href="https://policies.google.com/privacy?hl=es" target="_blank" rel="noreferrer" title="privacidad">Política de Privacidad</a>
-    </div>
-
-    <div class="footer__contacto">
-        <a href="./contacto.html" title="contacto">Formulario de Contacto</a>
-    </div>
-
-</div>
-
-
-</div>
-<!--Enlace a JS-->
-
- <script src="./js/script.js"></script>
+    <script src="./js/script.js"></script>
 
 </body>
 
 
 
 </html>
-
-
- 
