@@ -565,7 +565,7 @@
 
 #products__container,
 #productos__container,
-#disenos-container {
+#disenos__container {
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
@@ -668,7 +668,7 @@ Si se añade un diseño a la cesta, salta el mensaje #mensaje indicando al usuar
 
 /*resumen del carrito*/
 /*lo que hemos echado a la cesta*/
-.carritoResumen {
+.carrito__resumen {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
@@ -681,8 +681,8 @@ Si se añade un diseño a la cesta, salta el mensaje #mensaje indicando al usuar
 }
 
 /*dentro del resumen carrito, apartado para container y apartado para diseños*/
-#carrito-container,
-#carrito-disenos {
+#carrito__container,
+#carrito__disenos {
     display: flex;
 
 }
@@ -702,12 +702,12 @@ Si se añade un diseño a la cesta, salta el mensaje #mensaje indicando al usuar
 
 
 /*borrar el carrito*/
-#borrarCarrito {
+#borrar__carrito {
     padding: 20px;
     margin: 20px;
 }
 
-.borrarCarrito{
+.borrar__carrito{
 display: flex;
 align-items: center;
 flex-direction: column;
@@ -716,7 +716,7 @@ flex-direction: column;
 
 /*Dentro del carrito, la parte del pago */
 
-.carritoPago {
+.carrito__pago {
     
     display: flex;
     flex-direction: column;
@@ -762,7 +762,7 @@ flex-direction: column;
 
 
 
-.aplicardescuento {
+.aplicar__descuento {
     display: flex;
     flex-direction: column;
     width: 50%;
