@@ -518,7 +518,8 @@
 /*---------------HTML PERSONALIZAR----------------------------*/
 /*------------------------------------------------------------*/
 
-/*botón de ir al carrito*/
+
+/*Botón de ir al carrito, te lleva a la parte de abajo*/
 .irCarrito{
     padding: 20px;
     border-radius: 10%;
@@ -533,7 +534,7 @@
 
 }
 
-/*estilo de los botones de los articulos*/
+/*estilo de los botones para añadir al carrito*/
 
 .btnCestaRopa, .btnCestaDiseno{
     padding: 10px;
@@ -548,6 +549,8 @@
     
 }
 
+/*hover de estos ultimos borones*/
+
 :hover.btn, :hover.irCarrito {
     border-radius: 30%;
 
@@ -555,7 +558,7 @@
 
 }
 
-/*container donde están los articulos*/
+/*container donde están los articulos: prendas y ropa*/
 
 #products-container,
 #productos-container,
@@ -584,21 +587,25 @@
     margin: 30px;
 }
 
+/*hover de la clase anterior*/
 :hover.productItem,
 :hover.disenoItem {
     transform: scale(1.1);
 }
 
+/*imagenes de diseños*/
+.disenoItem img {
+    width: 100%;
+    height: auto;
+}
 
+/*imagenes de ropa y accesorios*/
 .productItem img {
     width: 100%;
     height: auto;
 }
 
-.disenoItem img {
-    width: 100%;
-    height: auto;
-}
+/*ropa y accesorios: estilos para h3, parrafos y precio de productItem (ropa y accesorios)*/
 
 .productItem h3 {
 
@@ -614,7 +621,10 @@
 
 }
 
-/*Cuando se añade un artículo a la cesta o se añade un diseño a la cesta, salta este mensaje*/
+/*MENSAJES*/
+
+/*Cuando se añade un artículo a la cesta, aparece el #mensajeDiseno, indicando al usuario que debe elegir un diseño. 
+Si se añade un diseño a la cesta, salta el mensaje #mensaje indicando al usuario que debe elegir una prenda o accesorio*/
 
 #mensaje, #mensajeDiseno {
     position: fixed;
@@ -634,14 +644,15 @@
 
 :hover#mensaje, :hover#mensajeDiseno {
     opacity: 1; /* Totalmente visible */
-    transform: translateY(0); /* En su posición original */
+    transform: translateY(0);
     display: block; 
 }
 
 
 
-/*Carrito*/
+/*CARRITO*/
 
+/*Contenedor para todo el carrito*/
 #carrito {
 
     background-color: var(--color-secundario);
@@ -659,6 +670,7 @@
 }
 
 /*resumen del carrito*/
+/*lo que hemos echado a la cesta*/
 .carritoResumen {
     display: flex;
     flex-direction: row;
@@ -712,9 +724,12 @@ flex-direction: column;
     text-align: center;
 }
 
+/*información del precio actual*/
 .infoPrecio {
     font-size: 1rem;
 }
+
+/*Div para aplicar descuento*/
 
 .aplicar {
     display: flex;
@@ -761,6 +776,7 @@ flex-direction: column;
     border: none;
     
 }
+
 
 
 
